@@ -3,6 +3,7 @@
 
 arg = %1%
 
-SplitPath, arg, filename
+SplitPath, arg, filename, dir
+SetWorkingDir, %dir%
 
 Run, %A_ScriptDir%\bin\mintty -t "%arg%" -e /bin/wslbridge.exe -t vim "%filename%"
