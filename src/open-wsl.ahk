@@ -12,8 +12,12 @@ if (args = "-a" && WinExist(title))
 else
 {
     IniRead, shell, %A_ScriptDir%\etc\wsl-terminal.conf, config, shell, "bash"
+    IniRead, one_instance, %A_ScriptDir%\etc\wsl-terminal.conf, config, one_instance, 0
 
-    WinClose, %title%
+    if (one_instance)
+    {
+        WinClose, %title%
+    }
 
     if (args = "-a")
     {
