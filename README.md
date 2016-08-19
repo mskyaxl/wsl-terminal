@@ -51,3 +51,11 @@ use_tmux=0
 ## Build
 
 Run build.bat, make sure wget/tar/xz/gzip/unzip/zip are installed in WSL.
+
+## LICENSE
+
+Cygwin DLL: https://cygwin.com/licensing.html
+mintty: GPLv3+
+wslbridge: MIT
+cbwin: MIT
+wsl-terminal: MIT
