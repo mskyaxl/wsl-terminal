@@ -4,7 +4,7 @@ wsl-terminal is a terminal emulator for Windows Subsystem for Linux (WSL), conta
 
 ## Usage
 
-Run `open-wsl.exe` to open a WSL terminal in current directory.
+Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge)).
 
 Add a `Open wsl here` context menu to explorer.exe, modify path of `open-wsl.exe` in `doc/wsl-terminal/open-wsl-here (modify path first).reg`, and then run it.
 
@@ -26,7 +26,7 @@ Windows Registry Editor Version 5.00
 
 run-wsl-file.exe can run any .sh(and any others like .py/.pl/.php) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
 
-vim.exe can open any text file in vim(in wsl-terminal), support `Open With` context i menu in explorer.exe.
+vim.exe can open any text file in vim(in wsl-terminal), support `Open With` context menu in explorer.exe.
 
 Run `outbash-daemon.js` to start a outbash.exe daemon, more about outbash.exe: https://github.com/xilun/cbwin
 
