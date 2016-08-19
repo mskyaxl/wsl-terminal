@@ -20,7 +20,7 @@ tar -xvf cygwin-${cygwin_version}.tar.xz \
     usr/share/doc/cygwin-${cygwin_version/-*/}/{COPYING,COPYING.NEWLIB,CYGWIN_LICENSE,README}
 
 tar -xvf mintty-${mintty_version}.tar.xz usr/bin/mintty.exe usr/share/doc
-mkdir -p etc && cp ../minttyrc etc
+mkdir -p etc && cp ../minttyrc ../wsl-terminal.conf etc
 
 tar -xvf wslbridge-${wslbridge_version}-cygwin64.tar.gz
 cd wslbridge-${wslbridge_version}-cygwin64

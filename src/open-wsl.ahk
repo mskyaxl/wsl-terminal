@@ -1,29 +1,27 @@
-#NoTrayIcon
+﻿#NoTrayIcon
 #NoEnv
 
-args = %0%
-title := "        "
+args = %1%
+IniRead, title, %A_ScriptDir%\etc\wsl-terminal.conf, config, title, "        "
 
-if (args = 1 && WinExist(title))
+if (args = "-a" && WinExist(title))
 {
     WinActivate, %title%
     Exit
 }
 else
 {
+    IniRead, shell, %A_ScriptDir%\etc\wsl-terminal.conf, config, shell, "bash"
+
     WinClose, %title%
 
-    if (args = "1")
+    if (args = "-a")
     {
-        Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -e USETMUX=1 -t zsh
+        Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -e USE_TMUX=1 -e ATTACH_ONLY=1 -t "%shell%"
     }
     else
     {
-        drive := SubStr(A_WorkingDir, 1, 1)
-        StringLower, drive, drive
-        dir := "/mnt/" drive StrReplace(SubStr(A_WorkingDir, 3), "\", "/")
-
-        Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -e USETMUX=1 -ePASSDIR="%dir%" -t zsh
+        Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -e USE_TMUX=1 -t "%shell%
     }
 
     Loop, 5

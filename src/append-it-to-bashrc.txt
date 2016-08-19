@@ -1,0 +1,10 @@
+[ -z "$TMUX" -a -n "$USE_TMUX" ] && {
+	[ -n "$ATTACH_ONLY" ] && {
+		cd
+		tmux a 2>/dev/null || exec tmux
+		exit
+	}
+
+	tmux new-window -c "$PWD" \; a 2>/dev/null || exec tmux
+	exit
+}

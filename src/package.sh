@@ -8,4 +8,3 @@ cp ../*.exe ../*.js ../*.reg ../../LICENSE ../../README.md .
 
 cd ..
 zip -r ../wsl-terminal-${version}.zip wsl-terminal
-rm -rf wsl-terminal
