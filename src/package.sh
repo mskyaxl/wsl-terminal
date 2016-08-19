@@ -2,11 +2,10 @@
 
 version="0.1"
 
-rm -rf wslterminal && mkdir -p wslterminal && cd wslterminal
-mv ../build/{bin,doc,etc} .
-mv ../*.exe .
-cp ../*.js ../*.reg .
+rm -rf wsl-terminal && mkdir -p wsl-terminal && cd wsl-terminal
+cp -r ../build/{bin,doc,etc} .
+cp ../*.exe ../*.js ../*.reg ../../LICENSE ../../README.md .
 
 cd ..
-zip -r ../wslterminal-${version}.zip wslterminal
-rm -rf wslterminal
+zip -r ../wsl-terminal-${version}.zip wsl-terminal
+rm -rf wsl-terminal
