@@ -6,7 +6,7 @@ wsl-terminal is a terminal emulator for Windows Subsystem for Linux (WSL), conta
 
 Run `open-wsl.exe` to open a WSL terminal in current directory.
 
-Add a `Open wsl here` context menu to explorer.exe, modify path of `open-wsl.exe` in `doc\wsl-terminal\open-wsl-here (modify path first).reg`, and then run it.
+Add a `Open wsl here` context menu to explorer.exe, modify path of `open-wsl.exe` in `doc/wsl-terminal/open-wsl-here (modify path first).reg`, and then run it.
 
 ```
 Windows Registry Editor Version 5.00
@@ -30,9 +30,9 @@ vim.exe can open any text file in vim(in wsl-terminal), support `Open With` cont
 
 Run `outbash-daemon.js` to start a outbash.exe daemon, more about outbash.exe: https://github.com/xilun/cbwin
 
-If no need of outbash.exe, run a sleep in background to avold all WSL processes(include tmux) being killed, more details in `outbash-daemon.js`.
+If no need of outbash.exe, run a sleep in background to avoid all WSL processes(include tmux) being killed, more details in `outbash-daemon.js`.
 
-bin/{wrun/wstart/wcmd} usage: https://github.com/xilun/cbwin
+bin/{wrun/wstart/wcmd} are used to run Windows processes, usage: https://github.com/xilun/cbwin
 
 wslbridge usage: https://github.com/rprichard/wslbridge
 
@@ -46,7 +46,7 @@ shell=bash
 use_tmux=0
 ```
 
-`etc\minttyrc` is mintty config file.
+`etc/minttyrc` is mintty config file.
 
 ## Build
 
