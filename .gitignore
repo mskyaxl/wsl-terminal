@@ -1,5 +1,5 @@
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
-/build
+/src/build
 *.exe
 *.zip

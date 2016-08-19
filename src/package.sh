@@ -8,5 +8,5 @@ mv ../*.exe .
 cp ../*.js ../*.reg .
 
 cd ..
-zip -r wslterminal-${version}.zip wslterminal
+zip -r ../wslterminal-${version}.zip wslterminal
 rm -rf wslterminal
