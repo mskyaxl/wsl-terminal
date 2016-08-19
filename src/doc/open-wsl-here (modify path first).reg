@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\open-wsl]
+@="Open wsl here"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\open-wsl\command]
+@="c:\\mine\\app\\wsl-terminal\\open-wsl.exe"
+
+[HKEY_CLASSES_ROOT\Folder\shell\open-wsl]
+@="Open wsl here"
+
+[HKEY_CLASSES_ROOT\Folder\shell\open-wsl\command]
+@="c:\\mine\\app\\wsl-terminal\\open-wsl.exe"

@@ -5,6 +5,8 @@ mintty_version="2.4.2-0"
 wslbridge_version="0.1.0"
 cbwin_version="0.9"
 
+set -e
+
 mkdir -p build && cd build
 
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/cygwin/cygwin-${cygwin_version}.tar.xz
@@ -20,7 +22,6 @@ tar -xvf cygwin-${cygwin_version}.tar.xz \
     usr/share/doc/cygwin-${cygwin_version/-*/}/{COPYING,COPYING.NEWLIB,CYGWIN_LICENSE,README}
 
 tar -xvf mintty-${mintty_version}.tar.xz usr/bin/mintty.exe usr/share/doc
-mkdir -p etc && cp ../minttyrc ../wsl-terminal.conf etc
 
 tar -xvf wslbridge-${wslbridge_version}-cygwin64.tar.gz
 cd wslbridge-${wslbridge_version}-cygwin64
@@ -40,8 +41,10 @@ cd ..
 rmdir cbwin-bin-${cbwin_version}
 
 
+cp -r ../etc .
 rm -rf bin doc
 mv usr/bin usr/share/doc .
+cp -r ../doc doc/wsl-terminal
 rm -rf usr
 
 rm -rf ahk2exe && mkdir ahk2exe && cd ahk2exe
