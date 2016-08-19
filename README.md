@@ -26,17 +26,17 @@ Windows Registry Editor Version 5.00
 @="c:\\path\\to\\wsl-terminal\\open-wsl.exe"
 ```
 
-run-wsl-file.exe can run any .sh(and any others like .py/.pl/.php) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
+`run-wsl-file.exe` can run any .sh(and any others like .py/.pl/.php) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
 
-vim.exe can open any text file in vim(in wsl-terminal), support `Open With` context menu in explorer.exe.
+`vim.exe` can open any text file in vim(in wsl-terminal), support `Open With` context menu in explorer.exe.
 
 Run `outbash-daemon.js` to start a outbash.exe daemon, read security warning in https://github.com/xilun/cbwin before run it.
 
-If no need of outbash.exe, run a sleep in background to avoid all WSL processes(include tmux) being killed, more details in `outbash-daemon.js`.
+If no need of `outbash.exe`, run a sleep in background to avoid all WSL processes(include tmux) being killed, more details in `outbash-daemon.js`.
 
-bin/{wrun/wstart/wcmd} are used to run Windows processes, usage: https://github.com/xilun/cbwin
+`bin/{wrun/wstart/wcmd}` are used to run Windows processes, usage: https://github.com/xilun/cbwin
 
-wslbridge usage: https://github.com/rprichard/wslbridge
+`wslbridge.exe` usage: https://github.com/rprichard/wslbridge
 
 ## Config
 
