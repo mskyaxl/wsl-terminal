@@ -6,6 +6,8 @@ wsl-terminal is a terminal emulator for Windows Subsystem for Linux (WSL), conta
 
 ## Usage
 
+Download from https://github.com/goreliu/wsl-terminal/releases
+
 Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge)).
 
 Add a `Open wsl here` context menu to explorer.exe, modify path of `open-wsl.exe` in `doc/wsl-terminal/open-wsl-here (modify path first).reg`, and then run it.
