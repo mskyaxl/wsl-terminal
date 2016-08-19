@@ -2,6 +2,8 @@
 
 wsl-terminal is a terminal emulator for Windows Subsystem for Linux (WSL), contains [Cygwin DLL](https://www.cygwin.com/), [mintty](http://mintty.github.io/), [wslbridge](https://github.com/rprichard/wslbridge), [cbwin](https://github.com/xilun/cbwin), and some useful tools.
 
+**Unfinished work**
+
 ## Usage
 
 Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge)).
@@ -28,7 +30,7 @@ run-wsl-file.exe can run any .sh(and any others like .py/.pl/.php) script files 
 
 vim.exe can open any text file in vim(in wsl-terminal), support `Open With` context menu in explorer.exe.
 
-Run `outbash-daemon.js` to start a outbash.exe daemon, more about outbash.exe: https://github.com/xilun/cbwin
+Run `outbash-daemon.js` to start a outbash.exe daemon, read security warning in https://github.com/xilun/cbwin before run it.
 
 If no need of outbash.exe, run a sleep in background to avoid all WSL processes(include tmux) being killed, more details in `outbash-daemon.js`.
 
