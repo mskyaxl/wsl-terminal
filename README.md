@@ -40,7 +40,7 @@ If no need of `outbash.exe`, run a sleep in background to avoid all WSL processe
 
 ## Config
 
-`etc\wsl-terminal.conf` is wsl-terminal config file.
+`etc/wsl-terminal.conf` is wsl-terminal config file.
 ```
 [config]
 title="        "
