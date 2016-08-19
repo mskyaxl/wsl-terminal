@@ -50,7 +50,7 @@ use_tmux=0
 
 ## Build
 
-Run build.bat, make sure wget/tar/xz/gzip/unzip/zip are installed in WSL.
+Run `build.bat`, make sure wget/tar/xz/gzip/unzip/zip are installed in WSL.
 
 ## License
 
