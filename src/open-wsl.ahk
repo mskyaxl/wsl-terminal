@@ -1,4 +1,4 @@
-﻿#NoTrayIcon
+#NoTrayIcon
 #NoEnv
 
 args = %1%
