@@ -5,6 +5,7 @@ args = %1%
 IniRead, title, %A_ScriptDir%\etc\wsl-terminal.conf, config, title, "        "
 IniRead, shell, %A_ScriptDir%\etc\wsl-terminal.conf, config, shell, "bash"
 IniRead, use_tmux, %A_ScriptDir%\etc\wsl-terminal.conf, config, use_tmux, 0
+IniRead, attach_tmux_locally, %A_ScriptDir%\etc\wsl-terminal.conf, config, attach_tmux_locally, 0
 
 if (args = "-a" && WinExist(title))
 {
@@ -18,7 +19,14 @@ else
 {
     if (args = "-a" && !WinExist(title))
     {
-        Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -t %shell% -c "tmux a 2>/dev/null || tmux"
+        if (attach_tmux_locally)
+        {
+            Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -e USE_TMUX=1 -e ATTACH_ONLY=1 -t "%shell%"
+        }
+        else
+        {
+            Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -t %shell% -c "tmux a 2>/dev/null || tmux"
+        }
     }
     else
     {
@@ -29,7 +37,14 @@ else
         }
         else
         {
-            Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -t %shell% -c 'tmux new-window -c "$PWD" \; a 2>/dev/null || tmux'
+            if (attach_tmux_locally)
+            {
+                Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -e USE_TMUX=1 -t "%shell%"
+            }
+            else
+            {
+                Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -t %shell% -c 'tmux new-window -c "$PWD" \; a 2>/dev/null || tmux; exit'
+            }
         }
     }
 }
