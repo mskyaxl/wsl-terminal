@@ -12,7 +12,7 @@ Download from https://github.com/goreliu/wsl-terminal/releases
 
 Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge)).
 
-Run `tools/add-open-wsl-here-menu.js` to add a `Open WSL Here` context menu to explorer.exe, and run `tools/remove-open-wsl-here-menu.js` to remove it.
+Run `tools/add-open-wsl-here-menu.js` to add a `Open WSL Here` context menu to explorer.exe (run `tools/remove-open-wsl-here-menu.js` to remove it).
 
 If you are using Total Commander, read [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander).
 
