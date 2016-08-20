@@ -33,7 +33,7 @@ cd bin && ./install_cbwin.sh
 Usage:
 
 ```
-# Run with cmd /C
+## Run with cmd /C ##
 $ wcmd ping 127.0.0.1
 
 Pinging 127.0.0.1 with 32 bytes of data:
@@ -42,14 +42,14 @@ Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
 
 $ wcmd example.bat
 
-# Run with CreateProcess()
+## Run with CreateProcess() ##
 $ wrun notepad example.txt
 
-# Run with cmd /C start
+## Run with cmd /C start ##
 $ wstart example.txt
 
-# Kill outbash.exe
-wrun taskkill /f /im outbash.exe
+## Kill outbash.exe ##
+$ wrun taskkill /f /im outbash.exe
 ```
 
 More details: https://github.com/xilun/cbwin
