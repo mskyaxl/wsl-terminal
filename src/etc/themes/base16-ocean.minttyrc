@@ -1,0 +1,16 @@
+Black=43,48,59
+BoldBlack=101,115,126
+Red=191,97,106
+BoldRed=208,135,112
+Green=163,190,140
+BoldGreen=52,61,70
+Yellow=235,203,139
+BoldYellow=79,91,102
+Blue=143,161,179
+BoldBlue=167,173,186
+Magenta=180,142,173
+BoldMagenta=223,225,232
+Cyan=150,181,180
+BoldCyan=171,121,103
+White=192,197,206
+BoldWhite=239,241,245
