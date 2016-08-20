@@ -20,11 +20,36 @@ Run `tools/add-open-wsl-here-menu.js` to add a `Open WSL Here` context menu to e
 
 `vim.exe` can open any text file in vim(in wsl-terminal), support `Open With` context menu in explorer.exe.
 
-Run `outbash-daemon.js` to start a outbash.exe daemon, read security warning in https://github.com/xilun/cbwin before run it.
+Run `outbash-daemon.js` to start a outbash.exe daemon, read security warning in https://github.com/xilun/cbwin before run it. (If no need of `outbash.exe`, run a sleep in background to avoid all WSL processes(include tmux) being killed, more details in `outbash-daemon.js`.)
 
-If no need of `outbash.exe`, run a sleep in background to avoid all WSL processes(include tmux) being killed, more details in `outbash-daemon.js`.
+`bin/{wrun/wstart/wcmd}` are used to run Windows programs:
 
-`bin/{wrun/wstart/wcmd}` are used to run Windows processes, usage: https://github.com/xilun/cbwin
+Install:
+
+```
+cd bin && ./install_cbwin.sh
+```
+
+Usage:
+
+```
+# Run with cmd /C
+$ wcmd ping 127.0.0.1
+
+Pinging 127.0.0.1 with 32 bytes of data:
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+...
+
+$ wcmd example.bat
+
+# Run with CreateProcess()
+$ wrun notepad example.txt
+
+# Run with cmd /C start
+$ wstart example.txt
+```
+
+More details: https://github.com/xilun/cbwin
 
 `wslbridge.exe` usage: https://github.com/rprichard/wslbridge
 
