@@ -16,6 +16,8 @@ Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a 
 
 Run `tools/add-open-wsl-here-menu.js` to add a `Open WSL Here` context menu to explorer.exe, and run `tools/remove-open-wsl-here-menu.js` to remove it.
 
+If you are using Total Commander, read [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander).
+
 `run-wsl-file.exe` can run any .sh(and any others like .py/.pl/.php) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
 
 `vim.exe` can open any text file in vim(in wsl-terminal), support `Open With` context menu in explorer.exe.
