@@ -9,7 +9,7 @@ cp -r ../build/{bin,doc,etc} .
 cp ../*.exe ../*.js ../../LICENSE ../../README.md .
 
 cd ..
-zip -r ../wsl-terminal-${version}.zip wsl-terminal
+7z a ../wsl-terminal-${version}.7z wsl-terminal
 
 cp *.ahk wsl-terminal
 rm -rf ../output && mv wsl-terminal ../output

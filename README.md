@@ -62,7 +62,7 @@ Sometimes tmux hangs.
 
 ## Build
 
-Run `build.bat`, make sure wget/tar/xz/gzip/unzip/zip are installed in WSL.
+Run `build.bat`, make sure wget/tar/xz/gzip/unzip/p7zip are installed in WSL.
 
 ## License
 
