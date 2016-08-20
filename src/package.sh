@@ -5,7 +5,7 @@ version="0.2.1"
 set -e
 
 rm -rf wsl-terminal && mkdir -p wsl-terminal && cd wsl-terminal
-cp -r ../build/{bin,etc} .
+cp -r ../build/{bin,etc,doc} .
 cp -r ../*.exe ../*.js ../tools ../../LICENSE ../../README.md .
 
 cd ..
