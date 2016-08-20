@@ -32,7 +32,7 @@ else
     {
         if (WinExist(title))
         {
-            Run, c:\windows\sysnative\bash -c 'tmux new-window -c "$PWD"', ,Hide
+            Run, c:\windows\sysnative\bash -c 'tmux new-window -c "$PWD"', , Hide
             WinActivate, %title%
         }
         else
@@ -43,7 +43,7 @@ else
             }
             else
             {
-                Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -t %shell% -c 'tmux new-window -c "$PWD" \; a 2>/dev/null || tmux; exit'
+                Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge.exe -t %shell% -c 'tmux new-window -c "$PWD" \; a 2>/dev/null || tmux'
             }
         }
     }
