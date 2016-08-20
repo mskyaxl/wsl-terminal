@@ -22,7 +22,7 @@ Run `tools/add-open-wsl-here-menu.js` to add a `Open WSL Here` context menu to e
 
 Run `outbash-daemon.js` to start a outbash.exe daemon, read security warning in https://github.com/xilun/cbwin before run it. (If no need of `outbash.exe`, run a sleep in background to avoid all WSL processes(include tmux) being killed, more details in `outbash-daemon.js`.)
 
-`bin/{wrun/wstart/wcmd}` are used to run Windows programs:
+`bin/{wrun/wstart/wcmd}` are used to run Windows programs (if outbash-deamon.js has been started):
 
 Install:
 
@@ -47,6 +47,9 @@ $ wrun notepad example.txt
 
 # Run with cmd /C start
 $ wstart example.txt
+
+# Kill outbash.exe
+wrun taskkill /f /im outbash.exe
 ```
 
 More details: https://github.com/xilun/cbwin
