@@ -4,6 +4,10 @@ wsl-terminal is a terminal emulator for Windows Subsystem for Linux (WSL), conta
 
 **Unfinished work**
 
+## Screenshot
+
+![screenshot](https://raw.githubusercontent.com/wiki/goreliu/wsl-terminal/images/wsl-terminal.png)
+
 ## Usage
 
 Download from https://github.com/goreliu/wsl-terminal/releases
