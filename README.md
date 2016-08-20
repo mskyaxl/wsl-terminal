@@ -54,7 +54,9 @@ $ wrun taskkill /f /im outbash.exe
 
 More details: https://github.com/xilun/cbwin
 
-`wslbridge.exe` usage: https://github.com/rprichard/wslbridge
+mintty tips: https://github.com/mintty/mintty/wiki/Tips
+
+wslbridge usage: https://github.com/rprichard/wslbridge
 
 ## Config
 
