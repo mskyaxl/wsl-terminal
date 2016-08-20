@@ -58,7 +58,7 @@ wsl-terminal -a: activate an existing wsl-terminal window, if config use_tmux=1,
 
 ## Known issues
 
-Sometimes tmux hangs.
+[Sometimes tmux hangs.](https://github.com/goreliu/wsl-terminal/issues/1)
 
 ## Build
 
