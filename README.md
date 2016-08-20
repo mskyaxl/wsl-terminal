@@ -54,8 +54,6 @@ $ wrun taskkill /f /im outbash.exe
 
 More details: https://github.com/xilun/cbwin
 
-mintty tips: https://github.com/mintty/mintty/wiki/Tips
-
 wslbridge usage: https://github.com/rprichard/wslbridge
 
 ## Config
@@ -68,7 +66,7 @@ shell=bash
 use_tmux=0
 ```
 
-`etc/minttyrc` is mintty config file.
+`etc/minttyrc` is mintty config file, mintty tips: https://github.com/mintty/mintty/wiki/Tips
 
 ## Param
 
