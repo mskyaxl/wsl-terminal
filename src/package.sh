@@ -5,8 +5,8 @@ version="0.2"
 set -e
 
 rm -rf wsl-terminal && mkdir -p wsl-terminal && cd wsl-terminal
-cp -r ../build/{bin,doc,etc} .
-cp ../*.exe ../*.js ../../LICENSE ../../README.md .
+cp -r ../build/{bin,etc} .
+cp -r ../*.exe ../*.js ../tools ../../LICENSE ../../README.md .
 
 cd ..
 7z a ../wsl-terminal-${version}.7z wsl-terminal

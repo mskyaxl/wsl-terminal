@@ -44,7 +44,6 @@ rmdir cbwin-bin-${cbwin_version}
 cp -r ../etc .
 rm -rf bin doc
 mv usr/bin usr/share/doc .
-cp -r ../doc doc/wsl-terminal
 rm -rf usr
 
 rm -rf ahk2exe && mkdir ahk2exe && cd ahk2exe
