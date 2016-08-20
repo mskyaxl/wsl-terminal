@@ -14,23 +14,7 @@ Download from https://github.com/goreliu/wsl-terminal/releases
 
 Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge)).
 
-Add a `Open wsl here` context menu to explorer.exe, modify path of `open-wsl.exe` in `doc/wsl-terminal/open-wsl-here (modify path first).reg`, and then run it.
-
-```
-Windows Registry Editor Version 5.00
-
-[HKEY_CLASSES_ROOT\Directory\Background\shell\open-wsl]
-@="Open wsl here"
-
-[HKEY_CLASSES_ROOT\Directory\Background\shell\open-wsl\command]
-@="c:\\path\\to\\wsl-terminal\\open-wsl.exe"
-
-[HKEY_CLASSES_ROOT\Folder\shell\open-wsl]
-@="Open wsl here"
-
-[HKEY_CLASSES_ROOT\Folder\shell\open-wsl\command]
-@="c:\\path\\to\\wsl-terminal\\open-wsl.exe"
-```
+Run `tools/add-open-wsl-here-menu.js` to add a `Open WSL Here` context menu to explorer.exe, and run `tools/remove-open-wsl-here-menu.js` to remove it.
 
 `run-wsl-file.exe` can run any .sh(and any others like .py/.pl/.php) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
 
