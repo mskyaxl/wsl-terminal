@@ -15,6 +15,8 @@ wget -nc https://github.com/rprichard/wslbridge/releases/download/${wslbridge_ve
 wget -nc https://github.com/xilun/cbwin/releases/download/v${cbwin_version}/cbwin-bin-${cbwin_version}.zip
 wget -nc https://autohotkey.com/download/ahk2exe.zip
 
+rm -rf bin etc usr doc
+
 tar -xvf cygwin-${cygwin_version}.tar.xz \
     usr/bin/cygwin1.dll \
     usr/bin/cygwin-console-helper.exe \
