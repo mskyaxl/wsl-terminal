@@ -98,6 +98,8 @@ open-wsl.exe
 
 [Sometimes tmux hangs.](https://github.com/goreliu/wsl-terminal/issues/1)
 
+[FAQ](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
+
 ## Build
 
 Run `build.bat`, make sure wget/tar/xz/gzip/unzip/p7zip are installed in WSL.
