@@ -1,6 +1,6 @@
 # wsl-terminal
 
-A terminal emulator for Windows Subsystem for Linux (WSL), contains [mintty](http://mintty.github.io/), [wslbridge](https://github.com/rprichard/wslbridge), [cbwin](https://github.com/xilun/cbwin), and some useful tools.
+A terminal emulator for Windows Subsystem for Linux (WSL), includes [mintty](http://mintty.github.io/), [wslbridge](https://github.com/rprichard/wslbridge), [cbwin](https://github.com/xilun/cbwin), and some other useful tools.
 
 ## Screenshot
 
@@ -26,9 +26,7 @@ If you are using Total Commander, read [Use wsl-terminal with Total Commander](h
 
 Run `outbash-daemon.js` to start a outbash.exe daemon, read [security warning](https://github.com/xilun/cbwin#security-warning) before running it. (If no need of `outbash.exe`, run a sleep(or a cat) in background to avoid all WSL processes (include tmux) being killed, more details in `outbash-daemon.js`.)
 
-`bin/{wrun/wstart/wcmd}` are used to run Windows programs (if outbash-deamon.js has been started):
-
-Install:
+`bin/{wrun/wstart/wcmd}` are used to run Windows programs (if outbash-deamon.js has been started). Open open-wsl.exe, run this command to install `wrun/wstart/wcmd`:
 
 ```
 cd bin && ./install_cbwin.sh
@@ -53,7 +51,7 @@ $ wrun notepad example.txt
 ## Run with cmd /C start ##
 $ wstart example.txt
 
-## Run a powershell command
+## Run a powershell command ##
 $ wrun powershell -c ps
 
 ## Kill outbash.exe ##
