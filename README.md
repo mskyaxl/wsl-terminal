@@ -20,13 +20,11 @@ If you are using Total Commander, read [Use wsl-terminal with Total Commander](h
 
 `run-wsl-file.exe` can run any .sh (and any others like .py/.pl/.php) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
 
-`vim.exe` can open any text file in vim(in wsl-terminal), support `Open With` context menu in explorer.exe.
+`vim.exe` can open any text files in vim (in wsl-terminal), support `Open With` context menu in explorer.exe. `vim.exe` can be renamed to `emacs.exe/nvim.exe/nano.exe/...` to open files with `emacs/nvim/nano/...`.
 
 ## Run Windows programs in WSL
 
-Run `outbash-daemon.js` to start a outbash.exe daemon, read [security warning](https://github.com/xilun/cbwin#security-warning) before running it. (If no need of `outbash.exe`, run a sleep (or a cat) in background to avoid all WSL processes (include tmux) being killed, more details in `outbash-daemon.js`.)
-
-`bin/{wrun/wstart/wcmd}` are used to run Windows programs (if `outbash-deamon.js` has been started). Start `open-wsl.exe`, run this command to install `wrun/wstart/wcmd`:
+Set `use_cbwin=1` in `etc/wsl-terminal.conf` ( read [security warning](https://github.com/xilun/cbwin#security-warning) before using it), then `bin/{wrun/wstart/wcmd}` can run Windows programs. Start `open-wsl.exe`, run this command to install `wrun/wstart/wcmd`:
 
 ```
 cd bin && ./install_cbwin.sh
@@ -67,6 +65,7 @@ $ wrun taskkill /f /im outbash.exe
 [config]
 title="        "
 shell=bash
+use_cbwin=0
 use_tmux=0
 ```
 
