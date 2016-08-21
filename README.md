@@ -8,7 +8,7 @@ wsl-terminal is a terminal emulator for Windows Subsystem for Linux (WSL), conta
 
 ## Usage
 
-Download from https://github.com/goreliu/wsl-terminal/releases
+[Download here.](https://github.com/goreliu/wsl-terminal/releases)
 
 Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge)).
 
@@ -20,7 +20,7 @@ If you are using Total Commander, read [Use wsl-terminal with Total Commander](h
 
 `vim.exe` can open any text file in vim(in wsl-terminal), support `Open With` context menu in explorer.exe.
 
-Run `outbash-daemon.js` to start a outbash.exe daemon, read security warning in https://github.com/xilun/cbwin before running it. (If no need of `outbash.exe`, run a sleep(or a cat) in background to avoid all WSL processes(include tmux) being killed, more details in `outbash-daemon.js`.)
+Run `outbash-daemon.js` to start a outbash.exe daemon, read [security warning](https://github.com/xilun/cbwin#security-warning) before running it. (If no need of `outbash.exe`, run a sleep(or a cat) in background to avoid all WSL processes(include tmux) being killed, more details in `outbash-daemon.js`.)
 
 `bin/{wrun/wstart/wcmd}` are used to run Windows programs (if outbash-deamon.js has been started):
 
@@ -53,9 +53,9 @@ $ wstart example.txt
 $ wrun taskkill /f /im outbash.exe
 ```
 
-More details: https://github.com/xilun/cbwin
+[More details about cbwin.](https://github.com/xilun/cbwin)
 
-wslbridge usage: https://github.com/rprichard/wslbridge
+[wslbridge usage.](https://github.com/rprichard/wslbridge)
 
 ## Config
 
@@ -67,9 +67,9 @@ shell=bash
 use_tmux=0
 ```
 
-[Use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes)
+`etc/themes` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
 
-`etc/minttyrc` is mintty config file, mintty tips: https://github.com/mintty/mintty/wiki/Tips
+`etc/minttyrc` is mintty config file, [mintty tips](https://github.com/mintty/mintty/wiki/Tips).
 
 ## Param
 
