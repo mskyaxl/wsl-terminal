@@ -7,4 +7,5 @@ More themes
 ===========
 
 https://github.com/oumu/mintty-color-schemes
+
 https://github.com/PhilipDaniels/mintty/tree/master/themes
