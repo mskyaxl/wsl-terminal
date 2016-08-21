@@ -71,9 +71,14 @@ use_tmux=0
 
 `etc/minttyrc` is mintty config file, [mintty tips](https://github.com/mintty/mintty/wiki/Tips).
 
-## Param
+## Params
 
-open-wsl.exe -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
+```
+open-wsl.exe
+    -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
+```
+
+[mintty params.](https://github.com/goreliu/wsl-terminal/wiki/mintty-params)
 
 ## Known issues
 
