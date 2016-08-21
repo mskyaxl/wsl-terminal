@@ -4,6 +4,7 @@
 args = %1%
 IniRead, title, %A_ScriptDir%\etc\wsl-terminal.conf, config, title, "        "
 IniRead, shell, %A_ScriptDir%\etc\wsl-terminal.conf, config, shell, "bash"
+IniRead, use_cbwin, %A_ScriptDir%\etc\wsl-terminal.conf, config, use_cbwin, 0
 IniRead, use_tmux, %A_ScriptDir%\etc\wsl-terminal.conf, config, use_tmux, 0
 IniRead, attach_tmux_locally, %A_ScriptDir%\etc\wsl-terminal.conf, config, attach_tmux_locally, 0
 
@@ -58,4 +59,24 @@ Loop, 5
     }
 
     Sleep, 50
+}
+
+if (use_cbwin)
+{
+    Process, Exist, outbash.exe
+
+    if (ErrorLevel = 0)
+    {
+        Run, %A_ScriptDir%\bin\outbash --outbash-session -c 'exec sleep 10000000', , Hide
+    }
+}
+else if (use_tmux)
+{
+    ; Run a sleep to avoid tmux being killed.
+    Process, Exist, sleep
+
+    if (ErrorLevel = 0)
+    {
+        Run, c:\windows\sysnative\bash -c 'exec sleep 10000000', , Hide
+    }
 }
