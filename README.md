@@ -22,6 +22,8 @@ If you are using Total Commander, read [Use wsl-terminal with Total Commander](h
 
 `vim.exe` can open any text file in vim(in wsl-terminal), support `Open With` context menu in explorer.exe.
 
+## Run Windows programs in WSL
+
 Run `outbash-daemon.js` to start a outbash.exe daemon, read [security warning](https://github.com/xilun/cbwin#security-warning) before running it. (If no need of `outbash.exe`, run a sleep(or a cat) in background to avoid all WSL processes (include tmux) being killed, more details in `outbash-daemon.js`.)
 
 `bin/{wrun/wstart/wcmd}` are used to run Windows programs (if outbash-deamon.js has been started):
