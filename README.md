@@ -79,6 +79,8 @@ use_tmux=0
 
 `Alt + F2`: New window
 
+`Alt + F3`: Search text
+
 `Ctrl + [Shift] + Tab`: Switch window
 
 `Ctrl + =+/-/0`: Zoom
