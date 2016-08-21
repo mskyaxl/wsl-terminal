@@ -55,8 +55,6 @@ $ wrun taskkill /f /im outbash.exe
 
 [More details about cbwin.](https://github.com/xilun/cbwin)
 
-[wslbridge usage.](https://github.com/rprichard/wslbridge)
-
 ## Config
 
 `etc/wsl-terminal.conf` is wsl-terminal config file.
@@ -79,6 +77,8 @@ open-wsl.exe
 ```
 
 [mintty params.](https://github.com/goreliu/wsl-terminal/wiki/mintty-params)
+
+[wslbridge params.](https://github.com/rprichard/wslbridge#usage)
 
 ## Known issues
 
