@@ -57,7 +57,7 @@ $ wrun taskkill /f /im outbash.exe
 
 [More details about cbwin.](https://github.com/xilun/cbwin)
 
-## Config
+## Configuration files
 
 `etc/wsl-terminal.conf` is wsl-terminal config file.
 ```
@@ -70,6 +70,16 @@ use_tmux=0
 `usr/share/mintty/themes/` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
 
 `etc/minttyrc` is mintty config file, [mintty tips](https://github.com/mintty/mintty/wiki/Tips).
+
+## Keyboard shortcuts
+
+`Alt + Enter`: Fullscreen
+
+`Alt + F2`: New window
+
+`Ctrl + [Shift] + Tab`: Switch window
+
+`Ctrl + =+/-/0`: Zoom
 
 ## Params
 
