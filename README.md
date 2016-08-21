@@ -6,7 +6,7 @@ A terminal emulator for Windows Subsystem for Linux (WSL), contains [mintty](htt
 
 ![screenshot](https://raw.githubusercontent.com/wiki/goreliu/wsl-terminal/images/wsl-terminal-2.png)
 
-[More screenshots](https://github.com/goreliu/wsl-terminal/wiki/Screenshots)
+[More screenshots.](https://github.com/goreliu/wsl-terminal/wiki/Screenshots)
 
 ## Usage
 
