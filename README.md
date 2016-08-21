@@ -53,6 +53,9 @@ $ wrun notepad example.txt
 ## Run with cmd /C start ##
 $ wstart example.txt
 
+##  Run a powershell command
+$ wrun powershell -c ps
+
 ## Kill outbash.exe ##
 $ wrun taskkill /f /im outbash.exe
 ```
