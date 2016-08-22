@@ -86,6 +86,10 @@ use_tmux=0
 
 `Ctrl + =+/-/0`: Zoom
 
+`Right Click`: Paste (Copy on select)
+
+`Ctrl + Click`: Open URL or dir/file under the cursor
+
 ## Params
 
 ```
