@@ -67,7 +67,7 @@ if (use_cbwin)
 
     if (ErrorLevel = 0)
     {
-        Run, %A_ScriptDir%\bin\outbash --outbash-session -c 'exec sleep 10000000', , Hide
+        Run, %A_ScriptDir%\bin\outbash --outbash-session -c 'exec sleep 10000000d', , Hide
     }
 }
 else if (use_tmux)
@@ -77,6 +77,6 @@ else if (use_tmux)
 
     if (ErrorLevel = 0)
     {
-        Run, c:\windows\sysnative\bash -c 'exec sleep 10000000', , Hide
+        Run, c:\windows\sysnative\bash -c 'exec sleep 10000000d', , Hide
     }
 }
