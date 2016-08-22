@@ -57,6 +57,8 @@ $ wrun powershell -c ps
 $ wrun taskkill /f /im notepad.exe
 ```
 
+[Some tips about using cbwin.](https://github.com/goreliu/wsl-terminal/wiki/Tips)
+
 [More details about cbwin.](https://github.com/xilun/cbwin)
 
 ## Configuration files
