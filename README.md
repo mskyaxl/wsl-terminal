@@ -20,7 +20,7 @@ A terminal emulator for Windows Subsystem for Linux (WSL), includes [mintty](htt
 
 5. `run-wsl-file.exe` can run any .sh (and any others like .py/.pl/.php) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
 
-6. `vim.exe` can open any text files in vim (in wsl-terminal), support `Open With` context menu in explorer.exe. `vim.exe` can be renamed to `emacs.exe/nvim.exe/nano.exe/...` to open files with `emacs/nvim/nano/...`.
+6. `vim.exe` can open any text files in vim (in wsl-terminal), support `Open With` context menu in explorer.exe. `vim.exe` can be renamed to `emacs.exe/nvim.exe/nano.exe/...` to open files in `emacs/nvim/nano/...`.
 
 ## Run Windows programs in WSL
 
@@ -33,6 +33,9 @@ cd bin && ./install_cbwin.sh
 Usage:
 
 ```
+## enter a DrvFs directory
+$ cd /mnt/c
+
 ## Run with cmd /C ##
 $ wcmd ping 127.0.0.1
 
@@ -52,8 +55,8 @@ $ wstart example.txt
 ## Run a powershell command ##
 $ wrun powershell -c ps
 
-## Kill outbash.exe ##
-$ wrun taskkill /f /im outbash.exe
+## Kill notepad.exe ##
+$ wrun taskkill /f /im notepad.exe
 ```
 
 [More details about cbwin.](https://github.com/xilun/cbwin)
