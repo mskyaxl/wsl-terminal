@@ -33,7 +33,7 @@ cd bin && ./install_cbwin.sh
 Usage:
 
 ```
-## enter a DrvFs directory
+## Enter a DrvFs directory ##
 $ cd /mnt/c
 
 ## Run with cmd /C ##
