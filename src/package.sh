@@ -7,6 +7,7 @@ set -e
 rm -rf wsl-terminal && mkdir -p wsl-terminal && cd wsl-terminal
 cp -r ../build/{bin,etc,doc} .
 cp -r ../*.exe ../tools ../usr ../../LICENSE ../../README.md .
+rm -f ../*.exe
 
 cd ..
 rm -f ../wsl-terminal-${version}.7z
