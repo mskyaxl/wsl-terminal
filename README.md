@@ -109,7 +109,7 @@ open-wsl.exe
 
 ## Build
 
-Run `build.bat`, make sure wget/tar/xz/gzip/unzip/p7zip are installed in WSL.
+Run `build.bat`, make sure wget/tar/xz-utils/gzip/unzip/p7zip-full (apt install wget tar xz-utils gzip unzip p7zip-full) are installed in WSL.
 
 ## License
 
