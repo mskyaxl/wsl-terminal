@@ -14,7 +14,7 @@ if (args = "-a" && WinExist(title))
 }
 else if (!use_tmux)
 {
-    Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge -t "%shell%
+    Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge -t %shell%
 }
 else
 {
@@ -22,7 +22,7 @@ else
     {
         if (attach_tmux_locally)
         {
-            Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge -e USE_TMUX=1 -e ATTACH_ONLY=1 -t "%shell%"
+            Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge -e USE_TMUX=1 -e ATTACH_ONLY=1 -t %shell%
         }
         else
         {
@@ -40,7 +40,7 @@ else
         {
             if (attach_tmux_locally)
             {
-                Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge -e USE_TMUX=1 -t "%shell%"
+                Run, %A_ScriptDir%\bin\mintty -t "%title%" -e /bin/wslbridge -e USE_TMUX=1 -t %shell%
             }
             else
             {
