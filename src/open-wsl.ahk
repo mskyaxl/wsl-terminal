@@ -9,7 +9,7 @@ IniRead, use_tmux, %A_ScriptDir%\etc\wsl-terminal.conf, config, use_tmux, 0
 IniRead, attach_tmux_locally, %A_ScriptDir%\etc\wsl-terminal.conf, config, attach_tmux_locally, 0
 IniRead, icon, %A_ScriptDir%\etc\wsl-terminal.conf, config, icon, ""
 
-icon_string := ""
+icon_string := "-i " A_ScriptFullPath
 if (icon != "" && FileExist(icon))
 {
     icon_string := "-i " icon
