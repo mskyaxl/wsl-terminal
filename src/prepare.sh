@@ -7,6 +7,18 @@ cbwin_version="0.10"
 
 set -e
 
+# wget tar xz gzip unzip p7zip
+
+type wget >/dev/null && \
+    type tar >/dev/null && \
+    type xz >/dev/null && \
+    type gzip >/dev/null && \
+    type unzip >/dev/null && \
+    type 7z >/dev/null || {
+    echo "Error: please install tar/xz/gzip/unzip/p7zip in WSL first."
+    exit 1
+}
+
 mkdir -p build && cd build
 
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/cygwin/cygwin-${cygwin_version}.tar.xz
