@@ -15,7 +15,8 @@ type wget >/dev/null && \
     type gzip >/dev/null && \
     type unzip >/dev/null && \
     type 7z >/dev/null || {
-    echo "Error: please install tar/xz/gzip/unzip/p7zip in WSL first."
+    echo "Error: please install tar/xz-utils/gzip/unzip/p7zip-full in WSL first."
+    echo "Run 'apt install wget tar xz-utils gzip unzip p7zip-full' with root manually."
     exit 1
 }
 
