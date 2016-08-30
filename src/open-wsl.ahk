@@ -21,7 +21,13 @@ if (args = "-a" && WinExist(title))
 }
 else if (!use_tmux)
 {
-    Run, %A_ScriptDir%\bin\mintty %icon_string% -t "%title%" -e /bin/wslbridge -t %shell%
+    cmd = %shell%
+    if (args = "-l")
+    {
+        cmd = %shell% -c "cd; %shell% -l"
+    }
+
+    Run, %A_ScriptDir%\bin\mintty %icon_string% -t "%title%" -e /bin/wslbridge -t %cmd%
 }
 else
 {
