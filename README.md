@@ -95,6 +95,7 @@ use_tmux=0
 ```
 open-wsl.exe
     -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
+    -l: ignores current path and starts terminal in your home directory (doesn't work with tmux).
 ```
 
 [mintty params.](https://github.com/goreliu/wsl-terminal/wiki/mintty-params)
