@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cygwin_version="2.5.2-1"
-mintty_version="2.5.0-0"
+cygwin_version="2.6.0-1"
+mintty_version="2.6.0-0"
 wslbridge_version="0.1.0"
 cbwin_version="0.10"
 
@@ -33,8 +33,7 @@ rm -rf bin etc usr doc
 tar -xvf cygwin-${cygwin_version}.tar.xz \
     usr/bin/cygwin1.dll \
     usr/bin/cygwin-console-helper.exe \
-    usr/share/doc/Cygwin \
-    usr/share/doc/cygwin-${cygwin_version/-*/}/{COPYING,COPYING.NEWLIB,CYGWIN_LICENSE,README}
+    usr/share/doc/Cygwin
 
 tar -xvf mintty-${mintty_version}.tar.xz usr/bin/mintty.exe usr/share/doc
 
