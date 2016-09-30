@@ -6,7 +6,6 @@ build\ahk2exe\Ahk2Exe.exe /in open-wsl.ahk /out open-wsl.exe /icon icons\termina
 build\ahk2exe\Ahk2Exe.exe /in vim.ahk /out vim.exe /icon icons\text.ico && ^
 bash -c ./package.sh && ^
 echo Build succeeded. && ^
-pause && ^
 exit
 
 echo Build failed.
