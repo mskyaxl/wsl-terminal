@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cygwin_version="2.6.0-1"
-mintty_version="2.6.1-0"
+mintty_version="2.6.2-0"
 wslbridge_version="0.2.0"
 cbwin_version="0.10"
 
@@ -26,7 +26,7 @@ wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/cygwin/cygwi
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/mintty/mintty-${mintty_version}.tar.xz
 wget -nc https://github.com/rprichard/wslbridge/releases/download/${wslbridge_version}/wslbridge-${wslbridge_version}-cygwin64.tar.gz
 wget -nc https://github.com/xilun/cbwin/releases/download/v${cbwin_version}/cbwin-bin-${cbwin_version}.zip
-wget -nc https://autohotkey.com/download/ahk2exe.zip
+wget -nc https://autohotkey.com/download/ahk.zip
 
 rm -rf bin etc usr doc
 
@@ -60,5 +60,5 @@ rm -rf bin doc
 mv usr/bin usr/share/doc .
 rm -rf usr
 
-rm -rf ahk2exe && mkdir ahk2exe && cd ahk2exe
-unzip ../ahk2exe.zip
+rm -rf ahk && mkdir ahk && cd ahk
+unzip ../ahk.zip
