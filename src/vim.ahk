@@ -8,4 +8,9 @@ SetWorkingDir, %dir%
 
 SplitPath, A_ScriptName, , , , editor
 
-Run, %A_ScriptDir%\bin\mintty -i "%A_ScriptFullPath%" -t "%arg%" -e /bin/wslbridge -t "%editor%" "%filename%"
+if (InStr(filename, " "))
+{
+    filename = "%filename%"
+}
+
+Run, %A_ScriptDir%\bin\mintty -i "%A_ScriptFullPath%" -t "%arg%" -e /bin/wslbridge -t "%editor%" %filename%
