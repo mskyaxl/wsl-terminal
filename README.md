@@ -20,47 +20,6 @@ A terminal emulator for Windows Subsystem for Linux (WSL), includes [mintty](htt
 
 5. `vim.exe` can open any text files in vim (in wsl-terminal), support `Open With` context menu in explorer.exe. `vim.exe` can be renamed to `emacs.exe/nvim.exe/nano.exe/...` to open files in `emacs/nvim/nano/...`.
 
-## Run Windows programs in WSL
-
-Set `use_cbwin=1` in `etc/wsl-terminal.conf` ( read [security warning](https://github.com/xilun/cbwin#security-warning) before using it), then `bin/{wrun/wstart/wcmd}` can run Windows programs. Start `open-wsl.exe`, run this command to install `wrun/wstart/wcmd`:
-
-```
-cd bin && ./install_cbwin.sh
-```
-
-Usage:
-
-```
-## Enter a DrvFs directory ##
-$ cd /mnt/c
-
-## Run with cmd /C ##
-$ wcmd ping 127.0.0.1
-
-Pinging 127.0.0.1 with 32 bytes of data:
-Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
-...
-
-## Run a .bat/.cmd file ##
-$ wcmd example.bat
-
-## Run with CreateProcess() ##
-$ wrun notepad example.txt
-
-## Run with cmd /C start ##
-$ wstart example.txt
-
-## Run a powershell command ##
-$ wrun powershell -c ps
-
-## Kill notepad.exe ##
-$ wrun taskkill /f /im notepad.exe
-```
-
-[Some tips about using cbwin.](https://github.com/goreliu/wsl-terminal/wiki/Tips)
-
-[More details about cbwin.](https://github.com/xilun/cbwin)
-
 ## Configuration files
 
 `etc/wsl-terminal.conf` is wsl-terminal config file.
