@@ -39,7 +39,7 @@ else
         }
         else
         {
-            Run, %A_ScriptDir%\bin\mintty %icon_string% -t "%title%" -e /bin/wslbridge -t %shell% -c "tmux a 2>/dev/null || tmux"
+            Run, %A_ScriptDir%\bin\mintty %icon_string% -t "%title%" -e /bin/wslbridge -t %shell% -c "tmux a 2>/dev/null || cd && tmux"
         }
     }
     else
