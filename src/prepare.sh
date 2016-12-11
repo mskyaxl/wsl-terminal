@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cygwin_version="2.6.1-0.1"
-mintty_version="2.7.1-0"
+mintty_version="2.7.2-0"
 wslbridge_version="0.2.1"
 cbwin_version="0.12"
 
