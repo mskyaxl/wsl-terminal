@@ -63,8 +63,6 @@ open-wsl.exe
 
 ## Known issues
 
-[Sometimes tmux hangs.](https://github.com/goreliu/wsl-terminal/issues/1)
-
 [FAQ](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
 
 ## Build
