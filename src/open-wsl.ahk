@@ -27,7 +27,7 @@ else if (!use_tmux)
         cmd = %shell% -c "cd; %shell% -l"
     }
 
-    Run, %A_ScriptDir%\bin\mintty %icon_string% -t "%title%" -e /bin/wslbridge -t %cmd%
+    Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge -t %cmd%
 }
 else
 {
@@ -35,11 +35,11 @@ else
     {
         if (attach_tmux_locally)
         {
-            Run, %A_ScriptDir%\bin\mintty %icon_string% -t "%title%" -e /bin/wslbridge -e USE_TMUX=1 -e ATTACH_ONLY=1 -t %shell%
+            Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge -e USE_TMUX=1 -e ATTACH_ONLY=1 -t %shell%
         }
         else
         {
-            Run, %A_ScriptDir%\bin\mintty %icon_string% -t "%title%" -e /bin/wslbridge -t %shell% -c "tmux a 2>/dev/null && exit || cd && exec tmux"
+            Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge -t %shell% -c "tmux a 2>/dev/null && exit || cd && exec tmux"
         }
     }
     else
@@ -53,11 +53,11 @@ else
         {
             if (attach_tmux_locally)
             {
-                Run, %A_ScriptDir%\bin\mintty %icon_string% -t "%title%" -e /bin/wslbridge -e USE_TMUX=1 -t %shell%
+                Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge -e USE_TMUX=1 -t %shell%
             }
             else
             {
-                Run, %A_ScriptDir%\bin\mintty %icon_string% -t "%title%" -e /bin/wslbridge -t %shell% -c 'tmux new-window -c "$PWD" \; a 2>/dev/null || tmux'
+                Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge -t %shell% -c 'tmux new-window -c "$PWD" \; a 2>/dev/null || tmux'
             }
         }
     }
@@ -80,7 +80,7 @@ if (use_cbwin)
 
     if (ErrorLevel = 0)
     {
-        Run, %A_ScriptDir%\bin\outbash --outbash-session -c 'exec sleep 10000000d', , Hide
+        Run, "%A_ScriptDir%\bin\outbash" --outbash-session -c 'exec sleep 10000000d', , Hide
     }
 }
 else if (use_tmux)
