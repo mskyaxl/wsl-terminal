@@ -3,7 +3,7 @@
 cygwin_version="2.6.1-1"
 mintty_version="2.7.3-0"
 wslbridge_version="0.2.1"
-cbwin_version="0.12"
+cbwin_version="0.13"
 
 set -e
 
