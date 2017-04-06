@@ -15,52 +15,52 @@ if (icon != "" && FileExist(icon))
     icon_string = -i "%icon%"
 }
 
+cmd = %shell%
+opts = -t -e SHELL="%shell%"
 if (args = "-a" && WinExist(title))
 {
-    WinActivate, %title%
+    cmd =
 }
 else if (!use_tmux)
 {
-    cmd = %shell%
     if (args = "-l")
     {
         cmd = %shell% -c "cd; %shell% -l"
     }
-
-    Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge -t %cmd%
 }
 else
 {
-    if (args = "-a" && !WinExist(title))
+    if (WinExist(title))
+    {
+        cmd =
+        Run, c:\windows\sysnative\bash -c 'tmux new-window -c "$PWD"', , Hide
+    }
+    else if (args = "-a")
     {
         if (attach_tmux_locally)
         {
-            Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge -e USE_TMUX=1 -e ATTACH_ONLY=1 -t %shell%
+            opts = %opts% -e USE_TMUX=1 -e ATTACH_ONLY=1
         }
         else
         {
-            Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge -t %shell% -c "tmux a 2>/dev/null && exit || cd && exec tmux"
+            cmd = %shell% -c "tmux a 2>/dev/null && exit || cd && exec tmux"
         }
     }
     else
     {
-        if (WinExist(title))
+        if (attach_tmux_locally)
         {
-            Run, c:\windows\sysnative\bash -c 'tmux new-window -c "$PWD"', , Hide
-            WinActivate, %title%
+            opts = %opts% -e USE_TMUX=1
         }
         else
         {
-            if (attach_tmux_locally)
-            {
-                Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge -e USE_TMUX=1 -t %shell%
-            }
-            else
-            {
-                Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge -t %shell% -c 'tmux new-window -c "$PWD" \; a 2>/dev/null || tmux'
-            }
+            cmd = %shell% -c 'tmux new-window -c "$PWD" \`; a 2>/dev/null || tmux'
         }
     }
+}
+if (cmd)
+{
+    Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge %opts% %cmd%
 }
 
 Loop, 5
