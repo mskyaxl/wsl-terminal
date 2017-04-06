@@ -9,6 +9,17 @@ IniRead, use_tmux, %A_ScriptDir%\etc\wsl-terminal.conf, config, use_tmux, 0
 IniRead, attach_tmux_locally, %A_ScriptDir%\etc\wsl-terminal.conf, config, attach_tmux_locally, 0
 IniRead, icon, %A_ScriptDir%\etc\wsl-terminal.conf, config, icon, ""
 
+bash_exe = %A_WinDir%\sysnative\bash.exe
+if (!FileExist(bash_exe))
+{
+    bash_exe = %A_WinDir%\system32\bash.exe
+}
+if (!FileExist(bash_exe))
+{
+    MsgBox, 0x10, , Ubuntu-on-Windows must be installed.
+    ExitApp, 1
+}
+
 icon_string = -i "%A_ScriptFullPath%"
 if (icon != "" && FileExist(icon))
 {
@@ -33,7 +44,7 @@ else
     if (WinExist(title))
     {
         cmd =
-        Run, c:\windows\sysnative\bash -c 'tmux new-window -c "$PWD"', , Hide
+        Run, "%bash_exe%" -c 'tmux new-window -c "$PWD"', , Hide
     }
     else if (args = "-a")
     {
@@ -90,6 +101,6 @@ else if (use_tmux)
 
     if (ErrorLevel = 0)
     {
-        Run, c:\windows\sysnative\bash -c 'exec sleep 10000000d', , Hide
+        Run, "%bash_exe%" -c 'exec sleep 10000000d', , Hide
     }
 }
