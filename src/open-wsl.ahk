@@ -26,6 +26,15 @@ if (icon != "" && FileExist(icon))
     icon_string = -i "%icon%"
 }
 
+if (args == "-C")
+{
+    SetWorkingDir, %2%
+    if (ErrorLevel == 1)
+    {
+        MsgBox, 0x10, , %2% directory not found.
+    }
+}
+
 cmd = %shell%
 opts = -t -e SHELL="%shell%"
 if (args = "-a" && WinExist(title))
