@@ -1,14 +1,49 @@
 #NoTrayIcon
 #NoEnv
 
-args = %1%
-IniRead, title, %A_ScriptDir%\etc\wsl-terminal.conf, config, title, "        "
-IniRead, shell, %A_ScriptDir%\etc\wsl-terminal.conf, config, shell, "bash"
-IniRead, use_cbwin, %A_ScriptDir%\etc\wsl-terminal.conf, config, use_cbwin, 0
-IniRead, use_tmux, %A_ScriptDir%\etc\wsl-terminal.conf, config, use_tmux, 0
-IniRead, attach_tmux_locally, %A_ScriptDir%\etc\wsl-terminal.conf, config, attach_tmux_locally, 0
-IniRead, icon, %A_ScriptDir%\etc\wsl-terminal.conf, config, icon, ""
+; Default options {{{1
+ini_file = %A_ScriptDir%\etc\wsl-terminal.conf
+activate_window := False
+change_directory := ""
+login_shell := False
 
+
+; Parse arguments {{{1
+argc = %0%
+args := []
+Loop, %argc% {
+    args.Insert(%A_Index%)
+}
+
+i := 0
+while (i++ < argc) {
+    c := args[i]
+    if (c == "-a") {
+        activate_window := True
+    }
+    else if (c == "-C") {
+        if (argc < ++i) {
+            MsgBox, 0x10, , Require directory arg.
+            ExitApp, 1
+        }
+        change_directory := args[i]
+    }
+    else if (c == "-l") {
+        login_shell := True
+    }
+}
+
+
+; Read ini file {{{1
+IniRead, title, %ini_file%, config, title, "        "
+IniRead, shell, %ini_file%, config, shell, "bash"
+IniRead, use_cbwin, %ini_file%, config, use_cbwin, 0
+IniRead, use_tmux, %ini_file%, config, use_tmux, 0
+IniRead, attach_tmux_locally, %ini_file%, config, attach_tmux_locally, 0
+IniRead, icon, %ini_file%, config, icon, ""
+
+
+; Find bash.exe {{{1
 bash_exe = %A_WinDir%\sysnative\bash.exe
 if (!FileExist(bash_exe))
 {
@@ -20,28 +55,32 @@ if (!FileExist(bash_exe))
     ExitApp, 1
 }
 
+
+; Find icon {{{1
 icon_string = -i "%A_ScriptFullPath%"
 if (icon != "" && FileExist(icon))
 {
     icon_string = -i "%icon%"
 }
 
+
+; Build command line {{{1
 cmd = %shell%
 opts = -t -e SHELL="%shell%"
-if (args == "-C")
-{
-    opts = -C "%2%" -t -e SHELL="%shell%"
-}
 
-if (args = "-a" && WinExist(title))
+if (activate_window && WinExist(title))
 {
     cmd =
 }
 else if (!use_tmux)
 {
-    if (args = "-l")
+    if (login_shell)
     {
-        cmd = %shell% -c "cd; %shell% -l"
+        cmd = %shell% -l
+        if (!change_directory)
+        {
+            change_directory = ~
+        }
     }
 }
 else
@@ -51,7 +90,7 @@ else
         cmd =
         Run, "%bash_exe%" -c 'tmux new-window -c "$PWD"', , Hide
     }
-    else if (args = "-a")
+    else if (activate_window)
     {
         if (attach_tmux_locally)
         {
@@ -74,11 +113,19 @@ else
         }
     }
 }
+
+if (change_directory)
+{
+    opts = %opts% -C "%change_directory%"
+}
+
 if (cmd)
 {
     Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge %opts% %cmd%
 }
 
+
+; Activate window {{{1
 Loop, 5
 {
     WinActivate, %title%
