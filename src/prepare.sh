@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cygwin_version="2.8.0-1"
-mintty_version="2.7.8-0"
-wslbridge_version="0.2.2"
+cygwin_version="2.8.2-1"
+mintty_version="2.7.9-0"
+wslbridge_version="0.2.3"
 cbwin_version="0.13"
 
 set -e
