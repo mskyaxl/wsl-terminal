@@ -18,9 +18,15 @@ sed -i -e "s/^cygwin_version=.*$/cygwin_version=\"$cygwin_version\"/g" \
     -e "s/^cbwin_version=.*$/cbwin_version=\"$cbwin_version\"/g" \
     prepare.sh
 
-echo "Upgrade mintty to [${mintty_version%-*}](https://github.com/mintty/mintty/releases/tag/${mintty_version%-*})."
-echo "Upgrade wslbridge to [$wslbridge_version](https://github.com/rprichard/wslbridge/releases/tag/$wslbridge_version)."
-echo "Upgrade cbwin to [$cbwin_version](https://github.com/xilun/cbwin/releases/tag/v$cbwin_version)."
-echo
+index=1
 
-git diff
+git diff | grep "^+mintty_version" >/dev/null \
+    && echo "$((index++)).Upgrade mintty to [${mintty_version%-*}](https://github.com/mintty/mintty/releases/tag/${mintty_version%-*})."
+
+git diff | grep "^+wslbridge_version" >/dev/null \
+    && echo "$((index++)).Upgrade wslbridge to [$wslbridge_version](https://github.com/rprichard/wslbridge/releases/tag/$wslbridge_version)."
+
+git diff | grep "^+cbwin_version" >/dev/null \
+    && echo "$((index++)).Upgrade cbwin to [$cbwin_version](https://github.com/xilun/cbwin/releases/tag/v$cbwin_version)."
+
+exit 0
