@@ -1,16 +1,21 @@
 #NoTrayIcon
 #NoEnv
 
-arg = %1%
+argc = %0%
+filepath := %argc%
+flag := ""
 
-SplitPath, arg, filename, dir
+Loop, % argc - 1 {
+    flag .= " " %A_Index%
+}
+
+SplitPath, filepath, filename, dir
 SetWorkingDir, %dir%
 
 SplitPath, A_ScriptName, , , , editor
 
-if (InStr(filename, " "))
-{
+if (InStr(filename, " ")) {
     filename = "%filename%"
 }
 
-Run, %A_ScriptDir%\bin\mintty -i "%A_ScriptFullPath%" -t "%arg%" -e /bin/wslbridge -t "%editor%" %filename%
+Run, %A_ScriptDir%\bin\mintty -i "%A_ScriptFullPath%" -t "%filepath%" -e /bin/wslbridge -t "%editor%" %flag% %filename%
