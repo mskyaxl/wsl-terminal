@@ -103,12 +103,12 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{47a89313-4300-
     State    REG_DWORD    0x1
     DistributionName    REG_SZ    Ubuntu
     Version    REG_DWORD    0x1
-    BasePath    REG_SZ    C:\Users\goreliu\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState
+    BasePath    REG_SZ    C:\Users\goreliu\AppData\Local\Packages\CanonicalGroupLimited...
     PackageFamilyName    REG_SZ    CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc
     KernelCommandLine    REG_SZ    BOOT_IMAGE=/kernel init=/init ro
     DefaultUid    REG_DWORD    0x3e8
     Flags    REG_DWORD    0x7
-    DefaultEnvironment    REG_MULTI_SZ    HOSTTYPE=x86_64\0LANG=en_US.UTF-8\0PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games\0TERM=xterm-256color
+    DefaultEnvironment    REG_MULTI_SZ    HOSTTYPE=x86_64\0LANG=en_US.UTF-8\0PATH=...
 
 # pass the distro guid to wslbridge
 > open-wsl -b "--distro-guid {47a89313-4300-4678-96ae-e53c41a79e03}"
