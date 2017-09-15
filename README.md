@@ -126,7 +126,9 @@ distro_guid={47a89313-4300-4678-96ae-e53c41a79e03}
 
 ## Build
 
-Run `build.bat`, make sure wget/tar/xz-utils/gzip/p7zip-full (apt install wget tar xz-utils gzip p7zip-full) are installed in WSL.
+Make sure `wget/tar/xz/gzip/p7zip` (Ubuntu: run `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: run `pacman -S wget tar xz gzip p7zip`) are installed in WSL.
+
+Run `build.bat`.
 
 ## License
 
