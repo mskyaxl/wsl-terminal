@@ -18,4 +18,4 @@ if (InStr(filename, " ")) {
     filename = "%filename%"
 }
 
-Run, %A_ScriptDir%\bin\mintty -i "%A_ScriptFullPath%" -t "%filepath%" -e /bin/wslbridge -t "%editor%" %flag% %filename%
+Run, %A_ScriptDir%\bin\mintty --configdir "%A_ScriptDir%\etc" -i "%A_ScriptFullPath%" -t "%filepath%" -e /bin/wslbridge -t "%editor%" %flag% %filename%

@@ -134,7 +134,7 @@ if (change_directory) {
 }
 
 if (cmd) {
-    Run, "%A_ScriptDir%\bin\mintty" %icon_string% -t "%title%" -e /bin/wslbridge %opts% %cmd%
+    Run, "%A_ScriptDir%\bin\mintty" --configdir "%A_ScriptDir%\etc" %icon_string% -t "%title%" -e /bin/wslbridge %opts% %cmd%
 }
 
 
