@@ -56,39 +56,32 @@ Usage: open-wsl [OPTION]...
   -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
   -l: start terminal in your home directory (doesn't work with tmux).
   -C dir: change directory to dir.
-  -d distribution: switch distribution.
+  -d distribution: switch distributions.
   -h: show help.
 ```
 
-[mintty params.](https://github.com/goreliu/wsl-terminal/wiki/mintty-params)
+See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
 
-[wslbridge params.](https://github.com/rprichard/wslbridge#usage)
+## Switch distributions
 
-## Switch distro
-
-Use `wslconfig` in `cmd.exe` to switch distro (Build 16273).
+Use `open-wsl -d distribution` or `wslconfig /s` to switch distributions (Windows 10 Build 16273).
 
 ```
-> wslconfig /?
-Performs administrative operations on Windows Subsystem for Linux
-
-Usage:
-    /l, /list [/all] - Lists registered distributions.
-        /all - Optionally list all distributions, including distributions that
-               are currently being installed or uninstalled.
-    /s, /setdefault <DistributionName> - Sets the specified distribution as the default.
-    /u, /unregister <DistributionName> - Unregisters a distribution.
-
-
+# list all distributions
 > wslconfig /l
 Legacy (Default)
 Ubuntu
 
-> wslconfig /s Ubuntu
+# use Ubuntu
+> open-wsl -d Ubuntu
 
+# Ubuntu is the default distribution now
 > wslconfig /l
 Ubuntu (Default)
 Legacy
+
+# or
+> wslconfig /s Ubuntu && open-wsl
 ```
 
 ## Known issues

@@ -43,7 +43,7 @@ while (i++ < argc) {
           -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
           -l: start terminal in your home directory (doesn't work with tmux).
           -C dir: change directory to dir.
-          -d distribution: switch distribution.
+          -d distribution: switch distributions.
           -h: show help.
         )
         MsgBox, %help%
