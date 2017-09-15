@@ -120,7 +120,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{47a89313-4300-
 distro_guid={47a89313-4300-4678-96ae-e53c41a79e03}
 ```
 
-## Known issues
+## Links
 
 [FAQ](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
 
