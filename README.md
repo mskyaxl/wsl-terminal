@@ -29,6 +29,8 @@ title="        "
 shell=bash
 use_cbwin=0
 use_tmux=0
+;icon=
+;distro_guid=
 ```
 
 `usr/share/mintty/themes/` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
@@ -112,6 +114,9 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{47a89313-4300-
 
 # pass the distro guid to wslbridge
 > open-wsl -b "--distro-guid {47a89313-4300-4678-96ae-e53c41a79e03}"
+
+# or set distro guid in etc/wsl-terminal.conf
+distro_guid={47a89313-4300-4678-96ae-e53c41a79e03}
 ```
 
 ## Known issues
