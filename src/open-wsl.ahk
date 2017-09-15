@@ -39,12 +39,12 @@ while (i++ < argc) {
     } else if (c == "-h") {
         help =
         (
-            Usage: open-wsl [OPTION]...
-
-            -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
-            -l: ignores current path and starts terminal in your home directory (doesn't work with tmux).
-            -C dir: change directory to dir.
-            -d distribution: switch distribution.
+        Usage: open-wsl [OPTION]...
+          -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
+          -l: start terminal in your home directory (doesn't work with tmux).
+          -C dir: change directory to dir.
+          -d distribution: switch distribution.
+          -h: show help.
         )
         MsgBox, %help%
         ExitApp
