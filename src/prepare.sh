@@ -1,22 +1,21 @@
 #!/bin/bash
 
-cygwin_version="2.9.0-2"
+cygwin_version="2.9.0-3"
 mintty_version="2.7.9-0"
 wslbridge_version="0.2.4"
 cbwin_version="0.13"
 
 set -e
 
-# wget tar xz gzip unzip p7zip
+# wget tar xz gzip p7zip
 
 type wget >/dev/null && \
     type tar >/dev/null && \
     type xz >/dev/null && \
     type gzip >/dev/null && \
-    type unzip >/dev/null && \
     type 7z >/dev/null || {
-    echo "Error: please install tar/xz-utils/gzip/unzip/p7zip-full in WSL first."
-    echo "Run 'apt install wget tar xz-utils gzip unzip p7zip-full' with root manually."
+    echo "Error: please install tar/xz-utils/gzip/p7zip-full in WSL first."
+    echo "Run 'apt install wget tar xz-utils gzip p7zip-full' with root manually."
     exit 1
 }
 
@@ -45,7 +44,7 @@ mv BuildInfo.txt LICENSE.txt README.md ../usr/share/doc/wslbridge
 cd ..
 rmdir wslbridge-${wslbridge_version}-cygwin64
 
-unzip cbwin-bin-${cbwin_version}.zip
+7z x -y cbwin-bin-${cbwin_version}.zip
 cd cbwin-bin-${cbwin_version}
 mv outbash.exe wcmd wrun wstart ../usr/bin
 mv install.sh ../usr/bin/install_cbwin.sh
@@ -61,4 +60,4 @@ mv usr/bin usr/share/doc .
 rm -rf usr
 
 rm -rf ahk && mkdir ahk && cd ahk
-unzip ../ahk.zip
+7z x -y ../ahk.zip
