@@ -8,7 +8,7 @@ Mintty configure file.
 
 ## fstab
 
-Cygwin configure file.
+Cygwin configure file, for correct drag-and-drop file path.
 
 ## themes/
 
