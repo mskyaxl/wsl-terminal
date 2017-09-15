@@ -86,7 +86,7 @@ Ubuntu (Default)
 Legacy
 ```
 
-Or set `distro_guid` in wsl-terminal.conf.
+Or set `distro_guid` in wsl-terminal.conf (Won't change the default distro).
 
 Double click `tools/write_distro_guids_to_config_file.js` (If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript write_distro_guids_to_config_file.js`).
 
