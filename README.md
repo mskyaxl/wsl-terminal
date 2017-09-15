@@ -82,10 +82,11 @@ Ubuntu
 > wslconfig /l
 Ubuntu (Default)
 Legacy
+```
 
+Or pass a distro guid to wslbridge.
 
-# or pass a distro guid to wslbridge
-
+```
 # query distro guids
 > reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\
 
