@@ -6,7 +6,8 @@ ini_file = %A_ScriptDir%\etc\wsl-terminal.conf
 activate_window := False
 change_directory := ""
 login_shell := False
-distribution := ""
+distro := ""
+wslbridge_flags := ""
 
 
 ; Parse arguments {{{1
@@ -31,11 +32,18 @@ while (i++ < argc) {
         login_shell := True
     } else if (c == "-d") {
         if (argc < ++i) {
-            MsgBox, 0x10, , Require distribution name arg.
+            MsgBox, 0x10, , Require distro name arg.
             ExitApp, 1
         }
 
-        distribution := args[i]
+        distro := args[i]
+    } else if (c == "-b") {
+        if (argc < ++i) {
+            MsgBox, 0x10, , Require additional wslbridge flags arg.
+            ExitApp, 1
+        }
+
+        wslbridge_flags := args[i]
     } else if (c == "-h") {
         help =
         (
@@ -43,7 +51,8 @@ while (i++ < argc) {
           -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
           -l: start terminal in your home directory (doesn't work with tmux).
           -C dir: change directory to dir.
-          -d distribution: switch distributions.
+          -d distro: switch distros.
+          -b "flags": pass additional flags to wslbridge.
           -h: show help.
         )
         MsgBox, %help%
@@ -70,9 +79,9 @@ if (!FileExist(bash_exe)) {
     ExitApp, 1
 }
 
-; Switch distribution {{{1
-if (distribution != "") {
-    Run, % StrReplace(bash_exe, "bash.exe", "wslconfig.exe") " /s " distribution
+; Switch distro {{{1
+if (distro != "") {
+    Run, % StrReplace(bash_exe, "bash.exe", "wslconfig.exe") " /s " distro
 }
 
 
@@ -85,7 +94,7 @@ if (icon != "" && FileExist(icon)) {
 
 ; Build command line {{{1
 cmd = %shell%
-opts = -t -e SHELL="%shell%"
+opts = %wslbridge_flags% -t -e SHELL="%shell%"
 
 if (activate_window && WinExist(title)) {
     cmd =

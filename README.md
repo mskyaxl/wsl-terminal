@@ -56,18 +56,19 @@ Usage: open-wsl [OPTION]...
   -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
   -l: start terminal in your home directory (doesn't work with tmux).
   -C dir: change directory to dir.
-  -d distribution: switch distributions.
+  -d distro: switch distros.
+  -b "flags": pass additional flags to wslbridge.
   -h: show help.
 ```
 
 See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
 
-## Switch distributions
+## Switch distros
 
-Use `open-wsl -d distribution` or `wslconfig /s` to switch distributions (Windows 10 Build 16273).
+Use `open-wsl -d distro` to switch distros (Windows 10 Build 16273).
 
 ```
-# list all distributions
+# list all distros
 > wslconfig /l
 Legacy (Default)
 Ubuntu
@@ -75,13 +76,42 @@ Ubuntu
 # use Ubuntu
 > open-wsl -d Ubuntu
 
-# Ubuntu is the default distribution now
+# Ubuntu is the default distro now
 > wslconfig /l
 Ubuntu (Default)
 Legacy
 
-# or
-> wslconfig /s Ubuntu && open-wsl
+
+# or pass a distro guid to wslbridge
+
+# query distro guids
+> reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\
+
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss
+    DefaultUsername    REG_SZ    goreliu
+    DefaultUid    REG_DWORD    0x3e8
+    DefaultGid    REG_DWORD    0x3e8
+    DefaultDistribution    REG_SZ    {12345678-1234-5678-0123-456789abcdef}
+
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{12345678-1234-5678-0123-456789abcdef}
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{47a89313-4300-4678-96ae-e53c41a79e03}
+
+# show details of a guid
+> reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{47a89313-4300-4678-96ae-e53c41a79e03}
+
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{47a89313-4300-4678-96ae-e53c41a79e03}
+    State    REG_DWORD    0x1
+    DistributionName    REG_SZ    Ubuntu
+    Version    REG_DWORD    0x1
+    BasePath    REG_SZ    C:\Users\goreliu\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState
+    PackageFamilyName    REG_SZ    CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc
+    KernelCommandLine    REG_SZ    BOOT_IMAGE=/kernel init=/init ro
+    DefaultUid    REG_DWORD    0x3e8
+    Flags    REG_DWORD    0x7
+    DefaultEnvironment    REG_MULTI_SZ    HOSTTYPE=x86_64\0LANG=en_US.UTF-8\0PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games\0TERM=xterm-256color
+
+# pass the distro guid to wslbridge
+> open-wsl -b "--distro-guid {47a89313-4300-4678-96ae-e53c41a79e03}"
 ```
 
 ## Known issues
