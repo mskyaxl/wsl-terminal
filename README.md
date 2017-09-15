@@ -33,7 +33,7 @@ use_tmux=0
 ;distro_guid=
 ```
 
-`usr/share/mintty/themes/` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
+`etc/themes/` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
 
 `etc/minttyrc` is mintty config file, [mintty tips](https://github.com/mintty/mintty/wiki/Tips).
 
