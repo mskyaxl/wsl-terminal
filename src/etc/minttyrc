@@ -1,0 +1,12 @@
+BoldAsFont=-1
+FontHeight=14
+Font=Consolas
+Scrollbar=none
+Term=xterm-256color
+CursorType=block
+AllowBlinking=yes
+Locale=en_US
+Charset=UTF-8
+BellType=0
+BellTaskbar=no
+Printer=*
