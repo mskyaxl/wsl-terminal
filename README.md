@@ -62,13 +62,40 @@ open-wsl.exe
 
 [wslbridge params.](https://github.com/rprichard/wslbridge#usage)
 
+## Switch distro
+
+Use `wslconfig` in `cmd.exe` to switch distro (Build 16273).
+
+```
+> wslconfig /?
+Performs administrative operations on Windows Subsystem for Linux
+
+Usage:
+    /l, /list [/all] - Lists registered distributions.
+        /all - Optionally list all distributions, including distributions that
+               are currently being installed or uninstalled.
+    /s, /setdefault <DistributionName> - Sets the specified distribution as the default.
+    /u, /unregister <DistributionName> - Unregisters a distribution.
+
+
+> wslconfig /l
+Legacy (Default)
+Ubuntu
+
+> wslconfig /s Ubuntu
+
+> wslconfig /l
+Ubuntu (Default)
+Legacy
+```
+
 ## Known issues
 
 [FAQ](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
 
 ## Build
 
-Run `build.bat`, make sure wget/tar/xz-utils/gzip/unzip/p7zip-full (apt install wget tar xz-utils gzip unzip p7zip-full) are installed in WSL.
+Run `build.bat`, make sure wget/tar/xz-utils/gzip/p7zip-full (apt install wget tar xz-utils gzip p7zip-full) are installed in WSL.
 
 ## License
 
