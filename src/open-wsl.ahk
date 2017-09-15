@@ -67,7 +67,8 @@ IniRead, shell, %ini_file%, config, shell, "bash"
 IniRead, use_cbwin, %ini_file%, config, use_cbwin, 0
 IniRead, use_tmux, %ini_file%, config, use_tmux, 0
 IniRead, attach_tmux_locally, %ini_file%, config, attach_tmux_locally, 0
-IniRead, icon, %ini_file%, config, icon, ""
+IniRead, icon, %ini_file%, config, icon,
+IniRead, distro_guid, %ini_file%, config, distro_guid,
 
 
 ; Find bash.exe {{{1
@@ -82,6 +83,10 @@ if (!FileExist(bash_exe)) {
 ; Switch distro {{{1
 if (distro != "") {
     Run, % StrReplace(bash_exe, "bash.exe", "wslconfig.exe") " /s " distro
+}
+
+if (distro_guid != "ERROR") {
+    wslbridge_flags .= " --distro-guid " distro_guid " "
 }
 
 
