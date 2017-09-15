@@ -115,6 +115,8 @@ If you want to pass the distro_guid to open-wsl in cmdline:
 
 [FAQ](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
 
+[TODO](https://github.com/goreliu/wsl-terminal/wiki/TODO)
+
 ## Build
 
 Make sure `wget/tar/xz/gzip/p7zip` (Ubuntu: run `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: run `pacman -S wget tar xz gzip p7zip`) are installed in WSL.
