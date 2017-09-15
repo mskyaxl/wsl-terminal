@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="0.6.11"
+version="0.7.0"
 
 set -e
 
