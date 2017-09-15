@@ -67,7 +67,9 @@ See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-par
 
 ## Switch distros
 
-Use `open-wsl -d distro` to switch distros (Windows 10 Build 16273).
+At least Windows 10 Build 16273.
+
+Use `open-wsl -d distro` to switch distros:
 
 ```
 # list all distros
@@ -84,40 +86,29 @@ Ubuntu (Default)
 Legacy
 ```
 
-Or pass a distro guid to wslbridge.
+Or set `distro_guid` in wsl-terminal.conf.
+
+Double click `tools/write_distro_guids_to_config_file.js` (If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript write_distro_guids_to_config_file.js`).
+
+Then a msgbox will show the result:
 
 ```
-# query distro guids
-> reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\
+result has been written to ..\etc\wsl-terminal.conf:
 
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss
-    DefaultUsername    REG_SZ    goreliu
-    DefaultUid    REG_DWORD    0x3e8
-    DefaultGid    REG_DWORD    0x3e8
-    DefaultDistribution    REG_SZ    {12345678-1234-5678-0123-456789abcdef}
+; Legacy
+;distro_guid={12345678-1234-5678-0123-456789abcdef}
 
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{12345678-1234-5678-0123-456789abcdef}
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{47a89313-4300-4678-96ae-e53c41a79e03}
+; Ubuntu
+;distro_guid={47a89313-4300-4678-96ae-e53c41a79e03}
 
-# show details of a guid
-> reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{47a89313-4300-4678-96ae-e53c41a79e03}
+remove the ; before distro_guid to use the distro.
+```
 
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{47a89313-4300-4678-96ae-e53c41a79e03}
-    State    REG_DWORD    0x1
-    DistributionName    REG_SZ    Ubuntu
-    Version    REG_DWORD    0x1
-    BasePath    REG_SZ    C:\Users\goreliu\AppData\Local\Packages\CanonicalGroupLimited...
-    PackageFamilyName    REG_SZ    CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc
-    KernelCommandLine    REG_SZ    BOOT_IMAGE=/kernel init=/init ro
-    DefaultUid    REG_DWORD    0x3e8
-    Flags    REG_DWORD    0x7
-    DefaultEnvironment    REG_MULTI_SZ    HOSTTYPE=x86_64\0LANG=en_US.UTF-8\0PATH=...
+If you want to pass the distro_guid to open-wsl in cmdline:
 
+```
 # pass the distro guid to wslbridge
 > open-wsl -b "--distro-guid {47a89313-4300-4678-96ae-e53c41a79e03}"
-
-# or set distro guid in etc/wsl-terminal.conf
-distro_guid={47a89313-4300-4678-96ae-e53c41a79e03}
 ```
 
 ## Links
