@@ -12,9 +12,9 @@ Cygwin configure file, for correct drag-and-drop file path.
 
 ## themes/
 
-mintty themes files, [base16-mintty](https://github.com/geoffstokes/base16-mintty).
+Mintty theme files, [base16-mintty](https://github.com/geoffstokes/base16-mintty).
 
-More themes:
+More theme files:
 
 https://github.com/oumu/mintty-color-schemes
 https://github.com/PhilipDaniels/mintty/tree/master/themes
