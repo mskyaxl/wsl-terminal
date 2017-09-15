@@ -67,8 +67,6 @@ See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-par
 
 ## Switch distros
 
-At least Windows 10 Build 16273.
-
 Use `open-wsl -d distro` to switch distros:
 
 ```
