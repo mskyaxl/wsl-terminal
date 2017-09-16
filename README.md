@@ -79,7 +79,7 @@ Usage: open-wsl [OPTION]...
 ```
 Usage: cmdtool [OPTION]...
   update: check the latest wsl-terminal version, and upgrade it.
-  killall: kill all WSL process.
+  killall: kill all WSL processes.
   install cbwin: install cbwin.
 ```
 
