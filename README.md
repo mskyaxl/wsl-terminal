@@ -20,22 +20,6 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 
 5. `vim.exe` can open any files with vim (in wsl-terminal), support `Open With` context menu in explorer.exe. `vim.exe` can be renamed to `emacs.exe/nvim.exe/nano.exe/less.exe/...` to open files in `emacs/nvim/nano/less/...`.
 
-## Configuration files
-
-`etc/wsl-terminal.conf` is wsl-terminal config file.
-```
-[config]
-title="my title"
-shell=bash
-use_tmux=0
-;icon=
-;distro_guid=
-```
-
-`etc/themes/*` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
-
-`etc/minttyrc` is mintty config file, [mintty tips](https://github.com/mintty/mintty/wiki/Tips).
-
 ## Keyboard shortcuts
 
 `Alt + Enter`: Fullscreen
@@ -49,14 +33,6 @@ use_tmux=0
 `Ctrl + =+/-/0`: Zoom
 
 `Ctrl + Click`: Open URL or dir/file under the cursor
-
-## Upgrade
-
-Open `open-wsl.exe` in `wsl-terminal` directory, run `./cmdtool update` to check the latest wsl-terminal version and upgrade it. If the download speed is too slow, you can download `wsl-terminal-v{version}.7z` from [releases](https://github.com/goreliu/wsl-terminal/releases) with other tools, and put it into `wsl-terminal` directory, then run `./cmdtool update`.
-
-`wget` and `7z` commands are needed (Ubuntu: `apt install wget p7zip-full`, Archlinux: `pacman -S wget p7zip`) .
-
-Config files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` will be placed to `etc/wsl-terminal.conf.pacnew` and `etc/minttyrc.pacnew`. Some `.bak` files will be left in `bin`, because they are running, those files will be removed after the next upgrading.
 
 ## Params
 
@@ -95,6 +71,30 @@ See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-par
 `tools/write-distro-guids-to-config-file.js`: Write distro guids to `etc/wsl-terminal.conf`.
 
 Double click any `.js` files to run it. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript xxx.js`.
+
+## Configuration files
+
+`etc/wsl-terminal.conf` is wsl-terminal config file.
+```
+[config]
+title="my title"
+shell=bash
+use_tmux=0
+;icon=
+;distro_guid=
+```
+
+`etc/themes/*` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
+
+`etc/minttyrc` is mintty config file, [mintty tips](https://github.com/mintty/mintty/wiki/Tips).
+
+## Upgrade
+
+Open `open-wsl.exe` in `wsl-terminal` directory, run `./cmdtool update` to check the latest wsl-terminal version and upgrade it. If the download speed is too slow, you can download `wsl-terminal-v{version}.7z` from [releases](https://github.com/goreliu/wsl-terminal/releases) with other tools, and put it into `wsl-terminal` directory, then run `./cmdtool update`.
+
+`wget` and `7z` commands are needed (Ubuntu: `apt install wget p7zip-full`, Archlinux: `pacman -S wget p7zip`) .
+
+Config files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` will be placed to `etc/wsl-terminal.conf.pacnew` and `etc/minttyrc.pacnew`. Some `.bak` files will be left in `bin`, because they are running, those files will be removed after the next upgrading.
 
 ## Switch distros
 
