@@ -57,6 +57,7 @@ use_tmux=0
 Usage: open-wsl [OPTION]...
   -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
   -l: start terminal in your home directory (doesn't work with tmux).
+  -c "command": run command.
   -C dir: change directory to dir.
   -d distro: switch distros.
   -b "options": pass additional options to wslbridge.

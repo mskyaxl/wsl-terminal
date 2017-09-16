@@ -77,6 +77,7 @@ change_directory := ""
 distro := ""
 login_shell := False
 wslbridge_options := ""
+user_command := ""
 
 i := 0
 while (i++ < argc) {
@@ -106,12 +107,20 @@ while (i++ < argc) {
         }
 
         wslbridge_options := args[i]
+    } else if (c == "-c") {
+        if (argc < ++i) {
+            MsgBox, 0x10, , Require command arg.
+            ExitApp, 1
+        }
+
+        user_command := args[i]
     } else if (c == "-h") {
         help =
         (
         Usage: open-wsl [OPTION]...
           -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
           -l: start terminal in your home directory (doesn't work with tmux).
+          -c "command": run command.
           -C dir: change directory to dir.
           -d distro: switch distros.
           -b "options": pass additional options to wslbridge.
@@ -120,6 +129,15 @@ while (i++ < argc) {
         MsgBox, %help%
         ExitApp
     }
+}
+
+if (user_command != "") {
+    if (change_directory != "") {
+        wslbridge_options = %wslbridge_options% -C "%change_directory%"
+    }
+
+    Run, %mintty_base% -t "%user_command%" %wslbridge_base% %wslbridge_options% -t %shell% -c "%user_command%"
+    ExitApp
 }
 
 ; Find bash.exe {{{1
