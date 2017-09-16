@@ -9,7 +9,6 @@ if (path.indexOf(WshShell.CurrentDirectory) >= 0) {
     WScript.Quit();
 }
 
-WScript.Echo(path);
 if (path.charAt(path.length - 1) != ";") {
     path += ";"
 }
