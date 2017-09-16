@@ -6,7 +6,7 @@ A terminal emulator for Windows Subsystem for Linux (WSL), includes [mintty](htt
 
 ![screenshot](https://raw.githubusercontent.com/wiki/goreliu/wsl-terminal/images/wsl-terminal-3.png)
 
-[More screenshots.](https://github.com/goreliu/wsl-terminal/wiki/Screenshots)
+More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots).
 
 ## Usage
 
@@ -18,21 +18,21 @@ A terminal emulator for Windows Subsystem for Linux (WSL), includes [mintty](htt
 
 4. `run-wsl-file.exe` can run any `.sh` (and any others like `.py/.pl/.php`) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
 
-5. `vim.exe` can open any files in vim (in wsl-terminal), support `Open With` context menu in explorer.exe. `vim.exe` can be renamed to `emacs.exe/nvim.exe/nano.exe/less.exe/...` to open files in `emacs/nvim/nano/less/...`.
+5. `vim.exe` can open any files with vim (in wsl-terminal), support `Open With` context menu in explorer.exe. `vim.exe` can be renamed to `emacs.exe/nvim.exe/nano.exe/less.exe/...` to open files in `emacs/nvim/nano/less/...`.
 
 ## Configuration files
 
 `etc/wsl-terminal.conf` is wsl-terminal config file.
 ```
 [config]
-title="        "
+title="my title"
 shell=bash
 use_tmux=0
 ;icon=
 ;distro_guid=
 ```
 
-`etc/themes/` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
+`etc/themes/*` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
 
 `etc/minttyrc` is mintty config file, [mintty tips](https://github.com/mintty/mintty/wiki/Tips).
 
@@ -56,7 +56,7 @@ Open `open-wsl.exe` in `wsl-terminal` directory, run `./cmdtool update` to check
 
 `wget` and `7z` commands are needed (Ubuntu: `apt install wget p7zip-full`, Archlinux: `pacman -S wget p7zip`) .
 
-Configure files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` will be placed to `etc/wsl-terminal.conf.pacnew` and `etc/minttyrc.pacnew`. Some `.bak` files will be left in `bin`, because they are running, those files will be removed after the next upgrading.
+Config files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` will be placed to `etc/wsl-terminal.conf.pacnew` and `etc/minttyrc.pacnew`. Some `.bak` files will be left in `bin`, because they are running, those files will be removed after the next upgrading.
 
 ## Params
 
