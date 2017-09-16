@@ -29,6 +29,12 @@ wslbridge_base = -e /bin/wslbridge %distro_option% -e SHELL="%shell%"
 SplitPath, A_ScriptName, , , , exe_name
 if (exe_name == "run-wsl-file") {
     arg = %1%
+
+    if (arg == "") {
+        MsgBox, Open .sh/.py/.pl/... with %exe_name%.exe to run it in WSL.
+        ExitApp
+    }
+
     SplitPath, arg, filename, dir
     SetWorkingDir, %dir%
 
@@ -36,21 +42,26 @@ if (exe_name == "run-wsl-file") {
     ExitApp
 } else if (exe_name != "open-wsl") {
     argc = %0%
-    filepath := %argc%
-    flag := ""
+    filepath := ""
+    filename := ""
+    options := ""
 
-    Loop, % argc - 1 {
-        flag .= " " %A_Index%
+    if (argc > 0) {
+        filepath := %argc%
+
+        Loop, % argc - 1 {
+            options .= " " %A_Index%
+        }
+
+        SplitPath, filepath, filename, dir
+        SetWorkingDir, %dir%
+
+        if (InStr(filename, " ")) {
+            filename = "%filename%"
+        }
     }
 
-    SplitPath, filepath, filename, dir
-    SetWorkingDir, %dir%
-
-    if (InStr(filename, " ")) {
-        filename = "%filename%"
-    }
-
-    Run, %mintty_base% -t "%filepath%" %wslbridge_base% -t "%exe_name%" %flag% %filename%
+    Run, %mintty_base% -t "%filepath%" %wslbridge_base% -t "%exe_name%" %options% %filename%
     ExitApp
 }
 
@@ -65,7 +76,7 @@ activate_window := False
 change_directory := ""
 distro := ""
 login_shell := False
-wslbridge_flags := ""
+wslbridge_options := ""
 
 i := 0
 while (i++ < argc) {
@@ -90,11 +101,11 @@ while (i++ < argc) {
         distro := args[i]
     } else if (c == "-b") {
         if (argc < ++i) {
-            MsgBox, 0x10, , Require additional wslbridge flags arg.
+            MsgBox, 0x10, , Require additional wslbridge options arg.
             ExitApp, 1
         }
 
-        wslbridge_flags := args[i]
+        wslbridge_options := args[i]
     } else if (c == "-h") {
         help =
         (
@@ -103,7 +114,7 @@ while (i++ < argc) {
           -l: start terminal in your home directory (doesn't work with tmux).
           -C dir: change directory to dir.
           -d distro: switch distros.
-          -b "flags": pass additional flags to wslbridge.
+          -b "options": pass additional options to wslbridge.
           -h: show help.
         )
         MsgBox, %help%
@@ -127,7 +138,7 @@ if (distro != "") {
 
 ; Build command line {{{1
 cmd = %shell%
-opts = %wslbridge_flags% -t
+opts = %wslbridge_options% -t
 
 if (activate_window && WinExist(title)) {
     cmd =

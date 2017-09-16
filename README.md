@@ -59,7 +59,7 @@ Usage: open-wsl [OPTION]...
   -l: start terminal in your home directory (doesn't work with tmux).
   -C dir: change directory to dir.
   -d distro: switch distros.
-  -b "flags": pass additional flags to wslbridge.
+  -b "options": pass additional options to wslbridge.
   -h: show help.
 ```
 
