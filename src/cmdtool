@@ -6,9 +6,9 @@ cd "$(dirname $0)"
 
 [[ $# == 0 || "$1" == "-h" || "$1" == "--help" ]] && {
     echo -e "Usage: $0 [OPTION]..."\
-        "\n  update: check the latest wsl-terminal version, and upgrade it"\
-        "\n  killall: kill all WSL process"\
-        "\n  install cbwin: install cbwin"
+        "\n  update: check the latest wsl-terminal version, and upgrade it."\
+        "\n  killall: kill all WSL process."\
+        "\n  install cbwin: install cbwin."
 
     exit
 }

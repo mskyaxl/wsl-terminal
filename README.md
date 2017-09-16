@@ -51,7 +51,17 @@ use_tmux=0
 
 `Ctrl + Click`: Open URL or dir/file under the cursor
 
+## Upgrade
+
+Open `open-wsl.exe` in `wsl-terminal` directory, run `./cmdtool update` to check the latest wsl-terminal version and upgrade it. If the download speed is too slow, you can download `wsl-terminal-v{version}.7z` from [releases](https://github.com/goreliu/wsl-terminal/releases) with other tools, and put it into `wsl-terminal` directory, then run `./cmdtool update`.
+
+`wget` and `7z` commands are needed (Ubuntu: `apt install wget p7zip-full`, Archlinux: `pacman -S wget p7zip`) .
+
+Configure files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` will be placed to `etc/wsl-terminal.conf.pacnew` and `etc/minttyrc.pacnew`. Some `.bak` files will be left in `bin`, because they are running, those files will be removed after the next upgrading.
+
 ## Params
+
+### open-wsl
 
 ```
 Usage: open-wsl [OPTION]...
@@ -62,6 +72,15 @@ Usage: open-wsl [OPTION]...
   -d distro: switch distros.
   -b "options": pass additional options to wslbridge.
   -h: show help.
+```
+
+### cmdtool
+
+```
+Usage: cmdtool [OPTION]...
+  update: check the latest wsl-terminal version, and upgrade it.
+  killall: kill all WSL process.
+  install cbwin: install cbwin.
 ```
 
 See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
