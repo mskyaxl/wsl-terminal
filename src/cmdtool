@@ -1,0 +1,54 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname $0)"
+
+op=$1
+
+if [[ "$1" == update ]]; then
+    version=$(cat ../VERSION)
+    echo Checking the latest version ...
+    latest_version=$(wget https://raw.githubusercontent.com/goreliu/wsl-terminal/master/VERSION -O -)
+    if [[ "$version" == "$latest_version" ]]; then
+        echo Already the latest version: $version
+        exit
+    fi
+
+    echo -n "Upgrade [$version] to [$latest_version]? (y/n)"
+    read -n1 answer 
+    if [[ "$answer" != "y" ]]; then
+        exit
+    fi
+
+    filename=wsl-terminal-$latest_version.7z
+
+    if [[ ! -e "$filename" ]]; then
+        wget -c "https://github.com/goreliu/wsl-terminal/releases/download/v$latest_version/wsl-terminal-$latest_version.7z"
+    fi
+
+    rm -rf wsl-terminal
+    7z x $filename
+    mv -v wsl-terminal/{*.*,LICENSE,VERSION} ..
+    rm -rf ../doc
+    mv -v wsl-terminal/doc ..
+    mv -v wsl-terminal/tools/* ../tools
+    mv -v wsl-terminal/etc/wsl-terminal.conf ../etc/wsl-terminal.conf.pacnew
+    mv -v wsl-terminal/etc/minttyrc ../etc/minttyrc.pacnew
+    mv -v wsl-terminal/etc/lang/* ../etc/lang/
+    mv -v wsl-terminal/etc/themes/* ../etc/themes/
+    mv -v wsl-terminal/etc/README.md ../etc/
+
+    cd wsl-terminal/bin
+    for i in *; do
+        mv ../../$i ../../$i.$$.bak
+        mv -v $i ../../$i
+        rm -f ../../*.bak 2>/dev/null || true
+    done
+    cd ../..
+
+    rm $filename
+    rm -rf wsl-terminal
+    echo Successully.
+    exit
+fi

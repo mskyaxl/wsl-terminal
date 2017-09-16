@@ -7,6 +7,7 @@ set -e
 rm -rf wsl-terminal && mkdir -p wsl-terminal && cd wsl-terminal
 cp -r ../build/{bin,etc,doc} .
 cp -r ../{*.exe,tools} ../../{LICENSE,README.md,VERSION} .
+cp ../cmdtool bin
 rm -f ../*.exe
 
 cd ..
