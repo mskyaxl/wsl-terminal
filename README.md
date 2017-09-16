@@ -88,7 +88,7 @@ See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-par
 
 `tools/add-open-wsl-terminal-here-menu.js`: Add `Open wsl-terminal Here` context menu to `explorer.exe`.
 
-`tools/remove-open-wsl-terminal-here-menu.js`: Remove ``Open wsl-terminal Here` context menu.
+`tools/remove-open-wsl-terminal-here-menu.js`: Remove `Open wsl-terminal Here` context menu.
 
 `tools/add-wsl-terminal-dir-to-path.js`: Add `wsl-terminal` directory to `Path` environment variable.
 
