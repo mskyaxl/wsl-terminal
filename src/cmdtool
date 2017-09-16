@@ -7,7 +7,7 @@ cd "$(dirname $0)"
 op=$1
 
 if [[ "$1" == update ]]; then
-    version=$(cat ../VERSION)
+    version=$(cat VERSION)
     echo Checking the latest version ...
     latest_version=$(wget https://raw.githubusercontent.com/goreliu/wsl-terminal/master/VERSION -O -)
     if [[ "$version" == "$latest_version" ]]; then
@@ -28,27 +28,33 @@ if [[ "$1" == update ]]; then
     fi
 
     rm -rf wsl-terminal
-    7z x $filename
-    mv -v wsl-terminal/{*.*,LICENSE,VERSION} ..
-    rm -rf ../doc
-    mv -v wsl-terminal/doc ..
-    mv -v wsl-terminal/tools/* ../tools
-    mv -v wsl-terminal/etc/wsl-terminal.conf ../etc/wsl-terminal.conf.pacnew
-    mv -v wsl-terminal/etc/minttyrc ../etc/minttyrc.pacnew
-    mv -v wsl-terminal/etc/lang/* ../etc/lang/
-    mv -v wsl-terminal/etc/themes/* ../etc/themes/
-    mv -v wsl-terminal/etc/README.md ../etc/
+    7z x $filename || {
+        echo "$filename is broken, try again."
+        rm -v $filename
+        exit 1
+    }
+
+    mv -v wsl-terminal/tools/* tools/
+    mv -v wsl-terminal/etc/wsl-terminal.conf etc/wsl-terminal.conf.pacnew
+    mv -v wsl-terminal/etc/minttyrc etc/minttyrc.pacnew
+    mv -v wsl-terminal/etc/lang/* etc/lang/
+    mv -v wsl-terminal/etc/themes/* etc/themes/
+    mv -v wsl-terminal/etc/README.md etc/
 
     cd wsl-terminal/bin
     for i in *; do
-        mv ../../$i ../../$i.$$.bak
-        mv -v $i ../../$i
-        rm -f ../../*.bak 2>/dev/null || true
+        mv ../../bin/$i ../../bin/$i.$$.bak
+        mv -v $i ../../bin/$i
+        rm -f ../../bin/*.bak 2>/dev/null || true
     done
     cd ../..
 
-    rm $filename
+    rm -rf doc
+    mv -v wsl-terminal/doc .
+    mv -v wsl-terminal/{*.*,cmdtool,VERSION} .
+
     rm -rf wsl-terminal
+    rm $filename
     echo Successully.
     exit
 fi
