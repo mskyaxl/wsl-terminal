@@ -4,6 +4,15 @@ set -e
 
 cd "$(dirname $0)"
 
+[[ $# == 0 || "$1" == "-h" || "$1" == "--help" ]] && {
+    echo -e "Usage: $0 [OPTION]..."\
+        "\n  update: check the latest wsl-terminal version, and upgrade it"\
+        "\n  killall: kill all WSL process"\
+        "\n  install cbwin: install cbwin"
+
+    exit
+}
+
 op=$1
 
 if [[ "$1" == update ]]; then
@@ -57,6 +66,8 @@ if [[ "$1" == update ]]; then
     rm $filename
     echo OK
     exit
+elif [[ "$1" == "killall" ]]; then
+    killall sleep wslbridge-backend bash tmux zsh
 elif [[ "$1" == "install" ]]; then
     if [[ "$2" == "cbwin" ]]; then
         wget https://github.com/xilun/cbwin/releases/download/v0.13/cbwin-bin-0.13.zip
