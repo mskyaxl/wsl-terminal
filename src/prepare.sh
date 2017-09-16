@@ -45,7 +45,7 @@ rmdir wslbridge-${wslbridge_version}-cygwin64
 cp -r ../etc .
 rm -rf bin doc
 mv usr/bin usr/share/doc .
-mv usr/share/mintty/lang etc
+mv usr/share/mintty/lang/* etc/lang/
 rm -rf usr
 
 rm -rf ahk && mkdir ahk && cd ahk
