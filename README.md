@@ -84,6 +84,16 @@ Usage: cmdtool [OPTION]...
 
 See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
 
+## Tools
+
+`tools/add-open-wsl-terminal-here-menu.js`: Add `Open wsl-terminal Here` context menu to `explorer.exe`.
+
+`tools/remove-open-wsl-terminal-here-menu.js`: Remove ``Open wsl-terminal Here` context menu.
+
+`tools/add-wsl-terminal-dir-to-path.js`: Add `wsl-terminal` directory to `Path` environment variable.
+
+`tools/write-distro-guids-to-config-file.js`: Write distro guids to `etc/wsl-terminal.conf`.
+
 ## Switch distros
 
 Use `open-wsl -d distro` to switch distros:
