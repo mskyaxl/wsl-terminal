@@ -1,6 +1,6 @@
 # wsl-terminal
 
-A terminal emulator for Windows Subsystem for Linux (WSL), includes [mintty](http://mintty.github.io/), [wslbridge](https://github.com/rprichard/wslbridge), [cbwin](https://github.com/xilun/cbwin), and some other useful tools.
+A terminal emulator for Windows Subsystem for Linux (WSL), includes [mintty](http://mintty.github.io/), [wslbridge](https://github.com/rprichard/wslbridge), and some other useful tools.
 
 ## Screenshot
 
@@ -14,7 +14,7 @@ A terminal emulator for Windows Subsystem for Linux (WSL), includes [mintty](htt
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge)).
 
-3. Run `tools/add-open-wsl-here-menu.js` to add a `Open WSL Here` context menu to explorer.exe (run `tools/remove-open-wsl-here-menu.js` to remove it). If you are using Total Commander, read [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander).
+3. Run `tools/add-open-wsl-here-menu.js` (Double click `tools/add-open-wsl-here-menu.js`. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript add-open-wsl-here-menu.js`) to add a `Open WSL Here` context menu to explorer.exe (run `tools/remove-open-wsl-here-menu.js` to remove it). If you are using Total Commander, [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) may help you. 
 
 4. `run-wsl-file.exe` can run any `.sh` (and any others like `.py/.pl/.php`) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
 
@@ -27,7 +27,6 @@ A terminal emulator for Windows Subsystem for Linux (WSL), includes [mintty](htt
 [config]
 title="        "
 shell=bash
-use_cbwin=0
 use_tmux=0
 ;icon=
 ;distro_guid=
@@ -148,7 +147,5 @@ Run `build.bat`.
 [mintty](http://mintty.github.io/): GPLv3+
 
 [wslbridge](https://github.com/rprichard/wslbridge): MIT
-
-[cbwin](https://github.com/xilun/cbwin): MIT
 
 [wsl-terminal](https://github.com/goreliu/wsl-terminal): MIT
