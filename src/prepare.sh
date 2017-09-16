@@ -3,7 +3,6 @@
 cygwin_version="2.9.0-3"
 mintty_version="2.7.9-0"
 wslbridge_version="0.2.4"
-cbwin_version="0.13"
 
 set -e
 
@@ -24,7 +23,6 @@ mkdir -p build && cd build
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/cygwin/cygwin-${cygwin_version}.tar.xz
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/mintty/mintty-${mintty_version}.tar.xz
 wget -nc https://github.com/rprichard/wslbridge/releases/download/${wslbridge_version}/wslbridge-${wslbridge_version}-cygwin64.tar.gz
-wget -nc https://github.com/xilun/cbwin/releases/download/v${cbwin_version}/cbwin-bin-${cbwin_version}.zip
 wget -nc https://autohotkey.com/download/ahk.zip
 
 rm -rf bin etc usr doc
@@ -43,16 +41,6 @@ mkdir -p ../usr/share/doc/wslbridge
 mv BuildInfo.txt LICENSE.txt README.md ../usr/share/doc/wslbridge
 cd ..
 rmdir wslbridge-${wslbridge_version}-cygwin64
-
-7z x -y cbwin-bin-${cbwin_version}.zip
-cd cbwin-bin-${cbwin_version}
-mv outbash.exe wcmd wrun wstart ../usr/bin
-mv install.sh ../usr/bin/install_cbwin.sh
-mkdir -p ../usr/share/doc/cbwin
-mv LICENSE README.md ../usr/share/doc/cbwin
-cd ..
-rmdir cbwin-bin-${cbwin_version}
-
 
 cp -r ../etc .
 rm -rf bin doc
