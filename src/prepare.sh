@@ -34,7 +34,7 @@ tar -xvf cygwin-${cygwin_version}.tar.xz \
     usr/bin/cygwin-console-helper.exe \
     usr/share/doc/Cygwin
 
-tar -xvf mintty-${mintty_version}.tar.xz usr/bin/mintty.exe usr/share/doc
+tar -xvf mintty-${mintty_version}.tar.xz usr/bin/mintty.exe usr/share/doc usr/share/mintty/lang
 
 tar -xvf wslbridge-${wslbridge_version}-cygwin64.tar.gz
 cd wslbridge-${wslbridge_version}-cygwin64
@@ -57,6 +57,7 @@ rmdir cbwin-bin-${cbwin_version}
 cp -r ../etc .
 rm -rf bin doc
 mv usr/bin usr/share/doc .
+mv usr/share/mintty/lang etc
 rm -rf usr
 
 rm -rf ahk && mkdir ahk && cd ahk
