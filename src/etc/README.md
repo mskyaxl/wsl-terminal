@@ -6,10 +6,6 @@ wsl-terminal configure file.
 
 Mintty configure file.
 
-## fstab
-
-Cygwin configure file, for correct drag-and-drop file path.
-
 ## themes/
 
 Mintty theme files, [base16-mintty](https://github.com/geoffstokes/base16-mintty).
