@@ -14,7 +14,7 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge)).
 
-3. Run `tools/add-open-wsl-here-menu.js` (Double click `tools/add-open-wsl-here-menu.js`. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript add-open-wsl-here-menu.js`) to add a `Open WSL Here` context menu to explorer.exe (run `tools/remove-open-wsl-here-menu.js` to remove it). If you are using Total Commander, [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) may help you. 
+3. Run `tools/add-open-wsl-terminal-here-menu.js` (Double click `tools/add-open-wsl-terminal-here-menu.js`. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript add-open-wsl-terminal-here-menu.js`) to add a `Open WSL Here` context menu to explorer.exe (run `tools/remove-open-wsl-terminal-here-menu.js` to remove it). If you are using Total Commander, [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) may help you.
 
 4. `run-wsl-file.exe` can run any `.sh` (and any others like `.py/.pl/.php`) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
 
