@@ -50,3 +50,9 @@ rm -rf usr
 
 rm -rf ahk && mkdir ahk && cd ahk
 7z x -y ../ahk.zip
+cd ..
+
+cat > "doc/wsl-terminal home.url" <<EOF
+[InternetShortcut]
+URL=https://goreliu.github.io/wsl-terminal/
+EOF
