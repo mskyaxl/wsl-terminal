@@ -112,7 +112,7 @@ use_tmux=0
 
 1. 在 WSL 里安装 tmux。
 
-2. 在 `etc/wsl-terminal.conf` 中设置 `use_tmux=1`。
+2. 在 `etc/wsl-terminal.conf` 中设置 `use_tmux=1`。如果版本号低于 `0.8.1`，还需要添加 `attach_tmux_locally=1` 。
 
 3. 添加如下代码到 `~/.bashrc`（如果配置的是 `shell=bash`）或者 `~/.zshrc`（如果配置的是 `shell=zsh`）：
 
