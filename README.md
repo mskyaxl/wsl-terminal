@@ -161,10 +161,4 @@ Run `build.bat`.
 
 ## License
 
-[Cygwin DLL](https://www.cygwin.com/): https://cygwin.com/licensing.html
-
-[mintty](http://mintty.github.io/): GPLv3+
-
-[wslbridge](https://github.com/rprichard/wslbridge): MIT
-
-[wsl-terminal](https://github.com/goreliu/wsl-terminal): MIT
+MIT
