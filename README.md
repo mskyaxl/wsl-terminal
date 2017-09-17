@@ -72,9 +72,9 @@ See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-par
 
 `tools/3-write-distro-guids-to-config-file.js`: Write distro guids to `etc/wsl-terminal.conf`.
 
-`tools/4-create-start-menu-shortcut.js`: Create a start menu shortcut op `open-wsl -C ~`.
+`tools/4-create-start-menu-shortcut.js`: Create a start menu shortcut to `open-wsl -C ~`.
 
-`tools/4-create-start-menu-shortcut-login-shell.js`: Create a start menu shortcut op `open-wsl -l`.
+`tools/4-create-start-menu-shortcut-login-shell.js`: Create a start menu shortcut to `open-wsl -l`.
 
 `tools/4-remove-all-start-menu-shortcuts.js`: Remove all wsl-terminal start menu shortcuts.
 
