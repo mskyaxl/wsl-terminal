@@ -5,3 +5,4 @@
 *.exe
 *.zip
 *.7z
+.debug
