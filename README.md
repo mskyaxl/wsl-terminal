@@ -146,7 +146,7 @@ If you want to pass the distro_guid to open-wsl in cmdline:
 
 ```
 # pass the distro guid to wslbridge
-> open-wsl -b "--distro-guid {47a89313-4300-4678-96ae-e53c41a79e03}"
+> open-wsl -b "-d {47a89313-4300-4678-96ae-e53c41a79e03}"
 ```
 
 ## Links

@@ -149,7 +149,7 @@ remove the ; before distro_guid to use the distro.
 
 ```
 # 将 distro guid 传递给 wslbridge
-> open-wsl -b "--distro-guid {47a89313-4300-4678-96ae-e53c41a79e03}"
+> open-wsl -b "-d {47a89313-4300-4678-96ae-e53c41a79e03}"
 ```
 
 ## 链接
