@@ -8,7 +8,9 @@ cd "$(dirname $0)"
     echo -e "Usage: $0 [OPTION]..."\
         "\n  update: check the latest wsl-terminal version, and upgrade it."\
         "\n  killall: kill all WSL process."\
-        "\n  install cbwin: install cbwin."
+        "\n  install cbwin: install cbwin."\
+        "\n  install dash: install dash (for debugging)."\
+        "\n  install busybox: install busybox (for debugging)."
 
     exit
 }
@@ -81,6 +83,22 @@ elif [[ "$1" == "install" ]]; then
         rm -rf cbwin-bin-0.13
         rm -f cbwin-bin-0.13.zip
         echo Add use_cbwin=1 to etc/wsl-terminal.conf to use cbwin.
+        echo OK
+    elif [[ "$2" == "dash" ]]; then
+        version=0.5.9.1-1
+        wget http://mirrors.ustc.edu.cn/cygwin/x86_64/release/dash/dash-$version.tar.xz 
+        tar -xvf dash-$version.tar.xz usr/bin/ash.exe
+        cp -v usr/bin/ash.exe bin/dash.exe
+        # mintty need a bash.exe if running with no args.
+        mv -v usr/bin/ash.exe bin/bash.exe
+        rm -rf usr dash-$version.tar.xz
+        echo OK
+    elif [[ "$2" == "busybox" ]]; then
+        version=1.23.2-1
+        wget http://mirrors.ustc.edu.cn/cygwin/x86_64/release/busybox/busybox-$version.tar.xz
+        tar -xvf busybox-$version.tar.xz usr/libexec/busybox/bin/busybox.exe
+        mv -v usr/libexec/busybox/bin/busybox.exe bin/busybox.exe
+        rm -rf usr busybox-$version.tar.xz
         echo OK
     fi
 fi
