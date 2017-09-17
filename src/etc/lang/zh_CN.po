@@ -1093,7 +1093,7 @@ msgstr "字体对字符范围支持有限"
 
 #: wintext.c:477
 msgid "Font installation corrupt, using system substitute"
-msgstr "字体安装错误，使用字体字体替代"
+msgstr "字体安装错误，使用系统字体替代"
 
 #: wintext.c:490
 msgid "Font does not support system locale"

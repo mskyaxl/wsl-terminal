@@ -117,7 +117,8 @@ while (i++ < argc) {
         help =
         (
         Usage: open-wsl [OPTION]...
-          -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
+          -a: activate an existing wsl-terminal window.
+              if use_tmux=1, attach the running tmux session.
           -l: start terminal in your home directory (doesn't work with tmux).
           -c "command": run command.
           -C dir: change directory to dir.
@@ -154,26 +155,29 @@ if (distro != "") {
 }
 
 ; Build command line {{{1
-cmd = %shell%
+cmd =
 opts = %wslbridge_options% -t
 
 if (activate_window && WinExist(title)) {
-    cmd =
 } else if (!use_tmux) {
     if (login_shell) {
         cmd = %shell% -l
         if (change_directory == "") {
             change_directory = ~
         }
+    } else {
+        cmd = %shell%
     }
 } else {
     if (WinExist(title)) {
-        cmd =
         Run, "%bash_exe%" -c 'tmux new-window -c "$PWD"', , Hide
-    } else if (activate_window) {
-        opts = %opts% -e USE_TMUX=1 -e ATTACH_ONLY=1
     } else {
+        cmd = %shell%
         opts = %opts% -e USE_TMUX=1
+
+        if (activate_window) {
+            opts = %opts% -e ATTACH_ONLY=1
+        }
     }
 }
 
@@ -181,7 +185,7 @@ if (change_directory != "") {
     opts = %opts% -C "%change_directory%"
 }
 
-if (cmd) {
+if (cmd != "") {
     Run, %mintty_base% -t "%title%" %wslbridge_base% %opts% %cmd%
 }
 

@@ -107,6 +107,29 @@ Open `open-wsl.exe` in `wsl-terminal` directory, run `./cmdtool update` to check
 
 Config files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` will be placed to `etc/wsl-terminal.conf.pacnew` and `etc/minttyrc.pacnew`. Some `.bak` files will be left in `bin`, because they are running, those files will be removed after the next upgrading.
 
+## Use tmux
+
+1. Install tmux in WSL.
+
+2. Set `use_tmux=1` in `etc/wsl-terminal.conf`:
+
+3. Add these lines to `~/.bashrc` (`shell=bash` in config) or `~/.zshrc` (`shell=zsh` in config):
+
+```
+[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
+    [[ -n "$ATTACH_ONLY" ]] && {
+        tmux a 2>/dev/null || {
+            cd && exec tmux
+        }
+        exit
+    }
+
+    tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
+    exec tmux
+}
+```
+Then `open-wsl` will use tmux.
+
 ## Switch distros
 
 Use `open-wsl -d distro` to switch distros:
