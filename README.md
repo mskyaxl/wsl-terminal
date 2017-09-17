@@ -111,7 +111,7 @@ Config files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` wil
 
 1. Install tmux in WSL.
 
-2. Set `use_tmux=1` in `etc/wsl-terminal.conf`:
+2. Set `use_tmux=1` in `etc/wsl-terminal.conf`.
 
 3. Add these lines to `~/.bashrc` (`shell=bash` in config) or `~/.zshrc` (`shell=zsh` in config):
 
@@ -128,6 +128,7 @@ Config files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` wil
     exec tmux
 }
 ```
+
 Then `open-wsl` will use tmux.
 
 ## Switch distros

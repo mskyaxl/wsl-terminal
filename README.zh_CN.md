@@ -108,6 +108,30 @@ use_tmux=0
 
 升级过程不会覆盖配置文件，`etc/wsl-terminal.conf` 和 `etc/minttyrc` 会被放置到 `etc/wsl-terminal.conf.pacnew` 和 `etc/minttyrc.pacnew`。升级后 `bin` 目录会残余一些 `.bak` 文件，因为这些文件还在运行，不能被删除。下一次升级时，会将之前的 `.bak` 文件全部删除，你也可以等那些进程退出后手删除那些文件。
 
+## 使用 tmux
+
+1. 在 WSL 里安装 tmux。
+
+2. 在 `etc/wsl-terminal.conf` 中设置 `use_tmux=1`。
+
+3. 添加如下代码到 `~/.bashrc`（如果配置的是 `shell=bash`）或者 `~/.zshrc`（如果配置的是 `shell=zsh`）：
+
+```
+[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
+    [[ -n "$ATTACH_ONLY" ]] && {
+        tmux a 2>/dev/null || {
+            cd && exec tmux
+        }
+        exit
+    }
+
+    tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
+    exec tmux
+}
+```
+
+然后 `open-wsl` 就会使用 tmux 了。
+
 ## 切换发行版
 
 使用 `open-wsl -d distro` （在 `cmd.exe` 里运行）来切换发行版：
