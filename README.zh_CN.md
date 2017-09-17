@@ -6,84 +6,85 @@
 
 ![screenshot](https://raw.githubusercontent.com/wiki/goreliu/wsl-terminal/images/wsl-terminal-3.png)
 
-[更多截图](https://github.com/goreliu/wsl-terminal/wiki/Screenshots)
+查看[更多截图](https://github.com/goreliu/wsl-terminal/wiki/Screenshots)。
 
 ## 用法
 
-1. [Download here.](https://github.com/goreliu/wsl-terminal/releases)
+1. 从[这里](https://github.com/goreliu/wsl-terminal/releases)下载最新版本并解压。
 
-2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge)).
+2. 运行 `open-wsl.exe` 可以在当前打开一个 WSL 终端模拟器（当前目录需要在本地的 NTFS 分区上，[原因](https://github.com/rprichard/wslbridge)）。
 
-3. Run `tools/1-add-open-wsl-terminal-here-menu.js` ([help](https://github.com/goreliu/wsl-terminal#tools)) to add a `Open wsl-terminal Here` context menu to `explorer.exe` (Run `tools/1-remove-open-wsl-terminal-here-menu.js` to remove it). If you are using Total Commander, [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) may help you.
+3. 运行 `tools/1-add-open-wsl-terminal-here-menu.js` ([帮助](https://github.com/goreliu/wsl-terminal#tools)) 来添加一个 `Open wsl-terminal Here` 右键菜单到资源管理器上 (运行 `tools/1-remove-open-wsl-terminal-here-menu.js` 可以将其删除）。 如果你使用 Total Commander, 可以参考 [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) 。
 
-4. `run-wsl-file.exe` can run any `.sh` (and any others like `.py/.pl/.php`) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
+4. `run-wsl-file.exe` 可以在 wsl-terminal 里运行任何 `.sh` （以及任何其他的可执行文件，比如 `.py/.pl/.php` 文件) 脚本文件，你可以在文件打开方式里设置使用它来打开文件。
 
-5. `vim.exe` can open any files with vim (in wsl-terminal), support `Open With` context menu in explorer.exe. `vim.exe` can be renamed to `emacs.exe/nvim.exe/nano.exe/less.exe/...` to open files in `emacs/nvim/nano/less/...`.
+5. `vim.exe` 可以使用 WSL 中的 vim 打开任何文件 (在 wsl-terminal 中)，支持在打开方式中配置。如果你使用其他编辑器，可以把 `vim.exe` 重命名成  `emacs.exe/nvim.exe/nano.exe/less.exe/...` 等等。
 
 ## 快捷键
 
-`Alt + Enter`: Fullscreen
+`Alt + Enter`: 全屏
 
-`Alt + F2`: New window
+`Alt + F2`: 新建窗口
 
-`Alt + F3`: Search text
+`Alt + F3`: 搜索文本
 
-`Ctrl + [Shift] + Tab`: Switch window
+`Ctrl + [Shift] + Tab`: 切换窗口
 
-`Ctrl + =+/-/0`: Zoom
+`Ctrl + =+/-/0`: 缩放
 
-`Ctrl + Click`: Open URL or dir/file under the cursor
+`Ctrl + Click`: 打开光标处的文件、目录名或者网址
 
 ## 命令行参数
 
 ### open-wsl
 
 ```
-Usage: open-wsl [OPTION]...
-  -a: activate an existing wsl-terminal window.
-      if use_tmux=1, attach the running tmux session.
-  -l: start terminal in your home directory (doesn't work with tmux).
-  -c "command": run command.
-  -C dir: change directory to dir.
-  -d distro: switch distros.
-  -b "options": pass additional options to wslbridge.
-  -h: show help.
+用法: open-wsl [选项]...
+  -a: 激活在运行的 wsl-terminal 窗口。
+      如果 use_tmux=1，会 attach 到正在运行的 tmux 会话上。
+  -l: 运行一个 login shell（如果 use_tmux=1 则失效）。
+  -c "command": 运行 command 中的命令。
+  -C dir: 进入到 dir 目录中，dir 是 WSL 中的目录。
+  -d distro: 切换发行版。
+  -b "options": 传递额外的选项给 wslbridge。
+  -h: 显示帮助信息。
 ```
 
 ### cmdtool
 
 ```
-Usage: cmdtool [OPTION]...
-  update: check the latest wsl-terminal version, and upgrade it.
-  killall: kill all WSL processes.
-  install cbwin: install cbwin.
+用法: cmdtool [选项]...
+  update: 检查更新，如果有更新可以直接升级。
+  killall: 杀死所有的 WSL 进程。
+  install cbwin: 安装 cbwin。
 ```
 
-See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
+另外可以参考 [mintty 参数](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) 和 [wslbridge 参数](https://github.com/rprichard/wslbridge#usage)。
 
 ## 工具
 
-`tools/1-add-open-wsl-terminal-here-menu.js`: Add `Open wsl-terminal Here` context menu to `explorer.exe`.
+`tools/1-add-open-wsl-terminal-here-menu.js`: 添加 `Open wsl-terminal Here` 右键菜单到资源管理器上。
 
-`tools/1-remove-open-wsl-terminal-here-menu.js`: Remove `Open wsl-terminal Here` context menu.
+`tools/1-remove-open-wsl-terminal-here-menu.js`: 移除 `Open wsl-terminal Here` 右键菜单。
 
-`tools/2-add-wsl-terminal-dir-to-path.js`: Add `wsl-terminal` directory to `Path` environment variable.
+`tools/2-add-wsl-terminal-dir-to-path.js`: 将 `wsl-terminal` 目录添加到 `Path` 环境变量里。
 
-`tools/2-remove-wsl-terminal-dir-from-path.js`: Remove `wsl-terminal` directory from `Path` environment variable.
+`tools/2-remove-wsl-terminal-dir-from-path.js`: 从 `Path` 环境变量中移除 `wsl-terminal` 目录。
 
-`tools/3-write-distro-guids-to-config-file.js`: Write distro guids to `etc/wsl-terminal.conf`.
+`tools/3-write-distro-guids-to-config-file.js`: 将所有发行版的 guid 写入到配置文件 `etc/wsl-terminal.conf` 中.
 
-`tools/4-create-start-menu-shortcut.js`: Create a start menu shortcut to `open-wsl -C ~`.
+`tools/4-create-start-menu-shortcut.js`: 创建一个开始菜单快捷方式，指向 `open-wsl -C ~`。
 
-`tools/4-create-start-menu-shortcut-login-shell.js`: Create a start menu shortcut to `open-wsl -l`.
+`tools/4-create-start-menu-shortcut-login-shell.js`: 创建一个开始菜单快捷方式, 指向 `open-wsl -l`。
 
-`tools/4-remove-all-start-menu-shortcuts.js`: Remove all wsl-terminal start menu shortcuts.
+`tools/4-remove-all-start-menu-shortcuts.js`: 移除所有 wsl-terminal 的开始菜单快捷方式。
 
-Double click any `.js` files to run it. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript xxx.js`.
+双击 `.js` 文件即可运行。如果 `.js` 文件被某个编辑器关联上了，可以用修改打开方式为 `Microsoft (R) Windows Based Script Host`，或者在 `tools ` 目录运行一个 `cmd.exe`，然后用 `wscript xxx.js` 运行对应文件。
 
 ## 配置文件
 
-`etc/wsl-terminal.conf` is wsl-terminal config file.
+`etc/wsl-terminal.conf` 是 wsl-terminal 的配置文件：
+
 ```
 [config]
 title="my title"
@@ -93,40 +94,40 @@ use_tmux=0
 ;distro_guid=
 ```
 
-`etc/themes/*` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
+`etc/themes/` 目录下的是主题文件，[使用主题](https://github.com/goreliu/wsl-terminal/wiki/Use-themes)。
 
-`etc/minttyrc` is mintty config file, [mintty tips](https://github.com/mintty/mintty/wiki/Tips).
+`etc/minttyrc` 是 mintty 的配置文件， [mintty 帮助](https://github.com/mintty/mintty/wiki/Tips)。
 
 ## 升级
 
-Open `open-wsl.exe` in `wsl-terminal` directory, run `./cmdtool update` to check the latest wsl-terminal version and upgrade it. If the download speed is too slow, you can download `wsl-terminal-v{version}.7z` from [releases](https://github.com/goreliu/wsl-terminal/releases) with other tools, and put it into `wsl-terminal` directory, then run `./cmdtool update`.
+在 `wsl-terminal` 里打开 `open-wsl.exe`，然后运行 `./cmdtool update`  可以检查 wsl-terminal 的最新版本然后升级。如果下载速度过慢，可以先使用其他方法从[发布页面](https://github.com/goreliu/wsl-terminal/releases)下载 `wsl-terminal-v{version}.7z` 文件，然后将其放入到 `wsl-terminal` 目录，然后运行 `./cmdtool update`。
 
-`wget` and `7z` commands are needed (Ubuntu: `apt install wget p7zip-full`, Archlinux: `pacman -S wget p7zip`) .
+该工具依赖 `wget` 和 `7z` 命令（安装方法。Ubuntu: `apt install wget p7zip-full`, Archlinux: `pacman -S wget p7zip`）。
 
-Config files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` will be placed to `etc/wsl-terminal.conf.pacnew` and `etc/minttyrc.pacnew`. Some `.bak` files will be left in `bin`, because they are running, those files will be removed after the next upgrading.
+升级过程不会覆盖配置文件，`etc/wsl-terminal.conf` 和 `etc/minttyrc` 会被放置到 `etc/wsl-terminal.conf.pacnew` 和 `etc/minttyrc.pacnew`。升级后 `bin` 目录会残余一些 `.bak` 文件，因为这些文件还在运行，不能被删除。下一次升级时，会将之前的 `.bak` 文件全部删除，你也可以等那些进程退出后手删除那些文件。
 
 ## 切换发行版
 
-Use `open-wsl -d distro` to switch distros:
+使用 `open-wsl -d distro` （在 `cmd.exe` 里运行）来切换发行版：
 
 ```
-# list all distros
+# 列出所有发行版
 > wslconfig /l
-Legacy (Default)
+Legacy (默认)
 Ubuntu
 
-# use Ubuntu (will run wslconfig /s Ubuntu before mintty)
+# 使用 Ubuntu（会运行 wslconfig /s Ubuntu 然后打开 wsl-terminal）
 > open-wsl -d Ubuntu
 
-# Ubuntu is the default distro now
+# Ubuntu 已经是默认的发行版了
 > wslconfig /l
-Ubuntu (Default)
+Ubuntu (默认)
 Legacy
 ```
 
-Or set `distro_guid` in wsl-terminal.conf (Won't change the default distro).
+如果你不想修改默认的发行版，可以在 `etc/wsl-terminal.conf` 里设置 `distro_guid`：
 
-Run `tools/3-write-distro-guids-to-config-file.js` ([help](https://github.com/goreliu/wsl-terminal#tools)), then a msgbox will show the result:
+运行 `tools/3-write-distro-guids-to-config-file.js`（[帮助](https://github.com/goreliu/wsl-terminal#tools)），然后会有窗口弹出结果：
 
 ```
 result has been written to ..\etc\wsl-terminal.conf:
@@ -140,24 +141,26 @@ result has been written to ..\etc\wsl-terminal.conf:
 remove the ; before distro_guid to use the distro.
 ```
 
-If you want to pass the distro_guid to open-wsl in cmdline:
+可以去掉 distro_guid 前边的 ; 来使用对应的发行版。
+
+如果你想通过命令行将 distro_guid 传递给 `open-wsl`：
 
 ```
-# pass the distro guid to wslbridge
+# 将 distro guid 传递给 wslbridge
 > open-wsl -b "--distro-guid {47a89313-4300-4678-96ae-e53c41a79e03}"
 ```
 
 ## 链接
 
-[FAQ](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
+[常见问题](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
 
-[TODO](https://github.com/goreliu/wsl-terminal/wiki/TODO)
+[开发计划](https://github.com/goreliu/wsl-terminal/wiki/TODO)
 
 ## 编译
 
-Make sure `wget/tar/xz/gzip/p7zip` (Ubuntu: run `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: run `pacman -S wget tar xz gzip p7zip`) are installed in WSL.
+确保已经在 WSL 里安装了这些 `wget/tar/xz/gzip/p7zip` (安装方法。Ubuntu: `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: `pacman -S wget tar xz gzip p7zip`）。
 
-Run `build.bat`.
+运行 `build.bat`。
 
 ## 许可
 
