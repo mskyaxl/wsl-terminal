@@ -68,6 +68,8 @@ See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-par
 
 `tools/2-add-wsl-terminal-dir-to-path.js`: Add `wsl-terminal` directory to `Path` environment variable.
 
+`tools/2-remove-wsl-terminal-dir-from-path.js`: Remove `wsl-terminal` directory from `Path` environment variable.
+
 `tools/3-write-distro-guids-to-config-file.js`: Write distro guids to `etc/wsl-terminal.conf`.
 
 Double click any `.js` files to run it. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript xxx.js`.
