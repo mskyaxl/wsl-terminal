@@ -16,7 +16,7 @@
 
 2. 运行 `open-wsl.exe` 可以在当前打开一个 WSL 终端模拟器（当前目录需要在本地的 NTFS 分区上，[原因](https://github.com/rprichard/wslbridge)）。
 
-3. 运行 `tools/1-add-open-wsl-terminal-here-menu.js` ([帮助](https://github.com/goreliu/wsl-terminal#tools)) 来添加一个 `Open wsl-terminal Here` 右键菜单到资源管理器上 (运行 `tools/1-remove-open-wsl-terminal-here-menu.js` 可以将其删除）。 如果你使用 Total Commander, 可以参考 [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) 。
+3. 运行 `tools/1-add-open-wsl-terminal-here-menu.js` ([帮助](https://github.com/goreliu/wsl-terminal/blob/master/README.zh_CN.md#工具)) 来添加一个 `Open wsl-terminal Here` 右键菜单到资源管理器上 (运行 `tools/1-remove-open-wsl-terminal-here-menu.js` 可以将其删除）。 如果你使用 Total Commander, 可以参考 [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) 。
 
 4. `run-wsl-file.exe` 可以在 wsl-terminal 里运行任何 `.sh` （以及任何其他的可执行文件，比如 `.py/.pl/.php` 文件) 脚本文件，你可以在文件打开方式里设置使用它来打开文件。
 
@@ -153,7 +153,7 @@ Legacy
 
 如果你不想修改默认的发行版，可以在 `etc/wsl-terminal.conf` 里设置 `distro_guid`：
 
-运行 `tools/3-write-distro-guids-to-config-file.js`（[帮助](https://github.com/goreliu/wsl-terminal#tools)），然后会有窗口弹出结果：
+运行 `tools/3-write-distro-guids-to-config-file.js`（[帮助](https://github.com/goreliu/wsl-terminal/blob/master/README.zh_CN.md#工具)），然后会有窗口弹出结果：
 
 ```
 result has been written to ..\etc\wsl-terminal.conf:
