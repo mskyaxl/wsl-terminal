@@ -46,7 +46,8 @@
       如果 use_tmux=1，会 attach 到正在运行的 tmux 会话上。
   -l: 运行一个 login shell（如果 use_tmux=1 则失效）。
   -c "command": 运行 command 中的命令。
-  -C dir: 进入到 dir 目录中，dir 是 WSL 中的目录。
+  -C dir: 进入到 dir 目录中，WSL 目录（例如 /home/username）。
+  -W dir: 进入到 dir 目录中，Windows 目录（例如 c:\Users\username)。
   -d distro: 切换发行版。
   -b "options": 传递额外的选项给 wslbridge。
   -B "options": 传递额外的选项给 mintty。

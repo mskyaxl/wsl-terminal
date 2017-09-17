@@ -46,7 +46,8 @@ Usage: open-wsl [OPTION]...
       if use_tmux=1, attach the running tmux session.
   -l: start terminal in your home directory (doesn't work with tmux).
   -c "command": run command.
-  -C dir: change directory to dir.
+  -C dir: change directory to a WSL dir (e.g. /home/username).
+  -W dir: change directory to a Windows dir (e.g. c:\Users\username).
   -d distro: switch distros.
   -b "options": pass additional options to wslbridge.
   -B "options": pass additional options to mintty.
