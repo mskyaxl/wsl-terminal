@@ -49,8 +49,11 @@
   -C dir: 进入到 dir 目录中，dir 是 WSL 中的目录。
   -d distro: 切换发行版。
   -b "options": 传递额外的选项给 wslbridge。
+  -B "options": 传递额外的选项给 mintty。
   -h: 显示帮助信息。
 ```
+
+`-B` 和 `-b` 后可以添加的选项，请参考 [mintty 参数](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) 和 [wslbridge 参数](https://github.com/rprichard/wslbridge#usage)。
 
 ### cmdtool
 
@@ -60,8 +63,6 @@
   killall: 杀死所有的 WSL 进程。
   install cbwin: 安装 cbwin。
 ```
-
-另外可以参考 [mintty 参数](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) 和 [wslbridge 参数](https://github.com/rprichard/wslbridge#usage)。
 
 ## 工具
 

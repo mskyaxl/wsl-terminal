@@ -49,8 +49,11 @@ Usage: open-wsl [OPTION]...
   -C dir: change directory to dir.
   -d distro: switch distros.
   -b "options": pass additional options to wslbridge.
+  -B "options": pass additional options to mintty.
   -h: show help.
 ```
+
+`-B` and `-b`, see also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
 
 ### cmdtool
 
@@ -60,8 +63,6 @@ Usage: cmdtool [OPTION]...
   killall: kill all WSL processes.
   install cbwin: install cbwin.
 ```
-
-See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
 
 ## Tools
 

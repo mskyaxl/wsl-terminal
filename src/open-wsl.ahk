@@ -76,6 +76,7 @@ change_directory := ""
 distro := ""
 login_shell := False
 wslbridge_options := ""
+mintty_options := ""
 user_command := ""
 
 i := 0
@@ -106,6 +107,13 @@ while (i++ < argc) {
         }
 
         wslbridge_options := args[i]
+    } else if (c == "-B") {
+        if (argc < ++i) {
+            MsgBox, 0x10, , Require additional mintty options arg.
+            ExitApp, 1
+        }
+
+        mintty_options := args[i]
     } else if (c == "-c") {
         if (argc < ++i) {
             MsgBox, 0x10, , Require command arg.
@@ -124,6 +132,7 @@ while (i++ < argc) {
           -C dir: change directory to dir.
           -d distro: switch distros.
           -b "options": pass additional options to wslbridge.
+          -B "options": pass additional options to mintty.
           -h: show help.
         )
         MsgBox, %help%
@@ -136,7 +145,7 @@ if (user_command != "") {
         wslbridge_options = %wslbridge_options% -C "%change_directory%"
     }
 
-    Run, %mintty_base% -t "%user_command%" %wslbridge_base% %wslbridge_options% -t %shell% -c "%user_command%"
+    Run, %mintty_base% %mintty_options% -t "%user_command%" %wslbridge_base% %wslbridge_options% -t %shell% -c "%user_command%"
     ExitApp
 }
 
@@ -186,7 +195,7 @@ if (change_directory != "") {
 }
 
 if (cmd != "") {
-    Run, %mintty_base% -t "%title%" %wslbridge_base% %opts% %cmd%
+    Run, %mintty_base% %mintty_options% -t "%title%" %wslbridge_base% %opts% %cmd%
 }
 
 ; Activate window {{{1
