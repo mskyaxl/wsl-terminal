@@ -7,7 +7,6 @@ IniRead, title, %ini_file%, config, title, "        "
 IniRead, shell, %ini_file%, config, shell, "bash"
 IniRead, use_cbwin, %ini_file%, config, use_cbwin, 0
 IniRead, use_tmux, %ini_file%, config, use_tmux, 0
-IniRead, attach_tmux_locally, %ini_file%, config, attach_tmux_locally, 0
 IniRead, icon, %ini_file%, config, icon,
 IniRead, distro_guid, %ini_file%, config, distro_guid,
 
@@ -172,17 +171,9 @@ if (activate_window && WinExist(title)) {
         cmd =
         Run, "%bash_exe%" -c 'tmux new-window -c "$PWD"', , Hide
     } else if (activate_window) {
-        if (attach_tmux_locally) {
-            opts = %opts% -e USE_TMUX=1 -e ATTACH_ONLY=1
-        } else {
-            cmd = %shell% -c "tmux a 2>/dev/null && exit || cd && exec tmux"
-        }
+        opts = %opts% -e USE_TMUX=1 -e ATTACH_ONLY=1
     } else {
-        if (attach_tmux_locally) {
-            opts = %opts% -e USE_TMUX=1
-        } else {
-            cmd = %shell% -c 'tmux new-window -c "$PWD" \`; a 2>/dev/null || tmux'
-        }
+        opts = %opts% -e USE_TMUX=1
     }
 }
 
