@@ -1,6 +1,6 @@
 # wsl-terminal
 
-A terminal emulator for Windows Subsystem for Linux (WSL), includes [mintty](http://mintty.github.io/), [wslbridge](https://github.com/rprichard/wslbridge), and some other useful tools.
+A terminal emulator for Windows Subsystem for Linux (WSL), based on [mintty](http://mintty.github.io/) and [wslbridge](https://github.com/rprichard/wslbridge).
 
 ## Screenshot
 
