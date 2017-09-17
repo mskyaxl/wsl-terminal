@@ -40,7 +40,8 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 
 ```
 Usage: open-wsl [OPTION]...
-  -a: activate an existing wsl-terminal window, if use_tmux=1, attach the running tmux session.
+  -a: activate an existing wsl-terminal window.
+      if use_tmux=1, attach the running tmux session.
   -l: start terminal in your home directory (doesn't work with tmux).
   -c "command": run command.
   -C dir: change directory to dir.
