@@ -14,7 +14,7 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge)).
 
-3. Run `tools/add-open-wsl-terminal-here-menu.js` ([help](https://github.com/goreliu/wsl-terminal#tools)) to add a `Open wsl-terminal Here` context menu to `explorer.exe` (Run `tools/remove-open-wsl-terminal-here-menu.js` to remove it). If you are using Total Commander, [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) may help you.
+3. Run `tools/1-add-open-wsl-terminal-here-menu.js` ([help](https://github.com/goreliu/wsl-terminal#tools)) to add a `Open wsl-terminal Here` context menu to `explorer.exe` (Run `tools/1-remove-open-wsl-terminal-here-menu.js` to remove it). If you are using Total Commander, [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) may help you.
 
 4. `run-wsl-file.exe` can run any `.sh` (and any others like `.py/.pl/.php`) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
 
@@ -62,13 +62,13 @@ See also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-par
 
 ## Tools
 
-`tools/add-open-wsl-terminal-here-menu.js`: Add `Open wsl-terminal Here` context menu to `explorer.exe`.
+`tools/1-add-open-wsl-terminal-here-menu.js`: Add `Open wsl-terminal Here` context menu to `explorer.exe`.
 
-`tools/remove-open-wsl-terminal-here-menu.js`: Remove `Open wsl-terminal Here` context menu.
+`tools/1-add-wsl-terminal-dir-to-path.js`: Add `wsl-terminal` directory to `Path` environment variable.
 
-`tools/add-wsl-terminal-dir-to-path.js`: Add `wsl-terminal` directory to `Path` environment variable.
+`tools/2-remove-open-wsl-terminal-here-menu.js`: Remove `Open wsl-terminal Here` context menu.
 
-`tools/write-distro-guids-to-config-file.js`: Write distro guids to `etc/wsl-terminal.conf`.
+`tools/3-write-distro-guids-to-config-file.js`: Write distro guids to `etc/wsl-terminal.conf`.
 
 Double click any `.js` files to run it. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript xxx.js`.
 
@@ -117,7 +117,7 @@ Legacy
 
 Or set `distro_guid` in wsl-terminal.conf (Won't change the default distro).
 
-Run `tools/write-distro-guids-to-config-file.js` ([help](https://github.com/goreliu/wsl-terminal#tools)), then a msgbox will show the result:
+Run `tools/3-write-distro-guids-to-config-file.js` ([help](https://github.com/goreliu/wsl-terminal#tools)), then a msgbox will show the result:
 
 ```
 result has been written to ..\etc\wsl-terminal.conf:
