@@ -2,6 +2,8 @@
 
 用于 Windows Subsystem for Linux (WSL) 的终端模拟器，基于 [mintty](http://mintty.github.io/) 和 [wslbridge](https://github.com/rprichard/wslbridge)。
 
+[英文页面](https://goreliu.github.io/wsl-terminal/)
+
 ## 截图
 
 ![screenshot](https://raw.githubusercontent.com/wiki/goreliu/wsl-terminal/images/wsl-terminal-3.png)
