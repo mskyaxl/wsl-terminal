@@ -18,9 +18,9 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 
 3. Run `tools/1-add-open-wsl-terminal-here-menu.js` ([help](https://github.com/goreliu/wsl-terminal#tools)) to add a `Open wsl-terminal Here` context menu to `explorer.exe` (Run `tools/1-remove-open-wsl-terminal-here-menu.js` to remove it). If you are using Total Commander, [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) may help you.
 
-4. `run-wsl-file.exe` can run any `.sh` (and any others like `.py/.pl/.php`) script files in wsl-terminal, support `Open With` context menu in explorer.exe.
+4. `run-wsl-file.exe` can run any `.sh` (or any others like `.py` `.pl`) script files in wsl-terminal, support `Open With` context menu in `explorer.exe`.
 
-5. `vim.exe` can open any files with vim (in wsl-terminal), support `Open With` context menu in explorer.exe. `vim.exe` can be renamed to `emacs.exe/nvim.exe/nano.exe/less.exe/...` to open files in `emacs/nvim/nano/less/...`.
+5. `vim.exe` can open any files with vim (in wsl-terminal), support `Open With` context menu in `explorer.exe`. `vim.exe` can be renamed to `emacs.exe` `nvim.exe` `nano.exe` `...` to open files in `emacs` `nvim` `nano` `...`.
 
 ## Keyboard shortcuts
 
@@ -44,7 +44,7 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 Usage: open-wsl [OPTION]...
   -a: activate an existing wsl-terminal window.
       if use_tmux=1, attach the running tmux session.
-  -l: start terminal in your home directory (doesn't work with tmux).
+  -l: start a login shell (doesn't work with use_tmux=1).
   -c "command": run command.
   -C dir: change directory to a WSL dir (e.g. /home/username).
   -W dir: change directory to a Windows dir (e.g. c:\Users\username).
@@ -54,7 +54,7 @@ Usage: open-wsl [OPTION]...
   -h: show help.
 ```
 
-`-B` and `-b`, see also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
+For `-B` and `-b`, see also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
 
 ### cmdtool
 
@@ -67,21 +67,23 @@ Usage: cmdtool [OPTION]...
 
 ## Tools
 
-`tools/1-add-open-wsl-terminal-here-menu.js`: Add `Open wsl-terminal Here` context menu to `explorer.exe`.
+Files in `tools` directory:
 
-`tools/1-remove-open-wsl-terminal-here-menu.js`: Remove `Open wsl-terminal Here` context menu.
+`1-add-open-wsl-terminal-here-menu.js`: add `Open wsl-terminal Here` context menu to `explorer.exe`.
 
-`tools/2-add-wsl-terminal-dir-to-path.js`: Add `wsl-terminal` directory to `Path` environment variable.
+`1-remove-open-wsl-terminal-here-menu.js`: remove `Open wsl-terminal Here` context menu.
 
-`tools/2-remove-wsl-terminal-dir-from-path.js`: Remove `wsl-terminal` directory from `Path` environment variable.
+`2-add-wsl-terminal-dir-to-path.js`: add `wsl-terminal` directory to `Path` environment variable.
 
-`tools/3-write-distro-guids-to-config-file.js`: Write distro guids to `etc/wsl-terminal.conf`.
+`2-remove-wsl-terminal-dir-from-path.js`: remove `wsl-terminal` directory from `Path` environment variable.
 
-`tools/4-create-start-menu-shortcut.js`: Create a start menu shortcut to `open-wsl -C ~`.
+`3-write-distro-guids-to-config-file.js`: write distro guids to `etc/wsl-terminal.conf`.
 
-`tools/4-create-start-menu-shortcut-login-shell.js`: Create a start menu shortcut to `open-wsl -l`.
+`4-create-start-menu-shortcut.js`: create a start menu shortcut to `open-wsl -C ~`.
 
-`tools/4-remove-all-start-menu-shortcuts.js`: Remove all wsl-terminal start menu shortcuts.
+`4-create-start-menu-shortcut-login-shell.js`: create a start menu shortcut to `open-wsl -l`.
+
+`4-remove-all-start-menu-shortcuts.js`: remove all wsl-terminal start menu shortcuts.
 
 Double click any `.js` files to run it. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript xxx.js`.
 
@@ -181,7 +183,7 @@ If you want to pass the distro_guid to open-wsl in cmdline:
 
 ## Build
 
-Make sure `wget/tar/xz/gzip/p7zip` (Ubuntu: run `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: run `pacman -S wget tar xz gzip p7zip`) are installed in WSL.
+Make sure `wget` `tar` `xz` `gzip` `p7zip` (Ubuntu: run `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: run `pacman -S wget tar xz gzip p7zip`) are installed in WSL.
 
 Run `build.bat`.
 

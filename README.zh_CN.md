@@ -16,11 +16,11 @@
 
 2. 运行 `open-wsl.exe` 可以在当前打开一个 WSL 终端模拟器（当前目录需要在本地的 NTFS 分区上，[原因](https://github.com/rprichard/wslbridge)）。
 
-3. 运行 `tools/1-add-open-wsl-terminal-here-menu.js` ([帮助](https://github.com/goreliu/wsl-terminal/blob/master/README.zh_CN.md#工具)) 来添加一个 `Open wsl-terminal Here` 右键菜单到资源管理器上 (运行 `tools/1-remove-open-wsl-terminal-here-menu.js` 可以将其删除）。 如果你使用 Total Commander, 可以参考 [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) 。
+3. 运行 `tools/1-add-open-wsl-terminal-here-menu.js` ([帮助](https://github.com/goreliu/wsl-terminal/blob/master/README.zh_CN.md#工具)) 来添加一个 `Open wsl-terminal Here` 右键菜单到资源管理器上 (运行 `tools/1-remove-open-wsl-terminal-here-menu.js` 可以将其删除）。 如果你使用 Total Commander, 可以参考 [在 Total Commander 中使用 wsl-terminal](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) 。
 
-4. `run-wsl-file.exe` 可以在 wsl-terminal 里运行任何 `.sh` （以及任何其他的可执行文件，比如 `.py/.pl/.php` 文件) 脚本文件，你可以在文件打开方式里设置使用它来打开文件。
+4. `run-wsl-file.exe` 可以在 wsl-terminal 里运行任何 `.sh` （以及任何其他的可执行文件，比如 `.py` `.pl` 文件) 脚本文件，你可以在文件打开方式里设置使用它来打开文件。
 
-5. `vim.exe` 可以使用 WSL 中的 vim 打开任何文件 (在 wsl-terminal 中)，支持在打开方式中配置。如果你使用其他编辑器，可以把 `vim.exe` 重命名成  `emacs.exe/nvim.exe/nano.exe/less.exe/...` 等等。
+5. `vim.exe` 可以使用 WSL 中的 vim 打开任何文件 (在 wsl-terminal 中)，支持在打开方式中配置。如果你使用其他编辑器，可以把 `vim.exe` 重命名成  `emacs.exe` `nvim.exe`  `nano.exe` 等等，会调用对应的编辑器打开。
 
 ## 快捷键
 
@@ -67,23 +67,25 @@
 
 ## 工具
 
-`tools/1-add-open-wsl-terminal-here-menu.js`: 添加 `Open wsl-terminal Here` 右键菜单到资源管理器上。
+`tools` 目录下的工具：
 
-`tools/1-remove-open-wsl-terminal-here-menu.js`: 移除 `Open wsl-terminal Here` 右键菜单。
+`1-add-open-wsl-terminal-here-menu.js`: 添加 `Open wsl-terminal Here` 右键菜单到资源管理器上。
 
-`tools/2-add-wsl-terminal-dir-to-path.js`: 将 `wsl-terminal` 目录添加到 `Path` 环境变量里。
+`1-remove-open-wsl-terminal-here-menu.js`: 移除 `Open wsl-terminal Here` 右键菜单。
 
-`tools/2-remove-wsl-terminal-dir-from-path.js`: 从 `Path` 环境变量中移除 `wsl-terminal` 目录。
+`2-add-wsl-terminal-dir-to-path.js`: 将 `wsl-terminal` 目录添加到 `Path` 环境变量里。
 
-`tools/3-write-distro-guids-to-config-file.js`: 将所有发行版的 guid 写入到配置文件 `etc/wsl-terminal.conf` 中.
+`2-remove-wsl-terminal-dir-from-path.js`: 从 `Path` 环境变量中移除 `wsl-terminal` 目录。
 
-`tools/4-create-start-menu-shortcut.js`: 创建一个开始菜单快捷方式，指向 `open-wsl -C ~`。
+`3-write-distro-guids-to-config-file.js`: 将所有发行版的 guid 写入到配置文件 `etc/wsl-terminal.conf` 中。
 
-`tools/4-create-start-menu-shortcut-login-shell.js`: 创建一个开始菜单快捷方式, 指向 `open-wsl -l`。
+`4-create-start-menu-shortcut.js`: 创建一个开始菜单快捷方式，指向 `open-wsl -C ~`。
 
-`tools/4-remove-all-start-menu-shortcuts.js`: 移除所有 wsl-terminal 的开始菜单快捷方式。
+`4-create-start-menu-shortcut-login-shell.js`: 创建一个开始菜单快捷方式, 指向 `open-wsl -l`。
 
-双击 `.js` 文件即可运行。如果 `.js` 文件被某个编辑器关联上了，可以用修改打开方式为 `Microsoft (R) Windows Based Script Host`，或者在 `tools ` 目录运行一个 `cmd.exe`，然后用 `wscript xxx.js` 运行对应文件。
+`4-remove-all-start-menu-shortcuts.js`: 移除所有 wsl-terminal 的开始菜单快捷方式。
+
+双击 `.js` 文件即可运行。如果 `.js` 文件被某个编辑器关联上了，可以修改打开方式为 `Microsoft (R) Windows Based Script Host`，或者在 `tools ` 目录运行一个 `cmd.exe`，然后用 `wscript xxx.js` 运行对应文件。
 
 ## 配置文件
 
@@ -91,7 +93,7 @@
 
 ```
 [config]
-title="my title"
+title="窗口标题"
 shell=bash
 use_tmux=0
 ;icon=
@@ -186,7 +188,7 @@ remove the ; before distro_guid to use the distro.
 
 ## 编译
 
-确保已经在 WSL 里安装了这些 `wget/tar/xz/gzip/p7zip` (安装方法。Ubuntu: `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: `pacman -S wget tar xz gzip p7zip`）。
+确保已经在 WSL 里安装了这些 `wget` `tar` `xz` `gzip` `p7zip` (安装方法。Ubuntu: `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: `pacman -S wget tar xz gzip p7zip`）。
 
 运行 `build.bat`。
 
