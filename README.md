@@ -73,21 +73,16 @@ Usage: cmdtool [OPTION]...
 
 Files in `tools` directory:
 
-`1-add-open-wsl-terminal-here-menu.js`: add `Open wsl-terminal Here` context menu to `explorer.exe`.
-
-`1-remove-open-wsl-terminal-here-menu.js`: remove `Open wsl-terminal Here` context menu.
-
-`2-add-wsl-terminal-dir-to-path.js`: add `wsl-terminal` directory to `Path` environment variable.
-
-`2-remove-wsl-terminal-dir-from-path.js`: remove `wsl-terminal` directory from `Path` environment variable.
-
-`3-write-distro-guids-to-config-file.js`: write distro guids to `etc/wsl-terminal.conf`.
-
-`4-create-start-menu-shortcut.js`: create a start menu shortcut to `open-wsl -C ~`.
-
-`4-create-start-menu-shortcut-login-shell.js`: create a start menu shortcut to `open-wsl -l`.
-
-`4-remove-all-start-menu-shortcuts.js`: remove all wsl-terminal start menu shortcuts.
+| filename                                 | function                                 |
+| ---------------------------------------- | ---------------------------------------- |
+| 1-add-open-wsl-terminal-here-menu.js     | Add `Open wsl-terminal Here` context menu to `explorer.exe`. |
+| 1-remove-open-wsl-terminal-here-menu.js  | Remove `Open wsl-terminal Here` context menu. |
+| 2-add-wsl-terminal-dir-to-path.js        | Add `wsl-terminal` directory to `Path` environment variable. |
+| 2-remove-wsl-terminal-dir-from-path.js   | Remove `wsl-terminal` directory from `Path` environment variable. |
+| 3-write-distro-guids-to-config-file.js   | Write distro guids to `etc/wsl-terminal.conf`. |
+| 4-create-start-menu-shortcut.js          | Create a start menu shortcut to `open-wsl -C ~`. |
+| 4-create-start-menu-shortcut-login-shell.js | Create a start menu shortcut to `open-wsl -l`. |
+| 4-remove-all-start-menu-shortcuts.js     | Remove all wsl-terminal start menu shortcuts. |
 
 Double click any `.js` files to run it. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript xxx.js`.
 
