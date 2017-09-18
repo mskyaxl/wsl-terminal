@@ -128,6 +128,18 @@ while (i++ < argc) {
         }
 
         user_command := args[i]
+    } else if (c == "-e") {
+        if (argc < ++i) {
+            MsgBox, 0x10, , Require command arg.
+            ExitApp, 1
+        }
+
+        user_command := shell " -c """ args[i]
+        while (++i <= argc) {
+            user_command .= " " args[i]
+        }
+        user_command .= """"
+        StringReplace, user_command, user_command, `", `\`", All
     } else if (c == "-h") {
         help =
         (
@@ -135,7 +147,8 @@ while (i++ < argc) {
           -a: activate an existing wsl-terminal window.
               if use_tmux=1, attach the running tmux session.
           -l: start terminal in your home directory (doesn't work with tmux).
-          -c "command": run command.
+          -c "command": run command (e.g. -c "echo a b; echo c; cat").
+          -e commands: run commands (e.g. -e echo a b; echo c; cat).
           -C dir: change directory to a WSL dir (e.g. /home/username).
           -W dir: change directory to a Windows dir (e.g. c:\Users\username).
           -d distro: switch distros.

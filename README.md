@@ -42,7 +42,8 @@ Usage: open-wsl [OPTION]...
   -a: activate an existing wsl-terminal window.
       if use_tmux=1, attach the running tmux session.
   -l: start a login shell (doesn't work with use_tmux=1).
-  -c "command": run command.
+  -c command: run command (e.g. -c "echo a b; echo c; cat").
+  -e commands: run commands (e.g. -e echo a b; echo c; cat).
   -C dir: change directory to a WSL dir (e.g. /home/username).
   -W dir: change directory to a Windows dir (e.g. c:\Users\username).
   -d distro: switch distros.
