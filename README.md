@@ -24,17 +24,14 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 
 ## Keyboard shortcuts
 
-`Alt + Enter`: Fullscreen
-
-`Alt + F2`: New window
-
-`Alt + F3`: Search text
-
-`Ctrl + [Shift] + Tab`: Switch window
-
-`Ctrl + =+/-/0`: Zoom
-
-`Ctrl + Click`: Open URL or dir/file under the cursor
+| key                        | function                              |
+| -------------------------- | ------------------------------------- |
+| `Alt` + `Enter`            | Fullscreen                            |
+| `Alt` + `F2`               | New window                            |
+| `Alt` + `F3`               | Search text                           |
+| `Ctrl` + `[Shift]` + `Tab` | Switch window                         |
+| `Ctrl` + `=` `+` `-` `0`   | Zoom                                  |
+| `Ctrl` + `Click`           | Open URL or dir/file under the cursor |
 
 ## Params
 
