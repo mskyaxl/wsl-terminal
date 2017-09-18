@@ -14,7 +14,7 @@
 
 1. 从[这里](https://github.com/goreliu/wsl-terminal/releases)下载最新版本并解压。
 
-2. 运行 `open-wsl.exe` 可以在当前打开一个 WSL 终端模拟器（当前目录需要在本地的 NTFS 分区上，[原因](https://github.com/rprichard/wslbridge)）。
+2. 运行 `open-wsl.exe` 可以在当前目录打开一个 WSL 终端模拟器（wsl-terminal 需要放置在本地的 NTFS 分区上，[原因](https://github.com/rprichard/wslbridge#building-wslbridge)）。
 
 3. 运行 `tools/1-add-open-wsl-terminal-here-menu.js` ([帮助](https://github.com/goreliu/wsl-terminal/blob/master/README.zh_CN.md#工具)) 来添加一个 `Open wsl-terminal Here` 右键菜单到资源管理器上 (运行 `tools/1-remove-open-wsl-terminal-here-menu.js` 可以将其删除）。 如果你使用 Total Commander, 可以参考 [在 Total Commander 中使用 wsl-terminal](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) 。
 
