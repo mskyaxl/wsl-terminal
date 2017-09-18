@@ -56,7 +56,7 @@ Usage: open-wsl [OPTION]...
 
 For `-B` and `-b`, see also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
 
-### cmdtool
+### cmdtool (run it in WSL)
 
 ```
 Usage: cmdtool [OPTION]...

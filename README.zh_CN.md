@@ -56,7 +56,7 @@
 
 `-B` 和 `-b` 后可以添加的选项，请参考 [mintty 参数](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) 和 [wslbridge 参数](https://github.com/rprichard/wslbridge#usage)。
 
-### cmdtool
+### cmdtool（在 WSL 中运行）
 
 ```
 用法: cmdtool [选项]...
