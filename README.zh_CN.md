@@ -181,7 +181,11 @@ remove the ; before distro_guid to use the distro.
 
 [常见问题](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
 
-[开发计划](https://github.com/goreliu/wsl-terminal/wiki/TODO)
+[反馈建议](https://github.com/goreliu/wsl-terminal/issues)
+
+[发布页面](https://github.com/goreliu/wsl-terminal/releases)
+
+[文档帮助](https://github.com/goreliu/wsl-terminal/wiki)
 
 ## 编译
 

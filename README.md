@@ -176,7 +176,11 @@ If you want to pass the distro_guid to open-wsl in cmdline:
 
 [FAQ](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
 
-[TODO](https://github.com/goreliu/wsl-terminal/wiki/TODO)
+[Issues](https://github.com/goreliu/wsl-terminal/issues)
+
+[Releases](https://github.com/goreliu/wsl-terminal/releases)
+
+[Wiki](https://github.com/goreliu/wsl-terminal/wiki)
 
 ## Build
 
