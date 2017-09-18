@@ -60,9 +60,13 @@ For `-B` and `-b`, see also [mintty params](https://github.com/goreliu/wsl-termi
 
 ```
 Usage: cmdtool [OPTION]...
+  wcmd: run Windows programs with cmd.exe /c.
+  wstart: run Windows programs with cmd.exe /c start.
   update: check the latest wsl-terminal version, and upgrade it.
   killall: kill all WSL processes.
   install cbwin: install cbwin.
+  install dash: install Cygwin dash (for debugging).
+  install busybox: install Cygwin busybox (for debugging).
 ```
 
 ## Tools

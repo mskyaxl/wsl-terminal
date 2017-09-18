@@ -60,9 +60,13 @@
 
 ```
 用法: cmdtool [选项]...
+  wcmd: 使用 cmd.exe /c 运行 Windows 程序。
+  wstart: 使用 cmd.exe /c start 运行 Windows 程序。
   update: 检查更新，如果有更新可以直接升级。
   killall: 杀死所有的 WSL 进程。
   install cbwin: 安装 cbwin。
+  install dash: 安装 Cygwin 中的 dash（用于调试）。
+  install busybox: 安装 Cygwin 中的 busybox（用于调试）。
 ```
 
 ## 工具

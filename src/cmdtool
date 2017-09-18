@@ -6,18 +6,26 @@ cd "$(dirname $0)"
 
 [[ $# == 0 || "$1" == "-h" || "$1" == "--help" ]] && {
     echo -e "Usage: $0 [OPTION]..."\
+        "\n  wcmd: run Windows programs with cmd.exe /c."\
+        "\n  wstart: run Windows programs with cmd.exe /c start."\
         "\n  update: check the latest wsl-terminal version, and upgrade it."\
         "\n  killall: kill all WSL process."\
         "\n  install cbwin: install cbwin."\
-        "\n  install dash: install dash (for debugging)."\
-        "\n  install busybox: install busybox (for debugging)."
+        "\n  install dash: install Cygwin dash (for debugging)."\
+        "\n  install busybox: install Cygwin busybox (for debugging)."
 
     exit
 }
 
 op=$1
 
-if [[ "$1" == update ]]; then
+if [[ "$1" == wcmd ]]; then
+    shift
+    exec /init /mnt/c/Windows/System32/cmd.exe /c "$@"
+elif [[ "$1" == wstart ]]; then
+    shift
+    exec /init /mnt/c/Windows/System32/cmd.exe /c start "" "$@"
+elif [[ "$1" == update ]]; then
     version=$(cat VERSION)
     echo Checking the latest version ...
     latest_version=$(wget https://raw.githubusercontent.com/goreliu/wsl-terminal/master/VERSION -O -)
