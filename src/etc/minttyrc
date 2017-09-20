@@ -1,5 +1,5 @@
 BoldAsFont=-1
-FontHeight=14
+FontHeight=13
 Font=Consolas
 Scrollbar=none
 Term=xterm-256color
