@@ -12,7 +12,7 @@
 
 ## 用法
 
-1. 从[这里](https://github.com/goreliu/wsl-terminal/releases)下载最新版本并解压。
+1. 从[这里](https://github.com/goreliu/wsl-terminal/releases)下载最新版本并解压，或者在 `cmd.exe` 或 WSL 里运行 `bash -c "wget https://github.com/goreliu/wsl-terminal/releases/download/v0.8.1/wsl-terminal-0.8.1.7z && 7z x wsl-terminal-0.8.1.7z"`。
 
 2. 运行 `open-wsl.exe` 可以在当前目录打开一个 WSL 终端模拟器（wsl-terminal 需要放置在本地的 NTFS 分区上，[原因](https://github.com/rprichard/wslbridge#building-wslbridge)）。
 
