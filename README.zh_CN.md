@@ -33,6 +33,8 @@
 | `Ctrl` + `=` `+` `-` `0`   | 缩放               |
 | `Ctrl` + `Click`           | 打开光标处的文件、目录名或者网址 |
 
+[将 wsl-terminal 绑定到快捷键](https://github.com/goreliu/wsl-terminal/wiki/Bind-wsl-terminal-to-a-hotkey)。
+
 ## 命令行参数
 
 ### open-wsl

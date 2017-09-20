@@ -33,6 +33,8 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 | `Ctrl` + `=` `+` `-` `0`   | Zoom                                  |
 | `Ctrl` + `Click`           | Open URL or dir/file under the cursor |
 
+[Bind wsl-terminal to a hotkey](https://github.com/goreliu/wsl-terminal/wiki/Bind-wsl-terminal-to-a-hotkey).
+
 ## Params
 
 ### open-wsl
