@@ -8,6 +8,7 @@ cd "$(dirname $0)"
     echo -e "Usage: $0 [OPTION]..."\
         "\n  wcmd: run Windows programs with cmd.exe /c."\
         "\n  wstart: run Windows programs with cmd.exe /c start."\
+        "\n  wpath [dir]: print Windows path of dir or current dir."\
         "\n  update: check the latest wsl-terminal version, and upgrade it."\
         "\n  killall: kill all WSL process."\
         "\n  install cbwin: install cbwin."\
@@ -25,6 +26,17 @@ if [[ "$1" == wcmd ]]; then
 elif [[ "$1" == wstart ]]; then
     shift
     exec /init /mnt/c/Windows/System32/cmd.exe /c start "" "$@"
+elif [[ "$1" == wpath ]]; then
+    if [[ -n "$2" ]]; then
+        wpath="$2"
+    else
+        wpath="$PWD"
+    fi
+
+    if [[ "$wpath" == /mnt/* ]]; then
+        wpath=${wpath:5:1}:${wpath:6}
+        echo ${wpath//\//\\}
+    fi
 elif [[ "$1" == update ]]; then
     version=$(cat VERSION)
     echo Checking the latest version ...
