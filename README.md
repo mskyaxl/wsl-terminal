@@ -84,6 +84,8 @@ Files in `tools` directory:
 | 4-create-start-menu-shortcut.js          | Create a start menu shortcut to `open-wsl -C ~`. |
 | 4-create-start-menu-shortcut-login-shell.js | Create a start menu shortcut to `open-wsl -l`. |
 | 4-remove-all-start-menu-shortcuts.js     | Remove all wsl-terminal start menu shortcuts. |
+| 5-add-open-with-vim-menu.js              | Add `Open with vim in wsl-terminal` context menu. |
+| 5-remove-open-with-vim-menu.js           | Remove `Open with vim in wsl-terminal` context menu. |
 
 Double click any `.js` files to run it. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript xxx.js`.
 
