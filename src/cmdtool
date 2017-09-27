@@ -59,9 +59,9 @@ elif [[ "$1" == update ]]; then
     fi
 
     rm -rf wsl-terminal
-    7z x $filename || {
+    7z x "$filename" || {
         echo "$filename is broken, try again."
-        rm -v $filename
+        rm -v "$filename"
         exit 1
     }
 
@@ -74,8 +74,8 @@ elif [[ "$1" == update ]]; then
 
     cd wsl-terminal/bin
     for i in *; do
-        mv ../../bin/$i ../../bin/$i.$$.bak
-        mv -v $i ../../bin/$i
+        mv "../../bin/$i" "../../bin/$i.$$.bak"
+        mv -v "$i" "../../bin/$i"
         rm -f ../../bin/*.bak 2>/dev/null || true
     done
     cd ../..
@@ -85,7 +85,7 @@ elif [[ "$1" == update ]]; then
     mv -v wsl-terminal/{*.*,cmdtool,VERSION} .
 
     rm -rf wsl-terminal
-    rm $filename
+    rm "$filename"
     echo OK
     exit
 elif [[ "$1" == "killall" ]]; then
