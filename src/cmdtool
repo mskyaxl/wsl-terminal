@@ -2,7 +2,7 @@
 
 set -e
 
-cd "$(dirname $0)"
+cd "$(dirname "$0")"
 
 [[ $# == 0 || "$1" == "-h" || "$1" == "--help" ]] && {
     echo -e "Usage: $0 [OPTION]..."\
