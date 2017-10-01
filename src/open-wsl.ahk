@@ -39,7 +39,7 @@ if (exe_name == "run-wsl-file") {
 
     Run, %mintty_base% -t "%arg%" %wslbridge_base% -t ./"%filename%"
     ExitApp
-} else if (exe_name != "open-wsl") {
+} else if (exe_name != "open-wsl" && exe_name != "cmd") {
     argc = %0%
     filepath := ""
     filename := ""
