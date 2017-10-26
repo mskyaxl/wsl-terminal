@@ -32,6 +32,7 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 | `Ctrl` + `[Shift]` + `Tab` | Switch window                         |
 | `Ctrl` + `=` `+` `-` `0`   | Zoom                                  |
 | `Ctrl` + `Click`           | Open URL or dir/file under the cursor |
+| `Ctrl` + `Right Click`     | Open context menu                     |
 
 [Bind wsl-terminal to a hotkey](https://github.com/goreliu/wsl-terminal/wiki/Bind-wsl-terminal-to-a-hotkey).
 
