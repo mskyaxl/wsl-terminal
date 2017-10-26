@@ -24,14 +24,15 @@
 
 ## 快捷键
 
-| 按键                         | 功能               |
+| 按键                       | 功能               |
 | -------------------------- | ---------------- |
 | `Alt` + `Enter`            | 全屏               |
 | `Alt` + `F2`               | 新建窗口             |
 | `Alt` + `F3`               | 搜索文本             |
 | `Ctrl` + `[Shift]` + `Tab` | 切换窗口             |
 | `Ctrl` + `=` `+` `-` `0`   | 缩放               |
-| `Ctrl` + `Click`           | 打开光标处的文件、目录名或者网址 |
+| `Ctrl` + `鼠标左键`         | 打开光标处的文件、目录名或者网址 |
+| `Ctrl` + `鼠标右键`         | 打开右键菜单                |
 
 [将 wsl-terminal 绑定到快捷键](https://github.com/goreliu/wsl-terminal/wiki/Bind-wsl-terminal-to-a-hotkey)。
 
