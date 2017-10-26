@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cygwin_version="2.9.0-3"
-mintty_version="2.7.9-0"
+mintty_version="2.8.0-0"
 wslbridge_version="0.2.4"
 
 set -e
