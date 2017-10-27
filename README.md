@@ -96,7 +96,7 @@ Double click any `.js` files to run it. If it was open by any editor, open it wi
 ```
 [config]
 title="my title"
-shell=bash
+shell=/bin/bash
 use_tmux=0
 ;icon=
 ;distro_guid=
@@ -118,7 +118,7 @@ Config files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` wil
 
 1. Install tmux in WSL.
 2. Set `use_tmux=1` in `etc/wsl-terminal.conf`. And set `attach_tmux_locally=1` if the version number is less than `0.8.1`.
-3. Add these lines to `~/.bashrc` (`shell=bash` in config) or `~/.zshrc` (`shell=zsh` in config):
+3. Add these lines to `~/.bashrc` (`shell=/bin/bash` in config) or `~/.zshrc` (`shell=/bin/zsh` in config):
 
 ```
 [[ -z "$TMUX" && -n "$USE_TMUX" ]] && {

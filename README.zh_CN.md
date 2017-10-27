@@ -24,15 +24,15 @@
 
 ## 快捷键
 
-| 按键                       | 功能               |
-| -------------------------- | ---------------- |
-| `Alt` + `Enter`            | 全屏               |
-| `Alt` + `F2`               | 新建窗口             |
-| `Alt` + `F3`               | 搜索文本             |
-| `Ctrl` + `[Shift]` + `Tab` | 切换窗口             |
-| `Ctrl` + `=` `+` `-` `0`   | 缩放               |
-| `Ctrl` + `鼠标左键`         | 打开光标处的文件、目录名或者网址 |
-| `Ctrl` + `鼠标右键`         | 打开右键菜单                |
+| 按键                       | 功能                             |
+| -------------------------- | -------------------------------- |
+| `Alt` + `Enter`            | 全屏                             |
+| `Alt` + `F2`               | 新建窗口                         |
+| `Alt` + `F3`               | 搜索文本                         |
+| `Ctrl` + `[Shift]` + `Tab` | 切换窗口                         |
+| `Ctrl` + `=` `+` `-` `0`   | 缩放                             |
+| `Ctrl` + `鼠标左键`        | 打开光标处的文件、目录名或者网址 |
+| `Ctrl` + `鼠标右键`        | 打开右键菜单                     |
 
 [将 wsl-terminal 绑定到快捷键](https://github.com/goreliu/wsl-terminal/wiki/Bind-wsl-terminal-to-a-hotkey)。
 
@@ -97,7 +97,7 @@
 ```
 [config]
 title="窗口标题"
-shell=bash
+shell=/bin/bash
 use_tmux=0
 ;icon=
 ;distro_guid=
@@ -119,9 +119,9 @@ use_tmux=0
 
 1. 在 WSL 里安装 tmux。
 
-2. 在 `etc/wsl-terminal.conf` 中设置 `use_tmux=1`。如果版本号低于 `0.8.1`，还需要添加 `attach_tmux_locally=1` 。
+2. 在 `etc/wsl-terminal.conf` 中设置 `use_tmux=1`。如果版本号低于 `0.8.1`，还需要添加 `attach_tmux_locally=1`。
 
-3. 添加如下代码到 `~/.bashrc`（如果配置的是 `shell=bash`）或者 `~/.zshrc`（如果配置的是 `shell=zsh`）：
+3. 添加如下代码到 `~/.bashrc`（如果配置的是 `shell=/bin/bash`）或者 `~/.zshrc`（如果配置的是 `shell=/bin/zsh`）：
 
 ```
 [[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
