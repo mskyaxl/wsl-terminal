@@ -44,7 +44,7 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 Usage: open-wsl [OPTION]...
   -a: activate an existing wsl-terminal window.
       if use_tmux=1, attach the running tmux session.
-  -l: start a login shell (doesn't work with use_tmux=1).
+  -l: start a login shell and cd to $HOME (doesn't work with use_tmux=1).
   -c command: run command (e.g. -c "echo a b; echo c; cat").
   -e commands: run commands (e.g. -e echo a b; echo c; cat).
   -C dir: change directory to a WSL dir (e.g. /home/username).
@@ -88,7 +88,7 @@ Files in `tools` directory:
 | 5-add-open-with-vim-menu.js              | Add `Open with vim in wsl-terminal` context menu. |
 | 5-remove-open-with-vim-menu.js           | Remove `Open with vim in wsl-terminal` context menu. |
 
-Double click any `.js` files to run it. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript xxx.js`.
+Double click any `.js` file to run it. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript xxx.js`.
 
 ## Configuration files
 
