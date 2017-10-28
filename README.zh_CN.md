@@ -44,7 +44,7 @@
 用法: open-wsl [选项]...
   -a: 激活在运行的 wsl-terminal 窗口。
       如果 use_tmux=1，会 attach 到正在运行的 tmux 会话上。
-  -l: 运行一个 login shell（如果 use_tmux=1 则失效）。
+  -l: 运行一个 login shell 并且切换到家目录（如果 use_tmux=1 则失效）。
   -c command: 运行命令 (例如 -c "echo a b; echo c; cat")。
   -e commands: 运行后边的所有命令 (例如 -e echo a b; echo c; cat)。
   -C dir: 进入到 dir 目录中，WSL 目录（例如 /home/username）。
