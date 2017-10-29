@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cygwin_version="$(curl http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/cygwin/md5.sum \
+cygwin_version="$(curl http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/cygwin/sha512.sum \
     2>/dev/null | grep -Po '\d\.\d\.\d-\d' | tail -n 1)"
 
-mintty_version="$(curl http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/mintty/md5.sum \
+mintty_version="$(curl http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/mintty/sha512.sum \
     2>/dev/null | grep -Po '\d\.\d\.\d-\d' | tail -n 1)"
 
 wslbridge_version="$(curl https://github.com/rprichard/wslbridge/releases \
