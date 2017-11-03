@@ -1095,6 +1095,16 @@ msgstr "▶"
 msgid "Leading: %d, Bold: %s, Underline: %s"
 msgstr "行间距：%d，粗体：%s，下划线：%s"
 
+#. __ Options - Text: font properties: value taken from font
+#: wintext.c:131
+msgid "font"
+msgstr "字体"
+
+#. __ Options - Text: font properties: value affected by option
+#: wintext.c:133
+msgid "manual"
+msgstr "手动"
+
 #: wintext.c:371
 msgid "Font not found, using system substitute"
 msgstr "找不到字体，使用系统字体替代"
