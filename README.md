@@ -75,18 +75,19 @@ Usage: cmdtool [OPTION]...
 
 Files in `tools` directory:
 
-| filename                                 | function                                 |
-| ---------------------------------------- | ---------------------------------------- |
-| 1-add-open-wsl-terminal-here-menu.js     | Add `Open wsl-terminal Here` context menu to `explorer.exe`. |
-| 1-remove-open-wsl-terminal-here-menu.js  | Remove `Open wsl-terminal Here` context menu. |
-| 2-add-wsl-terminal-dir-to-path.js        | Add `wsl-terminal` directory to `Path` environment variable. |
-| 2-remove-wsl-terminal-dir-from-path.js   | Remove `wsl-terminal` directory from `Path` environment variable. |
-| 3-write-distro-guids-to-config-file.js   | Write distro guids to `etc/wsl-terminal.conf`. |
-| 4-create-start-menu-shortcut.js          | Create a start menu shortcut to `open-wsl -C ~`. |
-| 4-create-start-menu-shortcut-login-shell.js | Create a start menu shortcut to `open-wsl -l`. |
-| 4-remove-all-start-menu-shortcuts.js     | Remove all wsl-terminal start menu shortcuts. |
-| 5-add-open-with-vim-menu.js              | Add `Open with vim in wsl-terminal` context menu. |
-| 5-remove-open-with-vim-menu.js           | Remove `Open with vim in wsl-terminal` context menu. |
+| filename                                    | function                                                            |
+| ------------------------------------------- | ------------------------------------------------------------------- |
+| 1-add-open-wsl-terminal-here-menu.js        | Add `Open wsl-terminal Here` context menu to `explorer.exe`.        |
+| 1-remove-open-wsl-terminal-here-menu.js     | Remove `Open wsl-terminal Here` context menu.                       |
+| 2-add-wsl-terminal-dir-to-path.js           | Add `wsl-terminal` directory to `Path` environment variable.        |
+| 2-remove-wsl-terminal-dir-from-path.js      | Remove `wsl-terminal` directory from `Path` environment variable.   |
+| 3-write-distro-guids-to-config-file.js      | Write distro guids to `etc/wsl-terminal.conf`.                      |
+| 4-create-start-menu-shortcut.js             | Create a start menu shortcut to `open-wsl -C ~`.                    |
+| 4-create-start-menu-shortcut-login-shell.js | Create a start menu shortcut to `open-wsl -l`.                      |
+| 4-remove-all-start-menu-shortcuts.js        | Remove all wsl-terminal start menu shortcuts.                       |
+| 5-add-open-with-vim-menu.js                 | Add `Open with vim in wsl-terminal` context menu.                   |
+| 5-remove-open-with-vim-menu.js              | Remove `Open with vim in wsl-terminal` context menu.                |
+| 6-set-default-shell.bat                     | Set `shell` in `etc/wsl-terminal.conf` to the default shell in WSL. |
 
 Double click any `.js` file to run it. If it was open by any editor, open it with `Microsoft (R) Windows Based Script Host`, or open a `cmd.exe` in `tools` directory and run `wscript xxx.js`.
 

@@ -75,18 +75,19 @@
 
 `tools` 目录下的工具：
 
-| 文件名                                      | 功能                                       |
-| ---------------------------------------- | ---------------------------------------- |
-| 1-add-open-wsl-terminal-here-menu.js     | 添加 `Open wsl-terminal Here` 右键菜单到资源管理器上。 |
-| 1-remove-open-wsl-terminal-here-menu.js  | 移除 `Open wsl-terminal Here` 右键菜单。        |
-| 2-add-wsl-terminal-dir-to-path.js        | 将 `wsl-terminal` 目录添加到 `Path` 环境变量里。     |
-| 2-remove-wsl-terminal-dir-from-path.js   | 从 `Path` 环境变量中移除 `wsl-terminal` 目录。      |
-| 3-write-distro-guids-to-config-file.js   | 将所有发行版的 guid 写入到配置文件 `etc/wsl-terminal.conf` 中。 |
-| 4-create-start-menu-shortcut.js          | 创建一个开始菜单快捷方式，指向 `open-wsl -C ~`。         |
-| 4-create-start-menu-shortcut-login-shell.js | 创建一个开始菜单快捷方式，指向 `open-wsl -l`。           |
-| 4-remove-all-start-menu-shortcuts.js     | 移除所有 wsl-terminal 的开始菜单快捷方式。             |
-| 5-add-open-with-vim-menu.js              | 添加 `Open with vim in wsl-terminal` 右键菜单到资源管理器上。 |
-| 5-remove-open-with-vim-menu.js           | 移除 `Open with vim in wsl-terminal` 右键菜单。 |
+| 文件名                                      | 功能                                                              |
+| ------------------------------------------- | ----------------------------------------------------------------- |
+| 1-add-open-wsl-terminal-here-menu.js        | 添加 `Open wsl-terminal Here` 右键菜单到资源管理器上。            |
+| 1-remove-open-wsl-terminal-here-menu.js     | 移除 `Open wsl-terminal Here` 右键菜单。                          |
+| 2-add-wsl-terminal-dir-to-path.js           | 将 `wsl-terminal` 目录添加到 `Path` 环境变量里。                  |
+| 2-remove-wsl-terminal-dir-from-path.js      | 从 `Path` 环境变量中移除 `wsl-terminal` 目录。                    |
+| 3-write-distro-guids-to-config-file.js      | 将所有发行版的 guid 写入到配置文件 `etc/wsl-terminal.conf` 中。   |
+| 4-create-start-menu-shortcut.js             | 创建一个开始菜单快捷方式，指向 `open-wsl -C ~`。                  |
+| 4-create-start-menu-shortcut-login-shell.js | 创建一个开始菜单快捷方式，指向 `open-wsl -l`。                    |
+| 4-remove-all-start-menu-shortcuts.js        | 移除所有 wsl-terminal 的开始菜单快捷方式。                        |
+| 5-add-open-with-vim-menu.js                 | 添加 `Open with vim in wsl-terminal` 右键菜单到资源管理器上。     |
+| 5-remove-open-with-vim-menu.js              | 移除 `Open with vim in wsl-terminal` 右键菜单。                   |
+| 6-set-default-shell.bat                     | 设置 `etc/wsl-terminal.conf` 中的 `shell` 为 WSL 中用户的 shell。 |
 
 双击 `.js` 文件即可运行。如果 `.js` 文件被某个编辑器关联上了，可以修改打开方式为 `Microsoft (R) Windows Based Script Host`，或者在 `tools ` 目录运行一个 `cmd.exe`，然后用 `wscript xxx.js` 运行对应文件。
 
