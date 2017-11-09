@@ -7,8 +7,13 @@ IniRead, title, %ini_file%, config, title, "        "
 IniRead, shell, %ini_file%, config, shell, "bash"
 IniRead, use_cbwin, %ini_file%, config, use_cbwin, 0
 IniRead, use_tmux, %ini_file%, config, use_tmux, 0
+IniRead, mintty_options, %ini_file%, config, mintty_options,
 IniRead, icon, %ini_file%, config, icon,
 IniRead, distro_guid, %ini_file%, config, distro_guid,
+
+if (mintty_options == "ERROR") {
+    mintty_options =
+}
 
 ; Prepare mintty_base and wslbridge_base {{{1
 icon_option = -i "%A_ScriptFullPath%"
@@ -76,7 +81,6 @@ change_directory := ""
 distro := ""
 login_shell := False
 wslbridge_options := ""
-mintty_options := ""
 user_command := ""
 
 i := 0
@@ -120,7 +124,7 @@ while (i++ < argc) {
             ExitApp, 1
         }
 
-        mintty_options := args[i]
+        mintty_options .= " " args[i]
     } else if (c == "-c") {
         if (argc < ++i) {
             MsgBox, 0x10, , Require command arg.
