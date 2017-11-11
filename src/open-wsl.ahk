@@ -10,6 +10,7 @@ IniRead, use_tmux, %ini_file%, config, use_tmux, 0
 IniRead, mintty_options, %ini_file%, config, mintty_options,
 IniRead, icon, %ini_file%, config, icon,
 IniRead, distro_guid, %ini_file%, config, distro_guid,
+IniRead, keep_wsl_running, %ini_file%, config, keep_wsl_running, 0
 
 if (mintty_options == "ERROR") {
     mintty_options =
@@ -239,8 +240,7 @@ if (use_cbwin) {
     if (ErrorLevel == 0) {
         Run, "%A_ScriptDir%\bin\outbash" --outbash-session -c 'exec sleep 10000000d', , Hide
     }
-} else if (use_tmux) {
-    ; Run a sleep to avoid tmux being killed.
+} else if (keep_wsl_running) {
     Process, Exist, sleep
 
     if (ErrorLevel == 0) {
