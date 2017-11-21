@@ -22,15 +22,15 @@ cd "$(dirname "$0")"
 op=$1
 
 if [[ "$1" == wcmd ]]; then
-    cd - 2>/dev/null
+    cd - >/dev/null
     shift
     exec /init /mnt/c/Windows/System32/cmd.exe /c "$@"
 elif [[ "$1" == wstart ]]; then
-    cd - 2>/dev/null
+    cd - >/dev/null
     shift
     exec /init /mnt/c/Windows/System32/cmd.exe /c start "" "$@"
 elif [[ "$1" == wstartex && -n "$2" ]]; then
-    cd - 2>/dev/null
+    cd - >/dev/null
     shift
     wstart_run='setsid /init /mnt/c/Windows/System32/cmd.exe /c start'
 
