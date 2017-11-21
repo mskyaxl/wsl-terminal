@@ -22,12 +22,15 @@ cd "$(dirname "$0")"
 op=$1
 
 if [[ "$1" == wcmd ]]; then
+    cd - 2>/dev/null
     shift
     exec /init /mnt/c/Windows/System32/cmd.exe /c "$@"
 elif [[ "$1" == wstart ]]; then
+    cd - 2>/dev/null
     shift
     exec /init /mnt/c/Windows/System32/cmd.exe /c start "" "$@"
 elif [[ "$1" == wstartex && -n "$2" ]]; then
+    cd - 2>/dev/null
     shift
     wstart_run='setsid /init /mnt/c/Windows/System32/cmd.exe /c start'
 
@@ -35,8 +38,8 @@ elif [[ "$1" == wstartex && -n "$2" ]]; then
         exec $wstart_run "" "$@"
     fi
 
-    dir_name="$(dirname $1)"
-    file_name="$(basename $1)"
+    dir_name="$(dirname "$1")"
+    file_name="$(basename "$1")"
 
     if [[ "$dir_name" == / ]]; then
         cd /; $wstart_run .; cd - >/dev/null
