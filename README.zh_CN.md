@@ -63,7 +63,8 @@
 用法: cmdtool [选项]...
   wcmd: 使用 cmd.exe /c 运行 Windows 程序。
   wstart: 使用 cmd.exe /c start 运行 Windows 程序。
-  wpath [dir]: 输出当前目录或者 dir 目录的 Windows 路径。
+  wstartex 文件路径|网址: 和 wstart 类似，但使用 WSL 风格的路径。
+  wpath [目录名]: 输出当前目录或者 dir 目录的 Windows 路径。
   update: 检查更新，如果有更新可以直接升级。
   killall: 杀死所有的 WSL 进程。
   install cbwin: 安装 cbwin。

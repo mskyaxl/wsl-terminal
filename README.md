@@ -63,6 +63,7 @@ For `-B` and `-b`, see also [mintty params](https://github.com/goreliu/wsl-termi
 Usage: cmdtool [OPTION]...
   wcmd: run Windows programs with cmd.exe /c.
   wstart: run Windows programs with cmd.exe /c start.
+  wstartex file|url: like wstart, but use WSL file path.
   wpath [dir]: print Windows path of dir or current dir.
   update: check the latest wsl-terminal version, and upgrade it.
   killall: kill all WSL processes.

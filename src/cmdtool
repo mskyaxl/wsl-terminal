@@ -8,6 +8,7 @@ cd "$(dirname "$0")"
     echo -e "Usage: $0 [OPTION]..."\
         "\n  wcmd: run Windows programs with cmd.exe /c."\
         "\n  wstart: run Windows programs with cmd.exe /c start."\
+        "\n  wstartex file|url: like wstart, but use WSL file path."\
         "\n  wpath [dir]: print Windows path of dir or current dir."\
         "\n  update: check the latest wsl-terminal version, and upgrade it."\
         "\n  killall: kill all WSL process."\
@@ -26,6 +27,25 @@ if [[ "$1" == wcmd ]]; then
 elif [[ "$1" == wstart ]]; then
     shift
     exec /init /mnt/c/Windows/System32/cmd.exe /c start "" "$@"
+elif [[ "$1" == wstartex && -n "$2" ]]; then
+    shift
+    wstart_run='setsid /init /mnt/c/Windows/System32/cmd.exe /c start'
+
+    if [[ "$1" == http* || "$1" == www* ]]; then
+        exec $wstart_run "" "$@"
+    fi
+
+    dir_name="$(dirname $1)"
+    file_name="$(basename $1)"
+
+    if [[ "$dir_name" == / ]]; then
+        cd /; $wstart_run .; cd - >/dev/null
+    elif [[ "$dir_name" == /mnt ]]; then
+        cd /; $wstart_run "" "$file_name":; cd - >/dev/null
+    else
+        shift 2>/dev/null
+        cd "$dir_name" && $wstart_run "" "$file_name" "$@"; cd - >/dev/null
+    fi
 elif [[ "$1" == wpath ]]; then
     if [[ -n "$2" ]]; then
         wpath="$2"
