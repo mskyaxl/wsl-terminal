@@ -43,7 +43,7 @@ if (exe_name == "run-wsl-file") {
     SplitPath, arg, filename, dir
     SetWorkingDir, %dir%
 
-    Run, %mintty_base% -t "%arg%" %wslbridge_base% -t ./"%filename%"
+    Run, %mintty_base% %mintty_options% -t "%arg%" %wslbridge_base% -t ./"%filename%"
     ExitApp
 } else if (exe_name != "open-wsl" && exe_name != "cmd") {
     argc = %0%
@@ -66,7 +66,7 @@ if (exe_name == "run-wsl-file") {
         }
     }
 
-    Run, %mintty_base% -t "%filepath%" %wslbridge_base% -t "%exe_name%" %options% %filename%
+    Run, %mintty_base% %mintty_options% -t "%filepath%" %wslbridge_base% -t "%exe_name%" %options% %filename%
     ExitApp
 }
 
