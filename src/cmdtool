@@ -9,10 +9,8 @@ cd "$(dirname "$0")"
         "\n  wcmd: run Windows programs with cmd.exe /c."\
         "\n  wstart: run Windows programs with cmd.exe /c start."\
         "\n  wstartex file|url: like wstart, but use WSL file path."\
-        "\n  wpath [dir]: print Windows path of dir or current dir."\
         "\n  update: check the latest wsl-terminal version, and upgrade it."\
         "\n  killall: kill all WSL process."\
-        "\n  install cbwin: install cbwin."\
         "\n  install dash: install Cygwin dash (for debugging)."\
         "\n  install busybox: install Cygwin busybox (for debugging)."
 
@@ -50,6 +48,11 @@ elif [[ "$1" == wstartex && -n "$2" ]]; then
         cd "$dir_name" && $wstart_run "" "$file_name" "$@"; cd - >/dev/null
     fi
 elif [[ "$1" == wpath ]]; then
+    type wslpath >/dev/null && {
+        echo 'Please use wslpath -w $PWD.'
+        exit 1
+    }
+
     if [[ -n "$2" ]]; then
         wpath="$2"
     else
@@ -59,6 +62,8 @@ elif [[ "$1" == wpath ]]; then
     if [[ "$wpath" == /mnt/* ]]; then
         wpath=${wpath:5:1}:${wpath:6}
         echo ${wpath//\//\\}
+    else
+        exit 1
     fi
 elif [[ "$1" == update ]]; then
     version=$(cat VERSION)
