@@ -11,6 +11,7 @@ cd "$(dirname "$0")"
         "\n  wstartex file|url: like wstart, but use WSL file path."\
         "\n  update: check the latest wsl-terminal version, and upgrade it."\
         "\n  killall: kill all WSL process."\
+        "\n  install winpty: install Cygwin winpty."\
         "\n  install dash: install Cygwin dash (for debugging)."\
         "\n  install busybox: install Cygwin busybox (for debugging)."
 
@@ -147,6 +148,12 @@ elif [[ "$1" == "install" ]]; then
         tar -xvf "busybox-$version.tar.xz" usr/libexec/busybox/bin/busybox.exe
         mv -v usr/libexec/busybox/bin/busybox.exe bin/busybox.exe
         rm -rf usr "busybox-$version.tar.xz"
+        echo OK
+    elif [[ "$2" == "winpty" ]]; then
+        wget "https://github.com/rprichard/winpty/releases/download/0.4.3/winpty-0.4.3-cygwin-2.8.0-x64.tar.gz"
+        tar -xvf "winpty-0.4.3-cygwin-2.8.0-x64.tar.gz" winpty-0.4.3-cygwin-2.8.0-x64/bin
+        mv -v winpty-0.4.3-cygwin-2.8.0-x64/bin/* bin
+        rm -rf winpty-0.4.3-cygwin-2.8.0-x64.tar.gz winpty-0.4.3-cygwin-2.8.0-x64
         echo OK
     fi
 fi
