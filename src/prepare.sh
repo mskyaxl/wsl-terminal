@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cygwin_version="2.9.0-3"
+cygwin_version="2.10.0-1"
 mintty_version="2.8.4-0"
 wslbridge_version="0.2.4"
 
