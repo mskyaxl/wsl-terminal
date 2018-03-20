@@ -234,13 +234,7 @@ Loop, 5 {
     Sleep, 50
 }
 
-if (use_cbwin) {
-    Process, Exist, outbash.exe
-
-    if (ErrorLevel == 0) {
-        Run, "%A_ScriptDir%\bin\outbash" --outbash-session -c 'exec sleep 10000000d', , Hide
-    }
-} else if (keep_wsl_running) {
+if (keep_wsl_running) {
     Process, Exist, sleep
 
     if (ErrorLevel == 0) {
