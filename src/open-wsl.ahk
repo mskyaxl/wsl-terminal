@@ -27,7 +27,8 @@ if (distro_guid != "ERROR") {
     distro_option = --distro-guid %distro_guid%
 }
 
-mintty_base = "%A_ScriptDir%\bin\mintty" --wsl --rootfs=// --configdir "%A_ScriptDir%\etc" -i "%icon_path%"
+mintty_path = "%A_ScriptDir%\bin\mintty"
+mintty_base = %mintty_path% --wsl --rootfs=// --configdir "%A_ScriptDir%\etc" -i "%icon_path%"
 wslbridge_base = -e /bin/wslbridge %distro_option% -e SHELL="%shell%" -e LANG
 
 ; Run as run-wsl-file or any editor {{{1
@@ -222,10 +223,10 @@ if (change_directory != "") {
 
 if (cmd != "") {
     lnk_args = %mintty_base% %mintty_options% -t "%title%" %wslbridge_base% %opts% %cmd%
-    lnk_args := StrReplace(lnk_args, mintty_base)
+    lnk_args := StrReplace(lnk_args, mintty_path)
 
-    FileCreateShortcut, %A_ScriptDir%\bin\mintty.exe, %A_ScriptDir%\open-wsl.tmp.lnk, %A_WorkingDir%, %lnk_args%, wsl-terminal temp shortcut, %icon_path%
-    Run, %A_ScriptDir%\open-wsl.tmp.lnk
+    FileCreateShortcut, %A_ScriptDir%\bin\mintty.exe, %A_ScriptDir%\wsl-terminal.lnk, %A_WorkingDir%, %lnk_args%, wsl-terminal temp shortcut, %icon_path%
+    Run, %A_ScriptDir%\wsl-terminal.lnk
 
     ;Run, %mintty_base% %mintty_options% -t "%title%" %wslbridge_base% %opts% %cmd%
 }
