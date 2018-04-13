@@ -1,7 +1,5 @@
 #!/bin/bash
 
-version="$(cat ../VERSION)"
-
 set -e
 
 [[ -e .debug ]] && {
@@ -20,6 +18,8 @@ cp -r ../{*.exe,tools,cmdtool} ../../VERSION .
 cp -r ../../{LICENSE,README.md} doc/
 rm -f ../*.exe
 cd ..
+
+version="$(cat ../VERSION)"
 
 rm -f ../wsl-terminal-${version}.7z
 7z a ../wsl-terminal-${version}.7z wsl-terminal
