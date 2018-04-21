@@ -232,13 +232,16 @@ if (cmd != "") {
 }
 
 ; Activate window {{{1
-Loop, 5 {
-    WinActivate, %title%
-    if (WinActive(title)) {
-        break
-    }
 
-    Sleep, 50
+if (activate_window || use_tmux) {
+    Loop, 5 {
+        WinActivate, %title%
+        if (WinActive(title)) {
+            break
+        }
+
+        Sleep, 50
+    }
 }
 
 if (keep_wsl_running) {
