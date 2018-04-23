@@ -12,7 +12,7 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 
 ## Usage
 
-1. [Download here](https://github.com/goreliu/wsl-terminal/releases), or run `bash -c "wget https://github.com/goreliu/wsl-terminal/releases/download/v0.8.10/wsl-terminal-0.8.10.7z && 7z x wsl-terminal-0.8.10.7z"` in `cmd.exe` or WSL.
+1. [Download here](https://github.com/goreliu/wsl-terminal/releases), or run `bash -c "wget https://github.com/goreliu/wsl-terminal/releases/download/v0.8.11/wsl-terminal-0.8.11.7z && 7z x wsl-terminal-0.8.11.7z"` in `cmd.exe` or WSL.
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge#building-wslbridge)).
 
