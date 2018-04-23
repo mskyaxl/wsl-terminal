@@ -1,6 +1,6 @@
 # wsl-terminal
 
-用于 Windows Subsystem for Linux (WSL) 的终端模拟器，基于 [mintty](http://mintty.github.io/) 和 [wslbridge](https://github.com/rprichard/wslbridge)。
+用于 Windows Subsystem for Linux (WSL) 的终端模拟器，基于 [mintty](http://mintty.github.io/)、[fatty](https://github.com/paolo-sz/fatty) 和 [wslbridge](https://github.com/rprichard/wslbridge)。
 
 [英文页面](https://goreliu.github.io/wsl-terminal/)
 
