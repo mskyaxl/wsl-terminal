@@ -4,6 +4,7 @@ set -e
 
 cygwin_version="2.10.0-1"
 mintty_version="2.8.5-0"
+fatty_version="r1842.4e91950-2"
 wslbridge_version="0.2.4"
 
 # wget tar xz gzip p7zip
@@ -22,6 +23,7 @@ mkdir -p build && cd build
 
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/cygwin/cygwin-${cygwin_version}.tar.xz
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/mintty/mintty-${mintty_version}.tar.xz
+wget -nc https://github.com/goreliu/fatty-prebuilds/releases/download/${fatty_version}/fatty-${fatty_version}.7z
 wget -nc https://github.com/rprichard/wslbridge/releases/download/${wslbridge_version}/wslbridge-${wslbridge_version}-cygwin64.tar.gz
 wget -nc https://autohotkey.com/download/ahk.zip
 
@@ -33,6 +35,7 @@ tar -xvf cygwin-${cygwin_version}.tar.xz \
     usr/share/doc/Cygwin
 
 tar -xvf mintty-${mintty_version}.tar.xz usr/bin/mintty.exe usr/share/doc usr/share/mintty/lang
+7z x -y fatty-${fatty_version}.7z fatty/bin/{fatty.exe,cyggcc_s-seh-1.dll,cygstdc++-6.dll} fatty/doc fatty/etc/lang
 
 tar -xvf wslbridge-${wslbridge_version}-cygwin64.tar.gz
 cd wslbridge-${wslbridge_version}-cygwin64
