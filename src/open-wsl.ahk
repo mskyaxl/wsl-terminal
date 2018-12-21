@@ -47,6 +47,7 @@ if (exe_name == "run-wsl-file") {
     Run, %mintty_base% %mintty_options% -t "%arg%" %wslbridge_base% -t ./"%filename%"
     ExitApp
 } else if (exe_name != "open-wsl" && exe_name != "cmd") {
+    ; editor
     argc = %0%
     filepath := ""
     filename := ""
@@ -68,6 +69,16 @@ if (exe_name == "run-wsl-file") {
     }
 
     Run, %mintty_base% %mintty_options% -t "%filepath%" %wslbridge_base% -t "%exe_name%" %options% %filename%
+
+    Loop, 5 {
+        WinActivate, %filepath%
+        if (WinActive(filepath)) {
+            break
+        }
+
+        Sleep, 50
+    }
+
     ExitApp
 }
 

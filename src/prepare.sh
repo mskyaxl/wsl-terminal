@@ -2,9 +2,9 @@
 
 set -e
 
-cygwin_version="2.10.0-1"
-mintty_version="2.8.5-0"
-fatty_version="r1842.4e91950-2"
+cygwin_version="2.11.2-1"
+mintty_version="2.9.5-0"
+fatty_version="r2094.3a2e677-1"
 wslbridge_version="0.2.4"
 
 # wget tar xz gzip p7zip
