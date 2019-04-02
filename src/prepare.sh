@@ -2,8 +2,8 @@
 
 set -e
 
-cygwin_version="2.11.2-1"
-mintty_version="2.9.5-0"
+cygwin_version="3.0.5-1"
+mintty_version="3.0.0-1"
 fatty_version="r2094.3a2e677-1"
 wslbridge_version="0.2.4"
 
