@@ -67,6 +67,11 @@ elif [[ "$1" == wpath ]]; then
         exit 1
     fi
 elif [[ "$1" == update ]]; then
+    which 7z || {
+        echo "7z command not found."
+        exit 1
+    }
+
     version=$(cat VERSION)
     echo Checking the latest version ...
     latest_version=$(wget https://raw.githubusercontent.com/goreliu/wsl-terminal/master/VERSION -O -)
