@@ -5,7 +5,6 @@
 ini_file = %A_ScriptDir%\etc\wsl-terminal.conf
 IniRead, title, %ini_file%, config, title, "        "
 IniRead, shell, %ini_file%, config, shell, "bash"
-IniRead, use_cbwin, %ini_file%, config, use_cbwin, 0
 IniRead, use_tmux, %ini_file%, config, use_tmux, 0
 IniRead, mintty_options, %ini_file%, config, mintty_options,
 IniRead, icon, %ini_file%, config, icon,
