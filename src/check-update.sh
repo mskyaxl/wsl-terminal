@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cygwin_version="$(curl http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/cygwin/sha512.sum \
-    2>/dev/null | grep -Po '\d\.\d\d\.\d-\d' | tail -n 1)"
+    2>/dev/null | grep -Po '\d\.\d*\.\d-\d' | tail -n 1)"
 
 mintty_version="$(curl http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/mintty/sha512.sum \
     2>/dev/null | grep -Po '\d\.\d\.\d-\d' | tail -n 1)"
