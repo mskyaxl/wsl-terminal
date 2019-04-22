@@ -120,20 +120,7 @@ elif [[ "$1" == update ]]; then
 elif [[ "$1" == "killall" ]]; then
     killall sleep wslbridge-backend bash tmux zsh
 elif [[ "$1" == "install" ]]; then
-    if [[ "$2" == "cbwin" ]]; then
-        wget https://github.com/xilun/cbwin/releases/download/v0.13/cbwin-bin-0.13.zip
-        7z x cbwin-bin-0.13.zip
-        cd cbwin-bin-0.13
-        mv -v outbash.exe w* ../bin/
-        mv -v install.sh ../bin/install_cbwin.sh
-        mkdir ../doc/cbwin
-        mv -v LICENSE README.md ../doc/cbwin
-        cd ..
-        rm -rf cbwin-bin-0.13
-        rm -f cbwin-bin-0.13.zip
-        echo Add use_cbwin=1 to etc/wsl-terminal.conf to use cbwin.
-        echo OK
-    elif [[ "$2" == "dash" ]]; then
+    if [[ "$2" == "dash" ]]; then
         version=0.5.9.1-1
         wget "http://mirrors.ustc.edu.cn/cygwin/x86_64/release/dash/dash-$version.tar.xz" 
         tar -xvf "dash-$version.tar.xz" usr/bin/ash.exe
