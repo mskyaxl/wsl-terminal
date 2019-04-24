@@ -4,7 +4,7 @@ set -e
 
 cygwin_version="3.0.6-1"
 mintty_version="3.0.0-1"
-fatty_version="r2094.3a2e677-1"
+fatty_version="r2253.5a9c340-1"
 wslbridge_version="0.2.4"
 
 # wget tar xz gzip p7zip
