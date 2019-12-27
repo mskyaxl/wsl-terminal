@@ -2,10 +2,10 @@
 
 set -e
 
-cygwin_version="3.0.6-1"
-mintty_version="3.0.0-1"
+cygwin_version="3.1.2-1"
+mintty_version="3.1.0-1"
 fatty_version="r2253.5a9c340-1"
-wslbridge_version="0.2.4"
+wslbridge2_version="0.5"
 
 # wget tar xz gzip p7zip
 
@@ -24,7 +24,7 @@ mkdir -p build && cd build
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/cygwin/cygwin-${cygwin_version}.tar.xz
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/mintty/mintty-${mintty_version}.tar.xz
 wget -nc https://github.com/goreliu/fatty-prebuilds/releases/download/${fatty_version}/fatty-${fatty_version}.7z
-wget -nc https://github.com/rprichard/wslbridge/releases/download/${wslbridge_version}/wslbridge-${wslbridge_version}-cygwin64.tar.gz
+wget -nc https://github.com/Biswa96/wslbridge2/releases/download/v${wslbridge2_version}/wslbridge2_cygwin_x86_64.7z
 wget -nc https://autohotkey.com/download/ahk.zip
 
 rm -rf bin etc usr doc
@@ -37,13 +37,10 @@ tar -xvf cygwin-${cygwin_version}.tar.xz \
 tar -xvf mintty-${mintty_version}.tar.xz usr/bin/mintty.exe usr/share/doc usr/share/mintty/lang
 7z x -y fatty-${fatty_version}.7z fatty/bin/{fatty.exe,cyggcc_s-seh-1.dll,cygstdc++-6.dll} fatty/doc fatty/etc/lang
 
-tar -xvf wslbridge-${wslbridge_version}-cygwin64.tar.gz
-cd wslbridge-${wslbridge_version}-cygwin64
-mv wslbridge.exe wslbridge-backend ../usr/bin
-mkdir -p ../usr/share/doc/wslbridge
-mv BuildInfo.txt LICENSE.txt README.md ../usr/share/doc/wslbridge
-cd ..
-rmdir wslbridge-${wslbridge_version}-cygwin64
+
+7z x -y wslbridge2_cygwin_x86_64.7z -ousr/bin
+mkdir -p usr/share/doc/wslbridge2
+wget -nc https://raw.githubusercontent.com/Biswa96/wslbridge2/v${wslbridge2_version}/LICENSE -Ousr/share/doc/wslbridge2/LICENSE
 
 cp -r ../etc .
 rm -rf bin doc
