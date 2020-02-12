@@ -1,24 +1,22 @@
 # wsl-terminal
 
-**不再维护。可以使用 [wsltty](https://github.com/mintty/wsltty)。**
-
 用于 Windows Subsystem for Linux (WSL) 的终端模拟器，基于 [mintty](http://mintty.github.io/)、[fatty](https://github.com/paolo-sz/fatty) 和 [wslbridge2](https://github.com/Biswa96/wslbridge2)。
 
-[英文页面](https://goreliu.github.io/wsl-terminal/)
+[英文页面](https://mskyaxl.github.io/wsl-terminal/)
 
 ## 截图
 
-![screenshot](https://raw.githubusercontent.com/wiki/goreliu/wsl-terminal/images/wsl-terminal-3.png)
+![screenshot](https://raw.githubusercontent.com/wiki/mskyaxl/wsl-terminal/images/wsl-terminal-3.png)
 
-查看[更多截图](https://github.com/goreliu/wsl-terminal/wiki/Screenshots)。
+查看[更多截图](https://github.com/mskyaxl/wsl-terminal/wiki/Screenshots)。
 
 ## 用法
 
-1. 从[这里](https://github.com/goreliu/wsl-terminal/releases)下载最新版本并解压，或者在 `cmd.exe` 或 WSL 里运行 `bash -c "wget https://github.com/goreliu/wsl-terminal/releases/download/v0.9.0/wsl-terminal-0.9.0.7z && 7z x wsl-terminal-0.9.0.7z"`。
+1. 从[这里](https://github.com/mskyaxl/wsl-terminal/releases)下载最新版本并解压，或者在 `cmd.exe` 或 WSL 里运行 `bash -c "wget https://github.com/mskyaxl/wsl-terminal/releases/download/v0.9.0/wsl-terminal-0.9.0.7z && 7z x wsl-terminal-0.9.0.7z"`。
 
 2. 运行 `open-wsl.exe` 可以在当前目录打开一个 WSL 终端模拟器（wsl-terminal 需要放置在本地的 NTFS 分区上，[原因](https://github.com/rprichard/wslbridge#building-wslbridge)）。
 
-3. 运行 `tools/1-add-open-wsl-terminal-here-menu.js` ([帮助](https://github.com/goreliu/wsl-terminal/blob/master/README.zh_CN.md#工具)) 来添加一个 `Open wsl-terminal Here` 右键菜单到资源管理器上 (运行 `tools/1-remove-open-wsl-terminal-here-menu.js` 可以将其删除）。 如果你使用 Total Commander, 可以参考 [在 Total Commander 中使用 wsl-terminal](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) 。
+3. 运行 `tools/1-add-open-wsl-terminal-here-menu.js` ([帮助](https://github.com/mskyaxl/wsl-terminal/blob/master/README.zh_CN.md#工具)) 来添加一个 `Open wsl-terminal Here` 右键菜单到资源管理器上 (运行 `tools/1-remove-open-wsl-terminal-here-menu.js` 可以将其删除）。 如果你使用 Total Commander, 可以参考 [在 Total Commander 中使用 wsl-terminal](https://github.com/mskyaxl/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) 。
 
 4. `run-wsl-file.exe` 可以在 wsl-terminal 里运行任何 `.sh` （以及任何其他的可执行文件，比如 `.py` `.pl` 文件) 脚本文件，你可以在文件打开方式里设置使用它来打开文件。
 
@@ -36,7 +34,7 @@
 | `Ctrl` + `鼠标左键`        | 打开光标处的文件、目录名或者网址 |
 | `Ctrl` + `鼠标右键`        | 打开右键菜单                     |
 
-[将 wsl-terminal 绑定到快捷键](https://github.com/goreliu/wsl-terminal/wiki/Bind-wsl-terminal-to-a-hotkey)。
+[将 wsl-terminal 绑定到快捷键](https://github.com/mskyaxl/wsl-terminal/wiki/Bind-wsl-terminal-to-a-hotkey)。
 
 ## 命令行参数
 
@@ -57,7 +55,7 @@
   -h: 显示帮助信息。
 ```
 
-`-B` 和 `-b` 后可以添加的选项，请参考 [mintty 参数](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) 和 [wslbridge2 参数](https://github.com/Biswa96/wslbridge2#options)。
+`-B` 和 `-b` 后可以添加的选项，请参考 [mintty 参数](https://github.com/mskyaxl/wsl-terminal/wiki/mintty-params) 和 [wslbridge2 参数](https://github.com/Biswa96/wslbridge2#options)。
 
 ### cmdtool（在 WSL 中运行）
 
@@ -105,13 +103,13 @@ use_tmux=0
 ;distro=
 ```
 
-`etc/themes/` 目录下的是主题文件，[使用主题](https://github.com/goreliu/wsl-terminal/wiki/Use-themes)。
+`etc/themes/` 目录下的是主题文件，[使用主题](https://github.com/mskyaxl/wsl-terminal/wiki/Use-themes)。
 
 `etc/minttyrc` 是 mintty 的配置文件， [mintty 帮助](https://github.com/mintty/mintty/wiki/Tips)。
 
 ## 升级
 
-在 `wsl-terminal` 里打开 `open-wsl.exe`，然后运行 `./cmdtool update`  可以检查 wsl-terminal 的最新版本然后升级。如果下载速度过慢，可以先使用其他方法从[发布页面](https://github.com/goreliu/wsl-terminal/releases)下载 `wsl-terminal-v{version}.7z` 文件，然后将其放入到 `wsl-terminal` 目录，然后运行 `./cmdtool update`。
+在 `wsl-terminal` 里打开 `open-wsl.exe`，然后运行 `./cmdtool update`  可以检查 wsl-terminal 的最新版本然后升级。如果下载速度过慢，可以先使用其他方法从[发布页面](https://github.com/mskyaxl/wsl-terminal/releases)下载 `wsl-terminal-v{version}.7z` 文件，然后将其放入到 `wsl-terminal` 目录，然后运行 `./cmdtool update`。
 
 该工具依赖 `wget` 和 `7z` 命令（安装方法。Ubuntu: `apt install wget p7zip-full`, Archlinux: `pacman -S wget p7zip`）。
 
@@ -162,7 +160,7 @@ Legacy
 
 如果你不想修改默认的发行版，可以在 `etc/wsl-terminal.conf` 里设置 `distro_guid`：
 
-运行 `tools/3-write-distro-to-config-file.js`（[帮助](https://github.com/goreliu/wsl-terminal/blob/master/README.zh_CN.md#工具)），然后会有窗口弹出结果：
+运行 `tools/3-write-distro-to-config-file.js`（[帮助](https://github.com/mskyaxl/wsl-terminal/blob/master/README.zh_CN.md#工具)），然后会有窗口弹出结果：
 
 ```
 result has been written to ..\etc\wsl-terminal.conf:
@@ -185,13 +183,13 @@ remove the ; before distro_guid to use the distro.
 
 ## 链接
 
-[常见问题](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
+[常见问题](https://github.com/mskyaxl/wsl-terminal/wiki/FAQ)
 
-[反馈建议](https://github.com/goreliu/wsl-terminal/issues)
+[反馈建议](https://github.com/mskyaxl/wsl-terminal/issues)
 
-[发布页面](https://github.com/goreliu/wsl-terminal/releases)
+[发布页面](https://github.com/mskyaxl/wsl-terminal/releases)
 
-[文档帮助](https://github.com/goreliu/wsl-terminal/wiki)
+[文档帮助](https://github.com/mskyaxl/wsl-terminal/wiki)
 
 ## 编译
 

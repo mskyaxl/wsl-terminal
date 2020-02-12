@@ -1,25 +1,23 @@
 # wsl-terminal
 
-**No longer maintained. [wsltty](https://github.com/mintty/wsltty) is an alternative.**
-
 A terminal emulator for Windows Subsystem for Linux (WSL), based on [mintty](http://mintty.github.io/), [fatty](https://github.com/paolo-sz/fatty) and [wslbridge2](https://github.com/Biswa96/wslbridge2).
 
 
-[中文页面](https://goreliu.github.io/wsl-terminal/README.zh_CN.html)
+[中文页面](https://mskyaxl.github.io/wsl-terminal/README.zh_CN.html)
 
 ## Screenshot
 
-![screenshot](https://raw.githubusercontent.com/wiki/goreliu/wsl-terminal/images/wsl-terminal-3.png)
+![screenshot](https://raw.githubusercontent.com/wiki/mskyaxl/wsl-terminal/images/wsl-terminal-3.png)
 
-More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots).
+More screenshots [here](https://github.com/mskyaxl/wsl-terminal/wiki/Screenshots).
 
 ## Usage
 
-1. [Download here](https://github.com/goreliu/wsl-terminal/releases), or run `bash -c "wget https://github.com/goreliu/wsl-terminal/releases/download/v0.9.0/wsl-terminal-0.9.0.7z && 7z x wsl-terminal-0.9.0.7z"` in `cmd.exe` or WSL.
+1. [Download here](https://github.com/mskyaxl/wsl-terminal/releases), or run `bash -c "wget https://github.com/mskyaxl/wsl-terminal/releases/download/v0.9.0/wsl-terminal-0.9.0.7z && 7z x wsl-terminal-0.9.0.7z"` in `cmd.exe` or WSL.
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge#building-wslbridge)).
 
-3. Run `tools/1-add-open-wsl-terminal-here-menu.js` ([help](https://github.com/goreliu/wsl-terminal#tools)) to add a `Open wsl-terminal Here` context menu to `explorer.exe` (Run `tools/1-remove-open-wsl-terminal-here-menu.js` to remove it). If you are using Total Commander, [Use wsl-terminal with Total Commander](https://github.com/goreliu/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) may help you.
+3. Run `tools/1-add-open-wsl-terminal-here-menu.js` ([help](https://github.com/mskyaxl/wsl-terminal#tools)) to add a `Open wsl-terminal Here` context menu to `explorer.exe` (Run `tools/1-remove-open-wsl-terminal-here-menu.js` to remove it). If you are using Total Commander, [Use wsl-terminal with Total Commander](https://github.com/mskyaxl/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) may help you.
 
 4. `run-wsl-file.exe` can run any `.sh` (or any others like `.py` `.pl`) script files in wsl-terminal, support `Open With` context menu in `explorer.exe`.
 
@@ -37,7 +35,7 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 | `Ctrl` + `Click`           | Open URL or dir/file under the cursor |
 | `Ctrl` + `Right Click`     | Open context menu                     |
 
-[Bind wsl-terminal to a hotkey](https://github.com/goreliu/wsl-terminal/wiki/Bind-wsl-terminal-to-a-hotkey).
+[Bind wsl-terminal to a hotkey](https://github.com/mskyaxl/wsl-terminal/wiki/Bind-wsl-terminal-to-a-hotkey).
 
 ## Params
 
@@ -58,7 +56,7 @@ Usage: open-wsl [OPTION]...
   -h: show help.
 ```
 
-For `-B` and `-b`, see also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge2 params](https://github.com/Biswa96/wslbridge2#options).
+For `-B` and `-b`, see also [mintty params](https://github.com/mskyaxl/wsl-terminal/wiki/mintty-params) and [wslbridge2 params](https://github.com/Biswa96/wslbridge2#options).
 
 ### cmdtool (run it in WSL)
 
@@ -105,13 +103,13 @@ use_tmux=0
 ;distro=
 ```
 
-`etc/themes/*` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
+`etc/themes/*` are theme files, [use themes](https://github.com/mskyaxl/wsl-terminal/wiki/Use-themes).
 
 `etc/minttyrc` is mintty config file, [mintty tips](https://github.com/mintty/mintty/wiki/Tips).
 
 ## Upgrade
 
-Open `open-wsl.exe` in `wsl-terminal` directory, run `./cmdtool update` to check the latest wsl-terminal version and upgrade it. If the download speed is too slow, you can download `wsl-terminal-v{version}.7z` from [releases](https://github.com/goreliu/wsl-terminal/releases) with other tools, and put it into `wsl-terminal` directory, then run `./cmdtool update`.
+Open `open-wsl.exe` in `wsl-terminal` directory, run `./cmdtool update` to check the latest wsl-terminal version and upgrade it. If the download speed is too slow, you can download `wsl-terminal-v{version}.7z` from [releases](https://github.com/mskyaxl/wsl-terminal/releases) with other tools, and put it into `wsl-terminal` directory, then run `./cmdtool update`.
 
 `wget` and `7z` commands are needed (Ubuntu: `apt install wget p7zip-full`, Archlinux: `pacman -S wget p7zip`) .
 
@@ -160,7 +158,7 @@ kali-linux
 
 Or set `distro` in wsl-terminal.conf (Won't change the default distro).
 
-Run `tools/3-write-distro-to-config-file.js` ([help](https://github.com/goreliu/wsl-terminal#tools)), then a msgbox will show the result:
+Run `tools/3-write-distro-to-config-file.js` ([help](https://github.com/mskyaxl/wsl-terminal#tools)), then a msgbox will show the result:
 
 ```
 result has been written to ..\etc\wsl-terminal.conf:
@@ -181,13 +179,13 @@ If you want to pass the distro_guid to open-wsl in cmdline:
 
 ## Links
 
-[FAQ](https://github.com/goreliu/wsl-terminal/wiki/FAQ)
+[FAQ](https://github.com/mskyaxl/wsl-terminal/wiki/FAQ)
 
-[Issues](https://github.com/goreliu/wsl-terminal/issues)
+[Issues](https://github.com/mskyaxl/wsl-terminal/issues)
 
-[Releases](https://github.com/goreliu/wsl-terminal/releases)
+[Releases](https://github.com/mskyaxl/wsl-terminal/releases)
 
-[Wiki](https://github.com/goreliu/wsl-terminal/wiki)
+[Wiki](https://github.com/mskyaxl/wsl-terminal/wiki)
 
 ## Build
 
