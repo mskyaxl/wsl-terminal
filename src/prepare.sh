@@ -4,7 +4,7 @@ set -e
 
 cygwin_version="3.1.2-1"
 mintty_version="3.1.0-1"
-fatty_version="r2253.5a9c340-1"
+fatty_version="r2549.ee7e4a1-1"
 wslbridge2_version="0.5"
 
 # wget tar xz gzip p7zip
@@ -39,6 +39,7 @@ tar -xvf mintty-${mintty_version}.tar.xz usr/bin/mintty.exe usr/share/doc usr/sh
 
 
 7z x -y wslbridge2_cygwin_x86_64.7z -ousr/bin
+rm usr/bin/rawpty.exe
 mkdir -p usr/share/doc/wslbridge2
 wget -nc https://raw.githubusercontent.com/Biswa96/wslbridge2/v${wslbridge2_version}/LICENSE -Ousr/share/doc/wslbridge2/LICENSE
 
