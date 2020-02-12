@@ -1,5 +1,7 @@
 # wsl-terminal
 
+**不再维护。可以使用 [wsltty](https://github.com/mintty/wsltty)。**
+
 用于 Windows Subsystem for Linux (WSL) 的终端模拟器，基于 [mintty](http://mintty.github.io/)、[fatty](https://github.com/paolo-sz/fatty) 和 [wslbridge2](https://github.com/Biswa96/wslbridge2)。
 
 [英文页面](https://goreliu.github.io/wsl-terminal/)
