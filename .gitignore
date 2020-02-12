@@ -2,6 +2,7 @@
 [._]s[a-w][a-z]
 /src/build
 /output
+/src/wsl-terminal
 *.exe
 *.zip
 *.7z

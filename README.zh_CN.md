@@ -2,7 +2,7 @@
 
 **不再维护。可以使用 [wsltty](https://github.com/mintty/wsltty)。**
 
-用于 Windows Subsystem for Linux (WSL) 的终端模拟器，基于 [mintty](http://mintty.github.io/)、[fatty](https://github.com/paolo-sz/fatty) 和 [wslbridge](https://github.com/rprichard/wslbridge)。
+用于 Windows Subsystem for Linux (WSL) 的终端模拟器，基于 [mintty](http://mintty.github.io/)、[fatty](https://github.com/paolo-sz/fatty) 和 [wslbridge2](https://github.com/Biswa96/wslbridge2)。
 
 [英文页面](https://goreliu.github.io/wsl-terminal/)
 
@@ -14,7 +14,7 @@
 
 ## 用法
 
-1. 从[这里](https://github.com/goreliu/wsl-terminal/releases)下载最新版本并解压，或者在 `cmd.exe` 或 WSL 里运行 `bash -c "wget https://github.com/goreliu/wsl-terminal/releases/download/v0.8.13/wsl-terminal-0.8.13.7z && 7z x wsl-terminal-0.8.13.7z"`。
+1. 从[这里](https://github.com/goreliu/wsl-terminal/releases)下载最新版本并解压，或者在 `cmd.exe` 或 WSL 里运行 `bash -c "wget https://github.com/goreliu/wsl-terminal/releases/download/v0.9.0/wsl-terminal-0.9.0.7z && 7z x wsl-terminal-0.9.0.7z"`。
 
 2. 运行 `open-wsl.exe` 可以在当前目录打开一个 WSL 终端模拟器（wsl-terminal 需要放置在本地的 NTFS 分区上，[原因](https://github.com/rprichard/wslbridge#building-wslbridge)）。
 
@@ -57,7 +57,7 @@
   -h: 显示帮助信息。
 ```
 
-`-B` 和 `-b` 后可以添加的选项，请参考 [mintty 参数](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) 和 [wslbridge 参数](https://github.com/rprichard/wslbridge#usage)。
+`-B` 和 `-b` 后可以添加的选项，请参考 [mintty 参数](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) 和 [wslbridge2 参数](https://github.com/Biswa96/wslbridge2#options)。
 
 ### cmdtool（在 WSL 中运行）
 
@@ -82,7 +82,7 @@
 | 1-remove-open-wsl-terminal-here-menu.js     | 移除 `Open wsl-terminal Here` 右键菜单。                          |
 | 2-add-wsl-terminal-dir-to-path.js           | 将 `wsl-terminal` 目录添加到 `Path` 环境变量里。                  |
 | 2-remove-wsl-terminal-dir-from-path.js      | 从 `Path` 环境变量中移除 `wsl-terminal` 目录。                    |
-| 3-write-distro-guids-to-config-file.js      | 将所有发行版的 guid 写入到配置文件 `etc/wsl-terminal.conf` 中。   |
+| 3-write-distro-to-config-file.js            | 将所有发行版的 guid 写入到配置文件 `etc/wsl-terminal.conf` 中。   |
 | 4-create-start-menu-shortcut.js             | 创建一个开始菜单快捷方式，指向 `open-wsl -C ~`。                  |
 | 4-create-start-menu-shortcut-login-shell.js | 创建一个开始菜单快捷方式，指向 `open-wsl -l`。                    |
 | 4-remove-all-start-menu-shortcuts.js        | 移除所有 wsl-terminal 的开始菜单快捷方式。                        |
@@ -102,7 +102,7 @@ title="窗口标题"
 shell=/bin/bash
 use_tmux=0
 ;icon=
-;distro_guid=
+;distro=
 ```
 
 `etc/themes/` 目录下的是主题文件，[使用主题](https://github.com/goreliu/wsl-terminal/wiki/Use-themes)。
@@ -162,16 +162,14 @@ Legacy
 
 如果你不想修改默认的发行版，可以在 `etc/wsl-terminal.conf` 里设置 `distro_guid`：
 
-运行 `tools/3-write-distro-guids-to-config-file.js`（[帮助](https://github.com/goreliu/wsl-terminal/blob/master/README.zh_CN.md#工具)），然后会有窗口弹出结果：
+运行 `tools/3-write-distro-to-config-file.js`（[帮助](https://github.com/goreliu/wsl-terminal/blob/master/README.zh_CN.md#工具)），然后会有窗口弹出结果：
 
 ```
 result has been written to ..\etc\wsl-terminal.conf:
 
-; Legacy
-;distro_guid={12345678-1234-5678-0123-456789abcdef}
+;distro=kali-linux
 
-; Ubuntu
-;distro_guid={47a89313-4300-4678-96ae-e53c41a79e03}
+;distro=Ubuntu}
 
 remove the ; before distro_guid to use the distro.
 ```
@@ -181,8 +179,8 @@ remove the ; before distro_guid to use the distro.
 如果你想通过命令行将 distro_guid 传递给 `open-wsl`：
 
 ```
-# 将 distro guid 传递给 wslbridge
-> open-wsl -b "--distro-guid {47a89313-4300-4678-96ae-e53c41a79e03}"
+# 将 distro 传递给 wslbridge
+> open-wsl -b "--distro Ubuntu"
 ```
 
 ## 链接

@@ -2,7 +2,8 @@
 
 **No longer maintained. [wsltty](https://github.com/mintty/wsltty) is an alternative.**
 
-A terminal emulator for Windows Subsystem for Linux (WSL), based on [mintty](http://mintty.github.io/), [fatty](https://github.com/paolo-sz/fatty) and [wslbridge](https://github.com/rprichard/wslbridge).
+A terminal emulator for Windows Subsystem for Linux (WSL), based on [mintty](http://mintty.github.io/), [fatty](https://github.com/paolo-sz/fatty) and [wslbridge2](https://github.com/Biswa96/wslbridge2).
+
 
 [中文页面](https://goreliu.github.io/wsl-terminal/README.zh_CN.html)
 
@@ -14,7 +15,7 @@ More screenshots [here](https://github.com/goreliu/wsl-terminal/wiki/Screenshots
 
 ## Usage
 
-1. [Download here](https://github.com/goreliu/wsl-terminal/releases), or run `bash -c "wget https://github.com/goreliu/wsl-terminal/releases/download/v0.8.13/wsl-terminal-0.8.13.7z && 7z x wsl-terminal-0.8.13.7z"` in `cmd.exe` or WSL.
+1. [Download here](https://github.com/goreliu/wsl-terminal/releases), or run `bash -c "wget https://github.com/goreliu/wsl-terminal/releases/download/v0.9.0/wsl-terminal-0.9.0.7z && 7z x wsl-terminal-0.9.0.7z"` in `cmd.exe` or WSL.
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge#building-wslbridge)).
 
@@ -57,7 +58,7 @@ Usage: open-wsl [OPTION]...
   -h: show help.
 ```
 
-For `-B` and `-b`, see also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge params](https://github.com/rprichard/wslbridge#usage).
+For `-B` and `-b`, see also [mintty params](https://github.com/goreliu/wsl-terminal/wiki/mintty-params) and [wslbridge2 params](https://github.com/Biswa96/wslbridge2#options).
 
 ### cmdtool (run it in WSL)
 
@@ -82,7 +83,7 @@ Files in `tools` directory:
 | 1-remove-open-wsl-terminal-here-menu.js     | Remove `Open wsl-terminal Here` context menu.                       |
 | 2-add-wsl-terminal-dir-to-path.js           | Add `wsl-terminal` directory to `Path` environment variable.        |
 | 2-remove-wsl-terminal-dir-from-path.js      | Remove `wsl-terminal` directory from `Path` environment variable.   |
-| 3-write-distro-guids-to-config-file.js      | Write distro guids to `etc/wsl-terminal.conf`.                      |
+| 3-write-distro-to-config-file.js            | Write distro guids to `etc/wsl-terminal.conf`.                      |
 | 4-create-start-menu-shortcut.js             | Create a start menu shortcut to `open-wsl -C ~`.                    |
 | 4-create-start-menu-shortcut-login-shell.js | Create a start menu shortcut to `open-wsl -l`.                      |
 | 4-remove-all-start-menu-shortcuts.js        | Remove all wsl-terminal start menu shortcuts.                       |
@@ -101,7 +102,7 @@ title="my title"
 shell=/bin/bash
 use_tmux=0
 ;icon=
-;distro_guid=
+;distro=
 ```
 
 `etc/themes/*` are theme files, [use themes](https://github.com/goreliu/wsl-terminal/wiki/Use-themes).
@@ -154,30 +155,28 @@ Ubuntu
 # Ubuntu is the default distro now
 > wslconfig /l
 Ubuntu (Default)
-Legacy
+kali-linux
 ```
 
-Or set `distro_guid` in wsl-terminal.conf (Won't change the default distro).
+Or set `distro` in wsl-terminal.conf (Won't change the default distro).
 
-Run `tools/3-write-distro-guids-to-config-file.js` ([help](https://github.com/goreliu/wsl-terminal#tools)), then a msgbox will show the result:
+Run `tools/3-write-distro-to-config-file.js` ([help](https://github.com/goreliu/wsl-terminal#tools)), then a msgbox will show the result:
 
 ```
 result has been written to ..\etc\wsl-terminal.conf:
 
-; Legacy
-;distro_guid={12345678-1234-5678-0123-456789abcdef}
+;distro=kali-linux
 
-; Ubuntu
-;distro_guid={47a89313-4300-4678-96ae-e53c41a79e03}
+;distro=Ubuntu
 
-remove the ; before distro_guid to use the distro.
+remove the ; before distro to use the distro.
 ```
 
 If you want to pass the distro_guid to open-wsl in cmdline:
 
 ```
 # pass the distro guid to wslbridge
-> open-wsl -b "--distro-guid {47a89313-4300-4678-96ae-e53c41a79e03}"
+> open-wsl -b "-d Ubuntu"
 ```
 
 ## Links

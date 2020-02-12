@@ -16,7 +16,7 @@ for (var i = 0; i < output.length; ++i) {
     var name = WshShell.RegRead(output[i] + "\\DistributionName");
     var guid = output[i].substr(lxssPos + 5);
 
-    result += "\r\n; " + name + "\r\n;distro_guid=" + guid + "\r\n";
+    result += "\r\n;distro=" + name + "\r\n;distro_guid " + guid + "\r\n";
 }
 
 if (result == "") {
@@ -35,4 +35,4 @@ var file = FSO.OpenTextFile(conf, 8, false);
 file.Write(result);
 file.Close();
 WScript.Echo("result has been written to ..\\etc\\wsl-terminal.conf:\n"
-    + result + "\nremove the ; before distro_guid to use the distro.");
+    + result + "\nremove the ; before distro to use the distro.");

@@ -123,7 +123,7 @@ elif [[ "$1" == update ]]; then
     echo OK
     exit
 elif [[ "$1" == "killall" ]]; then
-    killall sleep wslbridge-backend bash tmux zsh
+    killall sleep wslbridge2-backend bash tmux zsh
 elif [[ "$1" == "install" ]]; then
     if [[ "$2" == "dash" ]]; then
         version=0.5.9.1-1
