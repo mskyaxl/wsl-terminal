@@ -1,6 +1,6 @@
 # wsl-terminal
 
-**No longer maintained.**
+**No longer maintained. [wsltty](https://github.com/mintty/wsltty) is an alternative.**
 
 A terminal emulator for Windows Subsystem for Linux (WSL), based on [mintty](http://mintty.github.io/), [fatty](https://github.com/paolo-sz/fatty) and [wslbridge](https://github.com/rprichard/wslbridge).
 
