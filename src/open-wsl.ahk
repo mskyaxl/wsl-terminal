@@ -29,7 +29,7 @@ if (distro != "ERROR") {
 
 mintty_path = "%A_ScriptDir%\bin\mintty"
 mintty_base = %mintty_path% -i "%icon_path%" --rootfs=// --configdir "%A_ScriptDir%\etc" 
-wslbridge2_base = --WSLmode -e /bin/wslbridge2 %distro_option% -e SHELL=%shell% -e LANG 
+wslbridge2_base = --WSLmode -e /bin/wslbridge2 %distro_option% -e SHELL=%shell% -e LANG -e WSL_HOST_IP
 ; Run as run-wsl-file or any editor {{{1
 SplitPath, A_ScriptName, , , , exe_name
 if (exe_name == "run-wsl-file") {
