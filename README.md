@@ -3,7 +3,7 @@
 A terminal emulator for Windows Subsystem for Linux (WSL), based on [mintty](http://mintty.github.io/), [fatty](https://github.com/paolo-sz/fatty) and [wslbridge2](https://github.com/Biswa96/wslbridge2).
 
 
-[中文页面](https://mskyaxl.github.io/wsl-terminal/README.zh_CN.html)
+[中文页面](https://mskyaxl.github.io/wsl-terminal/README.zh_CN.html)(chinese README is no longer maintained)
 
 ## Screenshot
 
@@ -192,6 +192,10 @@ If you want to pass the distro_guid to open-wsl in cmdline:
 Make sure `wget` `tar` `xz` `gzip` `p7zip` (Ubuntu: run `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: run `pacman -S wget tar xz gzip p7zip`) are installed in WSL.
 
 Run `build.bat`.
+
+## Roadmap
+1. Bug fixing
+2. add x11 support
 
 ## License
 
