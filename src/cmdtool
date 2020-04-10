@@ -74,7 +74,7 @@ elif [[ "$1" == update ]]; then
 
     version=$(cat VERSION)
     echo Checking the latest version ...
-    latest_version=$(wget https://raw.githubusercontent.com/goreliu/wsl-terminal/master/VERSION -O -)
+    latest_version=$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/VERSION -O -)
     if [[ "$version" == "$latest_version" ]]; then
         echo Already the latest version: $version
         exit
