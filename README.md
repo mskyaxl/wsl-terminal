@@ -135,6 +135,21 @@ Config files won't be overridden, `etc/wsl-terminal.conf` and `etc/minttyrc` wil
     exec tmux
 }
 ```
+If you're using fish then update your '~/.config/fish/config.fish' (`shell=/bin/fish` in config) with
+
+```
+if [ -z "$TMUX" ]; and [ -n "$USE_TMUX" ]
+    if [ -n "$ATTACH_ONLY" ]
+        if not tmux a 2>/dev/null
+            cd; and exec tmux
+        end
+        exit
+    end
+
+    tmux new-window -c "$PWD" 2>/dev/null; and exec tmux a
+    exec tmux
+end
+```
 
 Then `open-wsl` will use tmux.
 
