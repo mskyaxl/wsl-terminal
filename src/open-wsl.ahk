@@ -4,7 +4,6 @@
 ; Read ini file {{{1
 ini_file = %A_ScriptDir%\etc\wsl-terminal.conf
 IniRead, title, %ini_file%, config, title, "        "
-IniRead, shell, %ini_file%, config, shell, "bash"
 IniRead, use_tmux, %ini_file%, config, use_tmux, 0
 IniRead, mintty_options, %ini_file%, config, mintty_options,
 IniRead, icon, %ini_file%, config, icon,
@@ -29,7 +28,7 @@ if (distro != "ERROR") {
 
 mintty_path = "%A_ScriptDir%\bin\mintty"
 mintty_base = %mintty_path% -i "%icon_path%" --rootfs=// --configdir "%A_ScriptDir%\etc" 
-wslbridge2_base = --WSLmode -e /bin/wslbridge2 %distro_option% -e SHELL=%shell% -e LANG -e WSL_HOST_IP
+wslbridge2_base = --WSLmode -e /bin/wslbridge2 %distro_option% -e LANG -e WSL_HOST_IP
 ; Run as run-wsl-file or any editor {{{1
 SplitPath, A_ScriptName, , , , exe_name
 if (exe_name == "run-wsl-file") {
@@ -44,6 +43,7 @@ if (exe_name == "run-wsl-file") {
     SetWorkingDir, %dir%
 
     Run, %mintty_base% %mintty_options% -t "%arg%"  %wslbridge2_base% -l %shell% -c ./"%filename%"
+
     ExitApp
 } else if (exe_name != "open-wsl" && exe_name != "cmd") {
     ; editor
@@ -186,18 +186,18 @@ if (user_command != "") {
     ExitApp
 }
 
-; Find bash.exe {{{1
-bash_exe = %A_WinDir%\sysnative\bash.exe
-if (!FileExist(bash_exe)) {
-    bash_exe = %A_WinDir%\system32\bash.exe
-} if (!FileExist(bash_exe)) {
+; Find wsl.exe {{{1
+wsl_exe = %A_WinDir%\sysnative\wsl.exe
+if (!FileExist(wsl_exe)) {
+    wsl_exe = %A_WinDir%\system32\wsl.exe
+} if (!FileExist(wsl_exe)) {
     MsgBox, 0x10, , WSL(Windows Subsystem for Linux) must be installed.
     ExitApp, 1
 }
 
 ; Switch distro {{{1
 if (distro != "") {
-    Run, % StrReplace(bash_exe, "bash.exe", "wslconfig.exe") " /s " distro
+    Run, % wsl_exe " -d " distro
 }
 
 ; Build command line {{{1
@@ -207,18 +207,15 @@ opts = %wslbridge2_options%
 if (activate_window && WinExist(title)) {
 } else if (!use_tmux) {
     if (login_shell) {
-        cmd = %shell% -l
+        wslbridge2_base = %wslbridge2_base% -l
         if (change_directory == "") {
             change_directory = ~
         }
-    } else {
-        cmd = %shell%
     }
 } else {
     if (WinExist(title)) {
-        Run, "%bash_exe%" -c 'tmux new-window -c "$PWD"', , Hide
+        Run, "%wsl_exe%" -e "-c 'tmux new-window -c "$PWD"'"", , Hide
     } else {
-        cmd = %shell%
         opts = %opts% -e USE_TMUX=1
 
         if (activate_window) {
@@ -258,6 +255,6 @@ if (keep_wsl_running) {
     Process, Exist, sleep
 
     if (ErrorLevel == 0) {
-        Run, "%bash_exe%" -c 'exec sleep 10000000d', , Hide
+        Run, "%wsl_exe%" -e "-c 'exec sleep 10000000d'"", , Hide
     }
 }
