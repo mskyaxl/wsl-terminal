@@ -1,8 +1,6 @@
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-/src/build
+/build
 /output
-/src/wsl-terminal
+/release
 *.exe
 *.zip
 *.7z

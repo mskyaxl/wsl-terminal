@@ -2,8 +2,8 @@
 
 set -e
 
-cygwin_version="3.1.2-1"
-mintty_version="3.1.0-1"
+cygwin_version="3.1.4-1"
+mintty_version="3.1.4-1"
 fatty_version="r2549.ee7e4a1-1"
 wslbridge2_version="0.5"
 
@@ -19,14 +19,18 @@ type wget >/dev/null && \
     exit 1
 }
 
+cd ..
 mkdir -p build && cd build
+
+
 
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/cygwin/cygwin-${cygwin_version}.tar.xz
 wget -nc http://mirrors.kernel.org/sourceware/cygwin/x86_64/release/mintty/mintty-${mintty_version}.tar.xz
-wget -nc https://github.com/goreliu/fatty-prebuilds/releases/download/${fatty_version}/fatty-${fatty_version}.7z
 wget -nc https://github.com/Biswa96/wslbridge2/releases/download/v${wslbridge2_version}/wslbridge2_cygwin_x86_64.7z
 wget -nc https://autohotkey.com/download/ahk.zip
 
+../scripts/build_fatty.sh
+pwd
 rm -rf bin etc usr doc
 
 tar -xvf cygwin-${cygwin_version}.tar.xz \
@@ -35,7 +39,7 @@ tar -xvf cygwin-${cygwin_version}.tar.xz \
     usr/share/doc/Cygwin
 
 tar -xvf mintty-${mintty_version}.tar.xz usr/bin/mintty.exe usr/share/doc usr/share/mintty/lang
-7z x -y fatty-${fatty_version}.7z fatty/bin/{fatty.exe,cyggcc_s-seh-1.dll,cygstdc++-6.dll} fatty/doc fatty/etc/lang
+7z x -y fatty-*.7z fatty/bin/{fatty.exe,cyggcc_s-seh-1.dll,cygstdc++-6.dll} fatty/doc fatty/etc/lang
 
 
 7z x -y wslbridge2_cygwin_x86_64.7z -ousr/bin
@@ -43,7 +47,7 @@ rm usr/bin/rawpty.exe
 mkdir -p usr/share/doc/wslbridge2
 wget -nc https://raw.githubusercontent.com/Biswa96/wslbridge2/v${wslbridge2_version}/LICENSE -Ousr/share/doc/wslbridge2/LICENSE
 
-cp -r ../etc .
+cp -r ../src/etc .
 rm -rf bin doc
 mv usr/bin usr/share/doc .
 mv usr/share/mintty/lang etc/
@@ -55,5 +59,5 @@ cd ..
 
 cat > "doc/wsl-terminal home.url" <<EOF
 [InternetShortcut]
-URL=https://goreliu.github.io/wsl-terminal/
+URL=https://mskyaxl.github.io/wsl-terminal/
 EOF

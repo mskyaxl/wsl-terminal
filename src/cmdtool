@@ -72,7 +72,9 @@ elif [[ "$1" == update ]]; then
         exit 1
     }
 
-    version=$(cat VERSION)
+    semanticVersion_reqex=".*(^[0-9]+\.[0-9]+\.[0-9]+)(-[0-9A-Za-z]+)*(_(tabbed))*$.*"
+    version=$(cat VERSION | sed -rn 's/'$semanticVersion_reqex'/\1/p')
+    tabbed=$(cat VERSION | sed -rn 's/'$semanticVersion_reqex'/\4/p')
     echo Checking the latest version ...
     latest_version=$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/VERSION -O -)
     if [[ "$version" == "$latest_version" ]]; then
@@ -86,27 +88,36 @@ elif [[ "$1" == update ]]; then
         exit
     fi
 
-    filename=wsl-terminal-$latest_version.7z
-
-    if [[ ! -e "$filename" ]]; then
-        wget -c "https://github.com/goreliu/wsl-terminal/releases/download/v$latest_version/wsl-terminal-$latest_version.7z"
+    if [[ "$tabbed" == tabbed ]]; then
+        echo "\ntabbed version detected"
+        filename=wsl-terminal-tabbed-$latest_version.7z
+        foldername=wsl-terminal-tabbed
+        ttyrcfile=fattyrc
+    else
+        filename=wsl-terminal-$latest_version.7z
+        foldername=wsl-terminal
+        ttyrcfile=minttyrc
     fi
 
-    rm -rf wsl-terminal
+    if [[ ! -e "$filename" ]]; then
+        wget -c "https://github.com/mskyaxl/wsl-terminal/releases/download/v$latest_version/$filename"
+    fi
+
+    rm -rf $foldername
     7z x "$filename" || {
         echo "$filename is broken, try again."
         rm -v "$filename"
         exit 1
     }
 
-    mv -v wsl-terminal/tools/* tools/
-    mv -v wsl-terminal/etc/wsl-terminal.conf etc/wsl-terminal.conf.pacnew
-    mv -v wsl-terminal/etc/minttyrc etc/minttyrc.pacnew
-    mv -v wsl-terminal/etc/lang/* etc/lang/
-    mv -v wsl-terminal/etc/themes/* etc/themes/
-    mv -v wsl-terminal/etc/README.md etc/
+    mv -v $foldername/tools/* tools/
+    mv -v $foldername/etc/wsl-terminal.conf etc/wsl-terminal.conf.pacnew
+    mv -v $foldername/etc/$ttyrcfile etc/$ttyrcfile.pacnew
+    mv -v $foldername/etc/lang/* etc/lang/
+    mv -v $foldername/etc/themes/* etc/themes/
+    mv -v $foldername/etc/README.md etc/
 
-    cd wsl-terminal/bin
+    cd $foldername/bin
     for i in *; do
         mv "../../bin/$i" "../../bin/$i.$$.bak"
         mv -v "$i" "../../bin/$i"
@@ -115,10 +126,10 @@ elif [[ "$1" == update ]]; then
     cd ../..
 
     rm -rf doc
-    mv -v wsl-terminal/doc .
-    mv -v wsl-terminal/{*.*,cmdtool,VERSION} .
+    mv -v $foldername/doc .
+    mv -v $foldername/{*.*,cmdtool,VERSION} .
 
-    rm -rf wsl-terminal
+    rm -rf $foldername
     rm "$filename"
     echo OK
     exit
