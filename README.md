@@ -3,7 +3,7 @@
 A terminal emulator for Windows Subsystem for Linux (WSL), based on [mintty](http://mintty.github.io/), [fatty](https://github.com/paolo-sz/fatty) and [wslbridge2](https://github.com/Biswa96/wslbridge2).
 
 
-[中文页面](https://mskyaxl.github.io/wsl-terminal/README.zh_CN.html)(chinese README is no longer maintained)
+[中文页面](https://mskyaxl.github.io/wsl-terminal/README.zh_CN.html)(The Chinese README is no longer maintained)
 
 ## Screenshot
 
