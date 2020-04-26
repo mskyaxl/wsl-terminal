@@ -13,7 +13,7 @@ More screenshots [here](https://github.com/mskyaxl/wsl-terminal/wiki/Screenshots
 
 ## Usage
 
-1. [Download here](https://github.com/mskyaxl/wsl-terminal/releases), or run `bash -c "wget https://github.com/mskyaxl/wsl-terminal/releases/download/v0.9.0/wsl-terminal-0.9.0.7z && 7z x wsl-terminal-0.9.0.7z"` in `cmd.exe` or WSL.
+1. [Download here](https://github.com/mskyaxl/wsl-terminal/releases), or run `bash -c "wget https://github.com/mskyaxl/wsl-terminal/releases/download/v0.9.1/wsl-terminal-0.9.1.7z && 7z x wsl-terminal-0.9.1.7z"` in `cmd.exe` or WSL.
 Make sure you have 7z installed. On Ubuntu run: `sudo apt install p7zip-full`, on Archlinux: run `pacman -S p7zip`
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge#building-wslbridge)).
