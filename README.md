@@ -2,6 +2,8 @@
 
 A terminal emulator for Windows Subsystem for Linux (WSL), based on [mintty](http://mintty.github.io/), [fatty](https://github.com/paolo-sz/fatty) and [wslbridge2](https://github.com/Biswa96/wslbridge2).
 
+All emojis designed by [OpenMoji](https://openmoji.org/) – the open-source emoji and icon project. License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/#)
+
 
 [中文页面](https://mskyaxl.github.io/wsl-terminal/README.zh_CN.html)(The Chinese README is no longer maintained)
 
@@ -15,6 +17,11 @@ More screenshots [here](https://github.com/mskyaxl/wsl-terminal/wiki/Screenshots
 
 1. [Download here](https://github.com/mskyaxl/wsl-terminal/releases), or run `bash -c "wget https://github.com/mskyaxl/wsl-terminal/releases/download/v0.9.1/wsl-terminal-0.9.1.7z && 7z x wsl-terminal-0.9.1.7z"` in `cmd.exe` or WSL.
 Make sure you have 7z installed. On Ubuntu run: `sudo apt install p7zip-full`, on Archlinux: run `pacman -S p7zip`
+
+For the tabbed version run
+```
+bash -c "wget https://github.com/mskyaxl/wsl-terminal/releases/download/v0.9.1/wsl-terminal-0.9.1.7z && 7z x wsl-terminal-0.9.1.7z"
+```
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge#building-wslbridge)).
 
@@ -189,6 +196,7 @@ remove the ; before distro to use the distro.
 If you want to pass the distro_guid to open-wsl in cmdline:
 
 ```
+
 # pass the distro guid to wslbridge
 > open-wsl -b "-d Ubuntu"
 ```
@@ -205,11 +213,29 @@ If you want to pass the distro_guid to open-wsl in cmdline:
 
 ## Build
 
-Make sure `wget` `tar` `xz` `gzip` `p7zip` (Ubuntu: run `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: run `pacman -S wget tar xz gzip p7zip`) are installed in WSL.
+### Prerequisites
 
-Run `build.bat`.
+* Install WSL and make sure `wget` `tar` `xz` `gzip` `p7zip` are available (Ubuntu: run `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: run `pacman -S wget tar xz gzip p7zip`) are installed in WSL.
+* cygwin x64 with the following packages installed `gcc-g++`, `make`, `w32api-headers` (for compiling fatty)
+
+### Build steps
+
+* clone the repo in WSL(to maintain the linux EOL characters) but on windows drive eg (`/mnt/c/Users/<userName>/work/wsl-terminal`)
+
+* change directory to the scripts folder
+
+    ```
+    cd wsl-terminal/scripts
+    ```
+
+* run build.sh
+
+    ```
+    ./build.sh
+    ```
 
 ## Roadmap
+
 1. Bug fixing
 2. add x11 support
 
