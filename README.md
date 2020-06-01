@@ -216,22 +216,20 @@ If you want to pass the distro_guid to open-wsl in cmdline:
 ### Prerequisites
 
 * Install WSL and make sure `wget` `tar` `xz` `gzip` `p7zip` are available (Ubuntu: run `apt install wget tar xz-utils gzip p7zip-full`, Archlinux: run `pacman -S wget tar xz gzip p7zip`) are installed in WSL.
-* cygwin x64 with the following packages installed `gcc-g++`, `make`, `w32api-headers` (for compiling fatty)
+* for the tabbed version: cygwin x64 with the following packages installed `gcc-g++`, `make`, `w32api-headers` (for compiling fatty)
 
 ### Build steps
 
 * clone the repo in WSL(to maintain the linux EOL characters) but on windows drive eg (`/mnt/c/Users/<userName>/work/wsl-terminal`)
 
-* change directory to the scripts folder
-
+* use build.sh to build with the appropiate parameters.
     ```
-    cd wsl-terminal/scripts
-    ```
-
-* run build.sh
-
-    ```
-    ./build.sh
+    ➜  wsl-terminal git:(master) scripts/build.sh -h
+    Usage:
+        build.sh -h                 Display this help message.
+        build.sh -a                 Builds wsl-terminal and wsl-terminal-tabbed.
+        build.sh -t                 Builds only wsl-terminal-tabbed(cygwin is required).
+        build.sh                    Builds only wsl-terminal.
     ```
 
 ## Roadmap

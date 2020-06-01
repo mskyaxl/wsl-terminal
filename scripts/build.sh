@@ -5,7 +5,7 @@ usage() {
       echo "Usage:"
       echo "    build.sh -h                 Display this help message."
       echo "    build.sh -a                 Builds wsl-terminal and wsl-terminal-tabbed."
-      echo "    build.sh -t                 Builds only wsl-terminal-tabbed(cygwin needed)."
+      echo "    build.sh -t                 Builds only wsl-terminal-tabbed(cygwin is required)."
       echo "    build.sh                    Builds only wsl-terminal."
 }
 
