@@ -20,7 +20,7 @@ Make sure you have 7z installed. On Ubuntu run: `sudo apt install p7zip-full`, o
 
 For the tabbed version run
 ```
-bash -c "wget https://github.com/mskyaxl/wsl-terminal/releases/download/v0.9.1/wsl-terminal-0.9.1.7z && 7z x wsl-terminal-0.9.1.7z"
+bash -c "wget https://github.com/mskyaxl/wsl-terminal/releases/download/v0.9.2/wsl-terminal-tabbed-0.9.2.7z && 7z x wsl-wsl-terminal-tabbed-0.9.2.7z"
 ```
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge#building-wslbridge)).
