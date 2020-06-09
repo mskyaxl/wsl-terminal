@@ -15,13 +15,24 @@ More screenshots [here](https://github.com/mskyaxl/wsl-terminal/wiki/Screenshots
 
 ## Usage
 
-1. [Download here](https://github.com/mskyaxl/wsl-terminal/releases), or run `bash -c "wget https://github.com/mskyaxl/wsl-terminal/releases/download/v0.9.2/wsl-terminal-0.9.2.7z && 7z x wsl-terminal-0.9.2.7z"` in `cmd.exe` or WSL.
-Make sure you have 7z installed. On Ubuntu run: `sudo apt install p7zip-full`, on Archlinux: run `pacman -S p7zip`
+1. Make sure you have 7z installed. On Ubuntu run: ```sudo apt install p7zip-full```, on Archlinux: run ```pacman -S p7zip```
 
-For the tabbed version run
-```
-bash -c "wget https://github.com/mskyaxl/wsl-terminal/releases/download/v0.9.2/wsl-terminal-tabbed-0.9.2.7z && 7z x wsl-wsl-terminal-tabbed-0.9.2.7z"
-```
+    run 
+
+    ```
+      wsl bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)"
+    ```
+    in `cmd.exe` or
+    ```
+    bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)"
+    ```
+     in WSL.
+
+
+    For the tabbed version run
+    ```
+    bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)" '' -t
+    ```
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge#building-wslbridge)).
 

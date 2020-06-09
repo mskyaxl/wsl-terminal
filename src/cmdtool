@@ -67,70 +67,7 @@ elif [[ "$1" == wpath ]]; then
         exit 1
     fi
 elif [[ "$1" == update ]]; then
-    which 7z || {
-        echo "7z command not found."
-        exit 1
-    }
-
-    semanticVersion_reqex=".*(^[0-9]+\.[0-9]+\.[0-9]+)(-[0-9A-Za-z]+)*(_(tabbed))*$.*"
-    version=$(cat VERSION | sed -rn 's/'$semanticVersion_reqex'/\1/p')
-    tabbed=$(cat VERSION | sed -rn 's/'$semanticVersion_reqex'/\4/p')
-    echo Checking the latest version ...
-    latest_version=$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/VERSION -O -)
-    if [[ "$version" == "$latest_version" ]]; then
-        echo Already the latest version: $version
-        exit
-    fi
-
-    echo -n "Upgrade [$version] to [$latest_version]? (y/n)"
-    read -n1 answer 
-    if [[ "$answer" != "y" ]]; then
-        exit
-    fi
-
-    if [[ "$tabbed" == tabbed ]]; then
-        echo "\ntabbed version detected"
-        filename=wsl-terminal-tabbed-$latest_version.7z
-        foldername=wsl-terminal-tabbed
-        ttyrcfile=fattyrc
-    else
-        filename=wsl-terminal-$latest_version.7z
-        foldername=wsl-terminal
-        ttyrcfile=minttyrc
-    fi
-
-    if [[ ! -e "$filename" ]]; then
-        wget -c "https://github.com/mskyaxl/wsl-terminal/releases/download/v$latest_version/$filename"
-    fi
-
-    rm -rf $foldername
-    7z x "$filename" || {
-        echo "$filename is broken, try again."
-        rm -v "$filename"
-        exit 1
-    }
-
-    mv -v $foldername/tools/* tools/
-    mv -v $foldername/etc/wsl-terminal.conf etc/wsl-terminal.conf.pacnew
-    mv -v $foldername/etc/$ttyrcfile etc/$ttyrcfile.pacnew
-    mv -v $foldername/etc/lang/* etc/lang/
-    mv -v $foldername/etc/themes/* etc/themes/
-    mv -v $foldername/etc/README.md etc/
-
-    cd $foldername/bin
-    for i in *; do
-        mv "../../bin/$i" "../../bin/$i.$$.bak"
-        mv -v "$i" "../../bin/$i"
-        rm -f ../../bin/*.bak 2>/dev/null || true
-    done
-    cd ../..
-
-    rm -rf doc
-    mv -v $foldername/doc .
-    mv -v $foldername/{*.*,cmdtool,VERSION} .
-
-    rm -rf $foldername
-    rm "$filename"
+    bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)" '' -u ${PWD}
     echo OK
     exit
 elif [[ "$1" == "killall" ]]; then
