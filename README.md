@@ -15,27 +15,29 @@ More screenshots [here](https://github.com/mskyaxl/wsl-terminal/wiki/Screenshots
 
 ## Usage
 
-1. Make sure you have 7z installed. On Ubuntu run: ```sudo apt install p7zip-full```, on Archlinux: run ```pacman -S p7zip```
+0. Make sure you have 7z installed. On Ubuntu run: ```sudo apt install p7zip-full```, on Archlinux: run ```pacman -S p7zip```
 
-    Option 1:
+1. Change the directory to the folder where you want to install wsl-terminal to.
 
-    ```
-      wsl bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)"
-    ```
-    in `cmd.exe` OR
-    
-    Option 2:
-    ```
-    bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)"
-    ```
-    in WSL.
+Make sure to install wsl-terminal in a the windows filesystem and not in the wsl filesistem. The installation folder needs to be on a local NTFS volume.
+
+* Option 1: If you're in cmd.exe run:
+
+```
+wsl bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)"
+```
+
+* Option 2: If you're in wsl already run
+
+```
+bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)"
+```
 
 
-
-    For the tabbed version run
-    ```
-    bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)" '' -t
-    ```
+If you want to install the tabbed version you have to add a ```-t``` as parameter as shown bellow
+```
+bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)" '' -t
+```
 
 2. Run `open-wsl.exe` to open a WSL terminal in current directory.
 
