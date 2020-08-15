@@ -17,16 +17,19 @@ More screenshots [here](https://github.com/mskyaxl/wsl-terminal/wiki/Screenshots
 
 1. Make sure you have 7z installed. On Ubuntu run: ```sudo apt install p7zip-full```, on Archlinux: run ```pacman -S p7zip```
 
-    run 
+    Option 1:
 
     ```
       wsl bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)"
     ```
-    in `cmd.exe` or
+    in `cmd.exe` OR
+    
+    Option 2:
     ```
     bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)"
     ```
-     in WSL.
+    in WSL.
+
 
 
     For the tabbed version run
@@ -34,7 +37,7 @@ More screenshots [here](https://github.com/mskyaxl/wsl-terminal/wiki/Screenshots
     bash -c "$(wget https://raw.githubusercontent.com/mskyaxl/wsl-terminal/master/scripts/install.sh -qO -)" '' -t
     ```
 
-2. Run `open-wsl.exe` to open a WSL terminal in current directory (need to be on a local NTFS volume, [more details](https://github.com/rprichard/wslbridge#building-wslbridge)).
+2. Run `open-wsl.exe` to open a WSL terminal in current directory.
 
 3. Run `tools/1-add-open-wsl-terminal-here-menu.js` ([help](https://github.com/mskyaxl/wsl-terminal#tools)) to add a `Open wsl-terminal Here` context menu to `explorer.exe` (Run `tools/1-remove-open-wsl-terminal-here-menu.js` to remove it). If you are using Total Commander, [Use wsl-terminal with Total Commander](https://github.com/mskyaxl/wsl-terminal/wiki/Use-wsl-terminal-with-Total-Commander) may help you.
 
