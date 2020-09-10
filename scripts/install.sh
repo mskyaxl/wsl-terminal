@@ -17,7 +17,7 @@ emoji_support=0
 semanticVersion_reqex=".*(^[0-9]+\.[0-9]+\.[0-9]+)(-[0-9A-Za-z]+)*(_(tabbed))*$.*"
 
 scriptpath="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-cd $scriptpath
+cd "$scriptpath"
 while getopts "htv:u:" opt; do
   case ${opt} in
     h )
