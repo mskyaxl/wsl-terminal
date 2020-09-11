@@ -76,7 +76,7 @@ if [ "$existing_install_folder" != "" ]; then
 
 fi
 
-if [ $(which 7z) == "" ]; then
+if [ "$(which 7z)" == "" ]; then
     echo "7z command not found."
     echo "install 7z in wsl"
     echo "ubuntu: sudo apt install p7zip-full"
